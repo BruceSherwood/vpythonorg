@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VPython</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="vp.css" rel="stylesheet" />
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery-ui.custom.min.js"></script>
+
+</head>
+
+<body>
+
+<div><i>Click "Read more" to view the details of each topic</i></div>
+
+<table>
+    <col width="700">
+<tr>
+<th>
+<div id="content">
+        <b>Additional information about VPython</b>
+        <p>Full documentation is available at <a href="https://webvpython.org/">webvpython.org</a> by clicking Help. Here is a <a href="https://glowscript.org/docs/VPythonDocs/index.html">direct link</a>.</p>
+        
+    <h4>User forums</h4>
+    <div class="accordion">
+        <i>Read more</i>
+        <div>
+        <a href="https://groups.google.com/forum/?fromgroups&hl=en#!forum/vpython-users">VPython 7 user forum</a></p>
+        <a href="https://groups.google.com/forum/?fromgroups&hl=en#!forum/glowscript-users">Web VPython user forum</a></p>
+        <p>Until Feb. 2013, there was a VPython mailing list whose archives may be found at https://sourceforge.net/mailarchive/forum.php?forum_name=visualpython-users. Please do not write to that list; instead post on the VPython 7 or Web VPython user forum.
+        <br><br>
+        </div>
+    </div>
+        
+    <h4>Stackoverflow</h4>
+    <div class="accordion">
+        <i>Read more</i>
+        <div>
+          <p><a href="https://stackoverflow.com/questions/tagged/vpython">VPython on Stackoverflow</a>: A third party question and answer site for users to share about VPython. We encourage people to post to the VPython <a href="https://groups.google.com/forum/?fromgroups&hl=en#!forum/vpython-users">user forum</a> or the Web VPython <a href="https://groups.google.com/g/glowscript-users">user forum</a> rather than to Stackoverflow, as there is a large number of knowledgeable users in these forums and one will get a faster response.<br>
+            <br>
+<br>
+          </p>
+        </div>
+    </div>
+        
+    <h4>Python</h4>
+    <div class="accordion">
+        <i>Read more</i>
+        <div>
+        <a href="https://www.python.org/">The Python web site</a>: The Python programming language, on which VPython is based.
+        </div>
+    </div>
+        
+    <h4>Plans for the future</h4>
+    <div class="accordion">
+        <i>Read more</i>
+        <div>
+        <a href="https://vpython.org/contents/announcements/evolution.html">Here is a description</a> of the plan for future development of VPython.
+        </div>
+    </div>
+        
+    <h4>Galleries of VPython programs</h4>
+    <div class="accordion">
+        <i>Read more</i>
+        <div>
+        Jay Wang has posted a gallery of <a href="http://www.faculty.umassd.edu/j.wang/vp/">photos</a> and <a href="http://www.faculty.umassd.edu/j.wang/vp/movie.htm">movies</a> of a variety of interesting VPython programs. Another large set of example programs is available at <a href="https://webvpython.org/">webvpython.org</a>.
+        <br><br>
+        </div>
+    </div>
+        
+    <h4>Presentations about VPython</h4>
+    <div class="accordion">
+        <i>Read more</i>
+        <div>
+        A podcast interview with Ruth Chabay and Bruce Sherwood about the <a href="http://pythonpodcast.com/vpython.html">history of VPython</a>.
+        <p>A blog article on <a href="https://brucesherwood.net/?p=136">A time line for VPython development</a> by Bruce Sherwood.</p>
+        <p>A brief technical presentation on the relationship between <a href="https://vpython.org/contents/VPythonArchitecture.pdf">Web VPython and VPython 7</a>.</p>
+<p>A poster on the relationship between <a href="https://vpython.org/contents/announcements/VPython-in-a-Browser.pdf">Web VPython and VPython 7</a> in a Jupyter notebook.</p>
+<p>For developers: <a href="https://github.com/vpython/glowscript/blob/master/docs/GlowScriptOverview.md">In-depth technical documentation</a></p>
+        </div>
+    </div>
+        
+    <h4>Textbooks that include the use of VPython</h4>
+    <div class="accordion">
+        <i>Read more</i>
+        <div>
+        <a href="https://matterandinteractions.org/">Matter &amp; Interactions</a> Ruth Chabay &amp; Bruce Sherwood; calculus-based introductory physics, including the use of VPython (4th edition 2015)
+        <p><a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-3527413154.html">Computational Physics: Problem Solving with Python</a> Rubin H. Landau, Manuel J. Páez, Cristian Bordeianu (2015)</p>
+        <p><a href="http://www-personal.umich.edu/~mejn/computational-physics">Computational Physics with Python</a> Mark Newman (2012)</p>
+        <p><a href="http://global.oup.com/academic/product/an-introduction-to-statistical-mechanics-and-thermodynamics-9780199646944?cc=us&lang=en&">An Introduction to Statistical Mechanics and Thermodynamics</a> Robert H. Swendsen (2012)</p>
+        <p><a href="http://www-personal.umich.edu/~lsander/ESP/ESP.htm">Equilibrium Statistical Physics With Computer Simulations in Python</a> Leonard M. Sander (2013) </p>
+        <p><a href="http://ukcatalogue.oup.com/product/9780199683093.do#">Soil Physics with Python: Transport in the Soil-Plant-Atmosphere System</a> Marco Bittelli, Gaylon S. Campbell, and Fausto Tomei (2015)</p>
+        <p><a href="http://www.wiley.com/WileyCDA/WileyTitle/productCd-1119179181.html">Computational Modeling and Visualization of Physical Systems with Python</a> Jay Wang (2016)</p>
+        </div>
+        <br><br>
+    </div>
+        
+</th>
+</tr>
+</table>
+
+<script>
+$( ".accordion" ).accordion({
+    active: false,
+    collapsible: true,
+    animate: {duration: 0},
+    activate: function( event, ui ) {
+        ui.newHeader.html("<i>Read less</i>");
+        ui.oldHeader.html("<i>Read more</i>");
+    },
+});
+</script>
+
+</body>
+</html>

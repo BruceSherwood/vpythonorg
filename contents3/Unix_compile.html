@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>VPython Unix SGI</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p>Marcelo Garcia compiled and ran VPython on an SGI machine. He started from 
+  the <a href="linux_download.html">Linux</a> installer package, and the Linux 
+  makefile. Here is what he reported:</p>
+<p>Finally VPython is running on SGI. </p>
+<p>I installed Python2.2, Numerical Python in a canonical way: make, make install, 
+  etc. </p>
+<p>And the rest: gtk, gtkgl, gcc, gmake are packages from SGI (<a href="http://freeware.sgi.com" target="new">http://freeware.sgi.com</a>).</p>
+<p> I had to change the file xgl.h to include the full path to gtk/gtkglarea.h, 
+  which is /usr/freeware/include/gtkgl/gtkglarea.h. </p>
+<p>I also commented the lines that install the rpm's and numpy in the VPython 
+  'install' script file.</p>
+<h3></h3>
+<blockquote> 
+  <p align="left">[<a href="index3.html">VPython home page</a>]</p>
+</blockquote>
+
+
+
+</body>
+</html>

@@ -1,0 +1,322 @@
+<p><strong>HOW TO BUILD VISUAL USING GTKMM ON MICROSOFT WINDOWS</strong><br />
+Last updated March 2008; conditions may have changed since then. </p>
+<p>These notes by Bruce Sherwood document what was required to build a GTKMM-based<br />
+  version for Microsoft Windows of
+Visual, the C++ module which together with Python and<br />
+numpy forms what is called VPython (vpython.org), an environment in which even novice<br /> 
+programmers can easily write Python programs that produce navigable 3D animations. The<br />
+intent was to use GTKMM as the mechanism for making VPython available on Windows<br />
+and Mac as well as on Linux. </p>
+<p>In many cases these notes offer important details about installation that were pieced together<br />
+  from disparate sources, and as such this document may be helpful to others who are starting<br />
+  out to develop on Windows using GTKMM.
+</p>
+<p>The attempt was successful but was incredibly effortful, as can be seen here. The great<br />
+  complexity of the approach has led to retreating to implementing lightweight machinery<br />
+  for creating windows and handling mouse and keyboard events on Windows and Mac,<br />
+  while continuing to use the GTKMM approach as the natural environment for Linux.<br />
+  However, it should be mentioned that some of the difficulties described in this document<br />
+are present on Linux as well. For example, at the time of writing (March 2008), gtkglext<br />
+and gtkglextmm are not standard components of GTK and GTKMM, and even on the <br />
+popular Ubuntu 7.10 there is no package for gtkglextmm, nor does a simple configure/make<br />
+of the source code work, for some unknown reason.</p>
+<p>The approach documented here involves using the MinGW compile environment<br />
+  rather than Microsoft Visual Studio, which is another valid approach but would have<br />
+many of the same problems.</p>
+<p>I want to express my gratitude for the large amount of work by dedicated people<br />
+  to produce and maintain the many open-source tools described here. What seems to<br />
+  be needed as the next step in these developments is better support, documentation,<br />
+  and integration of these tools on Windows and Macintosh.
+</p>
+<p>*************************************************************<br />
+  <strong>INSTALL PYTHON AND NUMPY</strong><br />
+  Download and install Python 2.5.x from www.python.org.<br />
+  OpenGL is provided with the standard Windows installation.</p>
+<p>Download and install numpy (http://numpy.scipy.org).</p>
+<p>*************************************************************<br />
+  <strong>INSTALL UNIX-LIKE MACHINERY FOR BUILDING VISUAL</strong><br />
+  You need to download and install MinGW, then MSYS, then MSYS-DTK.</p>
+<p>Go to www.mingw.org. The download section will send you to sourceforge.net.<br />
+  Download and install the automated MinGW installer, currently MinGW-5.1.3.<br />
+  Run this exe installer. Specify that you want the g++ compiler (for C++).<br />
+  The installer will also install gcc-core, mingw-runtime, and w32api.</p>
+<p>Note that detailed installation instructions are available at mingw.org<br />
+  by clicking on MinGWiki in the left column and choosing &quot;Getting started&quot;.</p>
+<p>From the same sourceforge.net site, download and install MSYS.<br />
+  You must click on MSYS Base System in the left column in order to find<br />
+  and download the current release (currently MSYS-1.0.10.exe). Install,<br />
+  and when asked, tell where MinGW is located (normally c:/MinGW). As a check<br />
+  you should find &quot;c:/mingw /mingw&quot; in the mount table for MSYS, which is<br />
+  c:\msys\1.0\etc\fstab.</p>
+<p>Back on the main sourceforge page, click on MSYS Supplementary Tools<br />
+  in the left column in order to find and download and install the current<br />
+  release of the developer's toolkit (currently msysDTK-1.0.1.exe).</p>
+<p>If a folder is (say) C:\installers\msys_stuff, in the MSYS application you type <br />
+  cd /c/installers/msys_stuff. Note that the TAB key will complete an incomplete <br />
+  file name. The up arrow retrieves an earlier command type-in.</p>
+<p>After installing msysDTK-1.0.1.exe, you need to download and install from<br />
+  the same source the following updates:<br />
+  msys-autoconf-2.59.2.59.tar.bz2<br />
+  msys-automake-1.8.2.tar.bz2<br />
+  msys-libtool-1.5.tar.bz2<br />
+  Run MSYS, and cd to the folder where you have downloaded these .bz2 files and<br />
+  execute<br />
+  tar -xjf msys-autoconf-2.59.2.59.tar.bz2<br />
+  tar -xjf msys-automake-1.8.2.tar.bz2<br />
+  tar -xjf msys-libtool-1.5.tar.bz2<br />
+  This will produce a bunch of folders (bin, lib, and so on). Copy these folders<br />
+  to c:\msys\1.0. Note that Windows merges on copy, so you can simply drag all <br />
+  the folders to c:\msys\1.0.</p>
+<p>Copy Python25's libs/libpython25.a to /mingw/lib.<br />
+  See http://www.python.org/doc/current/inst/tweak-flags.html for discussion.</p>
+<p>From help obtained in mingw-msys-bounces@lists.sourceforge.net (2008/01/31):<br />
+  &quot;For Windows Vista, Microsoft changed how msvcrt.dll reacts to access(), <br />
+  normally in XP and 2000, X_OK parameter is ignored, but Vista pukes on it. <br />
+  The MinGW gcc is affected by it. The patched version is found at<br />
+  http://dessent.net/tmp/gcc-vista-3.4.5-20060117-1.tar.gz&quot;</p>
+<p> If you're using Vista, get this file, start up MSYS, cd to the folder where <br />
+  the gz file is located. </p>
+<p> Execute gunzip gcc-vista-3.4.5-20060117-1.tar.gz. This will produce folders<br />
+  bin and libexec. Copy the files in these folders to the corresponding locations<br />
+  in c:/MinGW.</p>
+<p>-------------Need to check whether the following stuff is necessary<br />
+  If you are building on Windows Vista, execute &quot;gcc --version&quot; and note<br />
+  the version number (e.g. 3.4.2). Then in msys/etc/profile, change the<br />
+  PATH setting to include /mingw/bin:/mingw/libexec/gcc/mingw32/3.4.2 (otherwise<br />
+  the configure step will fail due to a failure of gcc to find a file).</p>
+<p>Vista problem: See the following note about why msys/bin/install can fail.<br />
+  Downloading and installing the updated coreutils for msys did the trick.</p>
+<p>http://sourceforge.net/tracker/index.php?func=detail&amp;aid=1711379&amp;group_id=2435&amp;atid=102435</p>
+<p>I tried the following, and it didn't work for me:<br />
+  &quot;The heuristics can be turned off on Business and Ultimate editions of<br />
+  Vista through the &quot;Local Security Policy&quot; found under Administrative Tools.<br />
+  Look under &quot;Local Policies / Security Options / User Account Control:<br />
+  Detect application installations and prompt for elevation&quot;. I don't think<br />
+  the security policy editor is included in home editions, but there should<br />
+  be a registry hack which would have the same effect.&quot;<br />
+  --------------</p>
+<p>*************************************************************<br />
+  <strong>BUILDING BOOST</strong><br />
+  The Boost libraries are extensions to C++. Among the libraries<br />
+  are python and thread libraries used by Visual. The python library<br />
+  makes connections between Python and C++.</p>
+<p>The following instructions can be used to build from source those <br />
+  Boost libraries needed by Visual. However, the process takes a long<br />
+  time, so precompiled files are available in the Developers section<br />
+  of vpython.org, which makes the following procedure unnecessary.</p>
+<p><strong>BUILDING BOOST FROM SOURCE</strong><br />
+  Download a precompiled version of the 'bjam' tool from www.boost.org <br />
+  and place it into C:\mingw\bin (or anywhere else on your executable PATH).</p>
+<p>Download latest Boost (1.34.1) from www.boost.org.<br />
+  &gt; tar -xjf boost_1_34_1.tar.bz2</p>
+<p>The following must be done from a Windows typescript, NOT from Msys.<br />
+  (From Start/Run, execute cmd.)<br />
+  &gt; cd boost_1_34_1<br />
+  (-a means rebuild all)</p>
+<p>Make sure that Python 2.5 is the only Python installed, then (takes a long time):<br />
+  &gt; bjam --toolset=gcc --with-python --with-thread stage</p>
+<p>Copy the directory named &quot;boost&quot; to /mingw/include.</p>
+<p>Switch to Msys and cd to boost_1_34_1.<br />
+  &gt; cp stage/lib/boost_thread-mgw34-mt-1_34_1.dll /mingw/bin<br />
+  &gt; cp stage/lib/boost_thread-mgw34-mt-1_34_1.a /mingw/lib/libboost_thread.a<br />
+  &gt; similar for boost_signals<br />
+  &gt; cd bin.v2/libs/python/build/gcc-mingw-3.4.2/release/threading-multi<br />
+  &gt; cp boost_python-mgw34-mt-1_34_1.dll /mingw/bin<br />
+  &gt; cp boost_python-mgw34-mt-1_34_1.a /mingw/lib/libboost_python25.a </p>
+<p>Another possibility would be to configure the boost build with a config file:<br />
+  boost_1_34_1/tools/build/v2/user-config.jam is the user configuration file.<br />
+  It should be placed in your home directory.<br />
+  Your home directory can be found by executing ECHO %HOMEDRIVE%%HOMEPATH%</p>
+<p>*************************************************************<br />
+  <strong>GTK+ AND FRIENDS</strong><br />
+  gtk+ (also called gtk2), written in C, is a toolkit for building graphical user interface<br />
+  programs; gtkmm is a &quot;wrapper&quot; of these C routines to make gtk+ functionality accessible <br />
+  to C++ programmers.</p>
+<p>Go to http://ftp.gnome.org/pub/GNOME/binaries/win32 and download the following components.<br />
+  In the zip files are folders containing files to be copied to the corresponding folders <br />
+  in c:\MinGW. Note that Windows merges on copy, so you can simply double-click the zip file<br />
+  and drag the folders to c:\MinGW; this will place the files in the correct locations. You<br />
+  don't need to copy make or manifest folders.</p>
+<p>gtk, gtk+-dev<br />
+  gtkmm-win32-devel (this is an exe installer)<br />
+  Includes atkmm, cairomm, gdkmm, glade--, glibmm, gtkmm, <br />
+  libglademm, libsigc++, libxml++, pangomm<br />
+  glib, glib-dev<br />
+  atk, atk-dev<br />
+  libglade, libglade-dev<br />
+  pango, pango-dev</p>
+<p>From the dependencies section:</p>
+<p>cairo, cairo-dev<br />
+  fontconfig, fontconfig-dev<br />
+  freetype, freetype-dev<br />
+  gettext-runtime, gettext-runtime-dev<br />
+  libiconv<br />
+  libxml2, libxml2-dev<br />
+  pkg-config<br />
+  You need to set an environment variable for pkg-config:<br />
+  Right click My Computer &gt; Properties &gt; Advanced &gt; Environment Variables and<br />
+  add a new user variable: name PKG_CONFIG_PATH, value c:\mingw\lib\pkgconfig.<br />
+  NOTE: You can run &quot;env&quot; in an MSYS terminal to check that the path is appropriate. <br />
+  A library such as sigc++ registers its version number in <br />
+  mingw/lib/pkgconfig/sigc++-2.0.pc, which makes it possible for the build process <br />
+  to find the installed version of the library.<br />
+  <br />
+  Can test that pkg-config is correctly installed by executing this:<br />
+  &gt; pkg-config --cflags sigc++-2.0<br />
+  <br />
+  See http://sourceforge.net/projects/expat, where one finds that this is a piece<br />
+  of interpreting xml files, apparently part of the glade machinery which reads<br />
+  a data file which specifies the layout of the window, including the toolbar.<br />
+  I found a copy of libexpat.dll here (copy to mingw/bin):<br />
+  http://www.dll-files.com/dllindex/dll-files.shtml?libexpat<br />
+  <br />
+  At gnuwin32.sourceforge.net/packages.html get binaries and developer files for<br />
+  LibPng (these are binary files, making the previous make instructions unneeded)<br />
+  LibJpeg (get dependencies, too)<br />
+  LibTiff (get dependencies, too)</p>
+<p>The following should be copied over the files in msys, not mingw:<br />
+  Libtool (the msys version is said to be too old).</p>
+<p>Edit c:\msys\1.0\bin\libtoolize to specify prefix=/usr <br />
+  instead of prefix=c:/progra~1/LibTool. <br />
+  In the MSYS context, /usr means c:\msys\1.0</p>
+<p>Noted on the web is some confusion over the name of libpng, which is sometimes <br />
+  referred to as libpng12 and sometimes as libpng13. To deal with this:<br />
+  In c:\MinGW\lib\pkgconfig, copy libpng12.pc -&gt; libpng13.pc<br />
+  <br />
+  At sourceforge.net/projects/gtkglext you can download zip files <br />
+  containing the source for the following components, which add to gtk2<br />
+  a drawingarea widget for displaying OpenGL graphics:<br />
+  gtkglext<br />
+  gtkglextmm</p>
+<p>However, these components are very difficult to build, due to complex<br />
+  dependencies (see below for an unsuccessful attempt). For gtkglext, go to<br />
+  http://www.k-3d.org/gtkglext and click on Downloads, Binaries. Download<br />
+  the GtkGLExt exe installer for Windows and run the installer. It will<br />
+  place the components into c:\GtkGLExt. Go there and copy the bin, include,<br />
+  lib, and share folders to c:\MinGW (merge copy, as usual).</p>
+<p>The build process for gtkglextmm also sometimes fails, on some Windows machines, <br />
+  so binary files are available in the developer's section of vpython.org.</p>
+<p>############### Here are instructions on how to attempt to build<br />
+  ############### gtkglext from source, though I didn't succeed.<br />
+  For instructions on how to build gtkglext on Windows:<br />
+  http://mail.gnome.org/archives/gtkglext-list/2006-March/msg00017.html</p>
+<p>In the gtkglext folder, edit configure to delete the many references to pangox,<br />
+  which has to do with the X11 window manager on Linux.</p>
+<p>Unzip the zip files. To build, run MSYS, cd into a directory, and do this:<br />
+  &gt; ./configure --prefix=/c/MinGW --build=i386-pc-mingw32<br />
+  &gt; make<br />
+  &gt; make install./configure --prefix=/c/MinGW --build=i386-pc-mingw32</p>
+<p>This fails in the configure attempts:<br />
+  checking for GTK+ - version &gt;= 2.0.0... no<br />
+  conftest.exe failed because jpeg62.dll was not found.<br />
+  *** Could not run GTK+ test program, checking why...<br />
+  *** The test program compiled, but did not run. This usually means<br />
+  *** that the run-time linker is not finding GTK+ or finding the wrong<br />
+  *** version of GTK+. If it is not finding GTK+, you'll need to set your<br />
+  *** LD_LIBRARY_PATH environment variable, or edit /etc/ld.so.conf to point<br />
+  *** to the installed location  Also, make sure you have run ldconfig if that<br />
+  *** is required on your system<br />
+  ***<br />
+  *** If you have an old version installed, it is best to remove it, although<br />
+  *** you may also be able to get things to work by modifying LD_LIBRARY_PATH<br />
+  configure: error: GTK+ 2.0 not found<br />
+  ######################################</p>
+<p>*************************************************************<br />
+  <strong>COPY AUTOCONFIGURE FILES TO MSYS</strong><br />
+  The autoconfigure machinery is in msys, so do this:<br />
+  Copy c:\MinGW\share\aclocal\* to c:\msys\1.0\share\aclocal-1.8</p>
+<p>*************************************************************<br />
+  <strong>BUILDING VISUAL</strong><br />
+  See INSTALL.txt for details on building Visual on Windows, after installing<br />
+  all the underlying components described above.</p>
+<p>cd to the CVS directory of Visual files and run ./autogen.sh.</p>
+<p>It failed because mingw/bin/libtoolize had an incorrect reference <br />
+  prefix=c:/progra~1/LibTool instead of prefix=/usr<br />
+  (which means in the MSYS context c:\msys\1.0).<br />
+  I edited c:\MinGW\bin\libtoolize to specify prefix=/usr. <br />
+  Note the earlier comment about getting from gnuwin32.sourceforge.net/packages.html<br />
+  &quot;Libtool (the msys version is said to be too old)&quot;<br />
+  Perhaps I was supposed to put this in msys, not mingw.</p>
+<p>I find that there is also a libtoolize in C:\msys\1.0\bin, with prefix=/usr. <br />
+  This highlights an issue that may be important, that I've never been clear <br />
+  on what goes into msys and what goes into mingw. Clearly, mingw/bin is taking<br />
+  precedence over /msys/1.0/bin. With my earlier installation on XP, there<br />
+  was no libtoolize in /mingw/bin, and the msys version was invoked.</p>
+<p>Now what happens is this:<br />
+  $ ./autogen.sh<br />
+  /usr/share/aclocal/autoopts.m4:22: warning: underquoted definition of AG_PATH_AUTOOPTS<br />
+  run info '(automake)Extending aclocal'<br />
+  or see http://sources.redhat.com/automake/automake.html#Extending%20aclocal<br />
+  configure.ac: installing `./missing'<br />
+  Makefile.am:6: directory should not contain `/'<br />
+  Completed successfully</p>
+<p>AG_PATH_AUTOOPTS does not appear in the Visual project but rather<br />
+  in c:\msys\1.0\share\aclocal in the context of AC_DEFUN(AG_PATH_AUTOOPTS, .....</p>
+<p>Without trying to debug this, I tried doing the make.<br />
+  I created a directory named &quot;build&quot; parallel to the CVS directory (vpython-core2).<br />
+  For convenience, I created in the build directory a conf.bat file containing this;<br />
+  PYTHON=/c/Python25/python.exe CXXFLAGS=&quot;-O2 -march=i686&quot; ./vpyton-core2/configure</p>
+<p>cd into the build directory and execute ./conf.bat<br />
+  After a successful configure, execute &quot;make&quot;.<br />
+  After a successful make, and create an installer as discussed next, it works.</p>
+<p>*************************************************************<br />
+  <strong>HOW TO CREATE AN INSTALLER FOR VISUAL FOR MICROSOFT WINDOWS</strong><br />
+  You need InnoSetup (www.jrsoftware.org) to create an installer for end users.<br />
+  The configure and make produce build/MakeVPython.iss, which you run to create<br />
+  an installer. But first you need to set up a directory of dll's.</p>
+<p>The following dll's are included in the same directory as the main application<br />
+  cvisual.pyd, namely c:\Python25\Lib\site-packages\visual. Also included are<br />
+  boost_python-mgw34-mt-1_34_1.dll<br />
+  boost_thread-mgw34-mt-1_34_1.dll<br />
+  mingw10.dll</p>
+<p>In addition, I included the files listed below in this directory. I stripped the files<br />
+  to save a lot of space and put the stripped versions in c:\MinGW\stripped. The installer, <br />
+  made with InnoSetup, is 8.5 MB (the non-gtkmm version was 2.5 MB). To strip the files, <br />
+  cd to the stripped directory and execute &quot;strip *&quot;, but do NOT strip iconv.dll, <br />
+  libexpat.dll, or libxml2.dll. Visual fails to run if you strip these.</p>
+<p>I determined which dll's I needed by repeatedly running the application from a command<br />
+  line and one-by-one getting error messages saying I was missing a dll. And then to make<br />
+  sure I'd gotten everything, I changed the name of c:\MinGW to c:\xxxMinGW and ran again, <br />
+  to prevent accessing dll's from the developer directories.</p>
+<p>freetype6.dll (This was libfreetype-6.dll with an older mingw installation)<br />
+  iconv.dll (do not strip this file)<br />
+  intl.dll<br />
+  jpeg62.dll<br />
+  libatk-1.0-0.dll<br />
+  libatkmm-1.6-1.dll<br />
+  libcairo-2.dll<br />
+  libcairomm-1.0-1.dll<br />
+  libexpat.dll (See comment above; also, do not strip this file)<br />
+  libfontconfig-1.dll<br />
+  libgdk_pixbuf-2.0-0.dll<br />
+  libgdkglext-win32-1.0-0.dll<br />
+  libgdkmm-2.4-1.dll<br />
+  libgdk-win32-2.0-0.dll<br />
+  libglade-2.0-0.dll<br />
+  libglademm-2.4-1.dll<br />
+  libglib-2.0-0.dll<br />
+  libglibmm-2.4-1.dll<br />
+  libgmodule-2.0-0.dll<br />
+  libgobject-2.0-0.dll<br />
+  libgthread-2.0-0.dll<br />
+  libgtkglext-win32-1.0-0.dll<br />
+  libgtkmm-2.4-1.dll<br />
+  libgtk-win32-2.0-0.dll<br />
+  libpango-1.0-0.dll<br />
+  libpangocairo-1.0-0.dll<br />
+  libpangoft2-1.0-0.dll<br />
+  libpangomm-1.4-1.dll<br />
+  libpangowin32-1.0-0.dll<br />
+  libpng13.dll (This was libpng1.dll with an older mingw installation)<br />
+  libsigc-2.0-0.dll<br />
+  libtiff3.dll<br />
+  libxml2.dll (See comment above; also, do not strip this file)<br />
+  zlib1.dll</p>
+<p>The creation of the installer for Windows also includes these GTK2-related files:</p>
+<p>C:\MinGW\etc\fonts\*<br />
+  C:\MinGW\etc\gtk-2.0\*<br />
+  C:\MinGW\etc\pango\*<br />
+  C:\MinGW\lib\gtk-2.0\*</p>
+<p>The only Windows-specific code remaining is a substitute for gettimeofday. I see in <br />
+  surfing the web that lots of people keep reinventing this routine for use on Windows. <br />
+  Seems like it would make sense for it to be part of gtk for Windows.</p>

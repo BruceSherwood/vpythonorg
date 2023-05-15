@@ -1,0 +1,128 @@
+<html>
+<head>
+<title>Download VPython for Windows</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link href="master.css" rel="stylesheet" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<table width="700" border="0" cellspacing="2" cellpadding="2">
+  <tr> 
+    <td width="318"><img src="vpython_small.gif" width="300" height="96"></td>
+    <td width="368"><h2><font color="#FF0000"><b><font color="#FF0000">Download 
+        and Install VPython on Windows</font></b></font></h2></td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><a href="index3.html" target="_top" onClick="MM_nbGroup('down','group1','VPhome','',1)" onMouseOver="MM_nbGroup('over','VPhome','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPhome.gif" alt="" name="VPhome" width="102" height="35" border="0" onload=""></a></td>
+    <td><a href="download.html" target="_top" onClick="MM_nbGroup('down','group1','VPdownloads','',1)" onMouseOver="MM_nbGroup('over','VPdownloads','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPdownloads.gif" alt="" name="VPdownloads" width="199" height="35" border="0" onload=""></a></td>
+    <td><a href="webdoc/index.html" target="_top" onClick="MM_nbGroup('down','group1','VPdocs','',1)" onMouseOver="MM_nbGroup('over','VPdocs','','',1)" onMouseOut="MM_nbGroup('out')"><img name="VPdocs" src="VPdocs.gif" border="0" alt="" onLoad=""></a></td>
+  </tr>
+</table>
+<p align="center"><strong><font color="#FF0000" size="4">Important: This is a 
+  limited, out of date version and is no longer supported.</font></strong><br>
+<strong>Go to</strong> <a href="http://vpython.org">vpython.org</a></p>
+<blockquote> 
+  <p><b>Download <a href="http://www.python.org/ftp/python/2.4.1/python-2.4.1.msi">Python-2.4.1.msi</a> 
+    and <a href="download/VPython-Win-Py2.4-3.2.9.exe">VPython-Win-Py2.4-3.2.9.exe</a> 
+    and install them by double-clicking on the files. <br>
+    <font color="#FF0000">IMPORTANT: You <em>must</em> install Python before installing 
+    VPython.</font><br>
+    <font color="#FF0000">IMPORTANT: Let Python install into its default location 
+    (C:\Python24), <em>not</em> into Program Files.</font></b><br>
+    <font color="#FF0000"><strong>Problems have been reported when Python was 
+    installed into Program Files.</strong></font><b> </b></p>
+</blockquote>
+<p><strong>Note to experienced users of IDLE:</strong> The VPython installer overwrites 
+  the Python file Lib\idlelib\config-main.def to add the Visual reference manual 
+  to the Help menu, and to make the defaults editor-on-startup= 1 and autosave= 
+  1, as these have proved to be appropriate for most new users of VPython. You 
+  may wish to edit the file to reset these parameters to zero, or use the Options 
+  menu to reconfigure these options, or save a copy of the file before installing 
+  VPython and restore it afterwards.</p>
+<blockquote>
+  <p><b>Be sure to read the section below, &quot;<a href="#start">To start using 
+    VPython</a>.&quot;</b></p>
+</blockquote>
+<p>The VPython installer installs the Visual 3D module, example programs, and 
+  Visual documentation into Lib/site-packages/visual in the Python folder. It 
+  also installs if necessary the Numeric module, which Visual requires. A shortcut 
+  to IDLE and the VPython example programs is placed on the desktop.</p>
+<p>If you are using Windows 95, you may need to install <a href="http://www.opengl.org/users/downloads/index.html">OpenGL</a>, 
+  the graphics library used by VPython.</p>
+<h1><font color="#008000"><a name="start"></a>To start using VPython:</font> </h1>
+<blockquote> 
+  <p>Start IDLE by doubleclicking the &quot;IDLE for Python&quot; shortcut on 
+    the desktop.<br>
+    Open an example program -- for example, bounce2.py.<br>
+    Press F5 to run (or use the Run menu). <br>
+    Every time you run, your files are automatically saved (if you have changed 
+    them). <br>
+    Choose Visual on the Help menu for documentation. </p>
+</blockquote>
+<p>You can also start IDLE from the &quot;Python 2.4: IDLE (Python GUI)&quot; 
+  entry on the Programs portion of the Windows Start menu, then open an example 
+  program in C:\Python24\Lib\site-packages\visual\examples.</p>
+<p>Once you have downloaded the VPython package, later revisions to components 
+  of this package can be downloaded separately below. If in doubt about whether 
+  you are up to date on all components, simply install the complete VPython package.</p>
+<p><font color="#FF0000">For help with installation problems</font>, see <a href="FAQ.html">FAQ</a> 
+  or <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://lists.sourceforge.net/lists/listinfo/visualpython-users">Read 
+archives or subscribe to the VPython user group</a></p>
+<p>[<a href="index3.html">VPython home page</a>] [<a href="download.html">other 
+  platforms</a>]</p>
+</body>
+</html>

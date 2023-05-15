@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1"
+ http-equiv="content-type">
+  <title>Building VPython on SuSE</title>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link href="master.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<table width="700" border="0" cellspacing="2" cellpadding="2">
+  <tr> 
+    <td width="318"><img src="vpython_small.gif" width="300" height="96"></td>
+    <td width="368"><h2><font color="#FF0000"><font face="Verdana, Arial, Helvetica, sans-serif">Building 
+        VPython on SuSE</font></font></h2></td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><a href="index3.html" target="_top" onClick="MM_nbGroup('down','group1','VPhome','',1)" onMouseOver="MM_nbGroup('over','VPhome','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPhome.gif" alt="" name="VPhome" width="102" height="35" border="0" onload=""></a></td>
+    <td><a href="download.html" target="_top" onClick="MM_nbGroup('down','group1','VPdownloads','',1)" onMouseOver="MM_nbGroup('over','VPdownloads','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPdownloads.gif" alt="" name="VPdownloads" width="199" height="35" border="0" onload=""></a></td>
+    <td><a href="webdoc/index.html" target="_top" onClick="MM_nbGroup('down','group1','VPdocs','',1)" onMouseOver="MM_nbGroup('over','VPdocs','','',1)" onMouseOut="MM_nbGroup('out')"><img name="VPdocs" src="VPdocs.gif" border="0" alt="" onLoad=""></a></td>
+  </tr>
+</table>
+<p>First install Python and Numeric. </p>
+<p>Then carry out the following steps to update the GNU C++ compiler, build the 
+  Boost libraries, and compile VPython. These steps are necessary because the 
+  latest version of the Boost libraries is required by VPython.</p>
+<p><span style="font-weight: bold;">UPDATE THE GNU COMPILER</span><br>
+  <br>
+  You need to install an update to the GNU compiler because version 3.3.1 available 
+  on SuSE 9.0 has a serious bug that prevents the compilation of VPython based 
+  on Boost, and SuSE says they will not provide an update (somehow they feel that 
+  the fact that a program won't compile isn't very serious!).<br>
+  <br>
+  1) Download the G++ 3.3.3 package from one of the mirror sites listed at &nbsp;gcc.gnu.org.&nbsp; 
+  Make sure you get the full package. <br>
+  <br>
+  2) Untar the source: `tar xjf gcc-3.3.3.tar.bz2` or `tar xzf gcc-3.3.3.tar.gz` 
+  as appropriate. <br>
+  <br>
+  3) Make a new directory alongside the unpacked source tree (e.g. 'mkdir buildgcc'), 
+  and enter that directory. <br>
+  <br>
+  4) Issue the following command:&nbsp; </p>
+<p> ../gcc-3.3.3/configure --prefix=/usr/local --enable-languages=c,c++ --enable-version-specific-runtime-libs 
+  --program-suffix=-3.3.3 --enable-threads=posix <br>
+  <br>
+  This configures the compiler to install under /usr/local (the default), building 
+  only the C and C++ compilers, renaming every generated program with the suffix 
+  '-3.3.3' appended to the name (to prevent stomping on your default compiler), 
+  enabling thread support for POSIX threads (should be automatically detected, 
+  but this is for safety), and installing the libraries in a location that won't 
+  stomp all over the default libs. <br>
+  <br>
+  5) Build the package with `make bootstrap`.&nbsp; This will take a while. <br>
+  <br>
+  6) Become root (su root) and install the package with `make install`. <br>
+  <br>
+  Now, (assuming that /usr/local/bin is in your PATH) you can configure the compilation 
+  of VPython by setting the CXX environment variable to g++-3.3.3 (see below for 
+  more details).<br>
+  <br style="font-weight: bold;">
+  <span style="font-weight: bold;">BUILD THE BOOST LIBRARIES</span><br>
+  <br>
+  Next, you need to install the Boost 1.31 libraries, which makes it possible 
+  for the Visual module to communicate with Python (Boost 1.30 packaged with SuSE 
+  9.0 isn't adequate for our purposes).<br>
+  <br>
+  1) Download the Boost source from www.boost.org.<br>
+  <br>
+  2) Untar the source: `tar xjf boost_1_31_0.tar.bz2` or `tar xzf boost_1_31_0.tar.gz` 
+  as appropriate. <br>
+  <br>
+  3) Build Boost with the following options:<br>
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;bjam -sTOOLS=gcc&nbsp; -sGXX=g++-3.3.3&nbsp; -sGCC=gcc-3.3.3&nbsp; 
+  -sPYTHON_VERSION=2.3&nbsp; stage<br>
+  <br>
+  4) When done, become root (su root) and repeat the above command, replacing 
+  'stage' with 'install'.<br>
+  <br>
+  5) Also while root create the following links, which make the Boost libraries 
+  findable in a standard location:<br>
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ln -s libboost_python-gcc-mt-1_31.so&nbsp; /usr/local/lib/libboost_python.so<br>
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ln -s boost-1_31/boost/&nbsp; /usr/local/include/boost<br>
+  <br style="font-weight: bold;">
+  <span style="font-weight: bold;">COMPILE VPYTHON</span><br>
+  <br>
+  With an updated GNU compiler and the Boost libraries installed you can now compile 
+  VPython. In order to invoke the correct version of gcc, you need to set the 
+  environment variable CXX=g++-3.3.3. Also, because gtkglarea.h is in a nonstandard 
+  location on SuSE (/opt/gnome/include/gtkgl), you need to set CPPFLAGS.<br>
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CPPFLAGS=-I/opt/gnome/include<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CXX=g++-3.3.3 ./configure (plus any other options 
+  such as --prefix)<br>
+  <br>
+  With this version of VPython if you type 'vpython' it starts up IDLE in the 
+  demo directory. If instead you type 'vpython test.py' it opens IDLE with this 
+  file (it creates the file if necessary).<br>
+  <br>
+  [<a href="index3.html">VPython home page</a>] </p>
+</body>
+</html>

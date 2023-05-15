@@ -1,0 +1,145 @@
+<title>installing VPython for Macintosh</title>
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link href="master.css" rel="stylesheet" type="text/css">
+<body bgcolor="#FFFFFF">
+<table width="700" border="0" cellspacing="2" cellpadding="2">
+  <tr> 
+    <td width="318"><img src="vpython_small.gif" width="300" height="96"></td>
+    <td width="368"><h2><font color="#FF0000">Installing VPython for Macintosh 
+        OS 9 (unsupported)</font></h2></td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><a href="index3.html" target="_top" onClick="MM_nbGroup('down','group1','VPhome','',1)" onMouseOver="MM_nbGroup('over','VPhome','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPhome.gif" alt="" name="VPhome" width="102" height="35" border="0" onload=""></a></td>
+    <td><a href="download.html" target="_top" onClick="MM_nbGroup('down','group1','VPdownloads','',1)" onMouseOver="MM_nbGroup('over','VPdownloads','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPdownloads.gif" alt="" name="VPdownloads" width="199" height="35" border="0" onload=""></a></td>
+    <td><a href="webdoc/index.html" target="_top" onClick="MM_nbGroup('down','group1','VPdocs','',1)" onMouseOver="MM_nbGroup('over','VPdocs','','',1)" onMouseOut="MM_nbGroup('out')"><img name="VPdocs" src="VPdocs.gif" border="0" alt="" onLoad=""></a></td>
+  </tr>
+</table>
+<h2 align="center"><strong><font color="#FF0000" size="4">Important: This is a 
+  limited, out of date version and is no longer supported.</font></strong><br>
+Go to <a href="http://vpython.org">vpython.org</a></h2>
+<h4><font color="#AF4438">You may wish to print this page for reference while 
+  installing VPython.</font></h4>
+<p>Recommended system configuration: </p>
+<p>&nbsp;&nbsp;&nbsp;PowerPC (will not run on old 68000 Macs)<br>
+  &nbsp;&nbsp;&nbsp;G3 or G4 processor (runs slowly on earlier PowerPC Macs) <br>
+  &nbsp;&nbsp;&nbsp;At least 64 MB of memory (runs very slowly if virtual memory 
+  is used). More memory is better!<br>
+  &nbsp;&nbsp;&nbsp;OS 8.1 or above. Runs on OS X in Classic mode.</p>
+<h4><font color="#0000FF">Installing VPython (Python 2.2.1 plus the Visual module):</font> 
+</h4>
+<h4></h4>
+<h4><font color="#CC0000">Step 1:</font></h4>
+<p>Install Python 2.2: Go to <a href="http://www.cwi.nl/%7Ejack/macpython.html">Jack's 
+  MacPython Page</a>, download MacPython221full.bin or MacPython221full.hqx and 
+  install. </p>
+<h4></h4>
+<h4><font color="#CC0000">Step 2:</font></h4>
+<p>In the Python folder (where Python was installed), run <b>ConfigurePythonClassic</b> 
+  by double-clicking on it.</p>
+<h4></h4>
+<h4><font color="#CC0000">Step 3:</font></h4>
+<p>Download the file <a href="../download/VPythonMac-2002-07-22.sit.hqx">VPythonMac-2002-07-22.sit.hqx</a> 
+  and decompress it.<br>
+  Open the resulting folder and <b>move all the files in it into the Python folder</b>.<br>
+  This will overwrite the existing file PythonCore.<br>
+  If for some reason you wish to save the original PythonCore, it is important 
+  to <b>move it out</b> of the Python folder.<br>
+  The VPython files include the following items:</p>
+<p>&nbsp;&nbsp;&nbsp;* PythonCore (which replaces the original PythonCore from 
+  your installation)<br>
+  &nbsp;&nbsp;&nbsp;* visual (a folder containing modules needed by the Visual 
+  3D library) <br>
+  &nbsp;&nbsp;&nbsp;* Programs (a folder containing VPython demo programs) <br>
+  &nbsp;&nbsp;&nbsp;* Doc (complete documentation on Python as well as VPython; 
+  start in index.html)</p>
+<p>Note: Keyboard interactions have not been implemented yet on the Macintosh 
+  version of VPython.<br>
+</p>
+<h4></h4>
+<h4><font color="#CC0000">Step 4:</font> </h4>
+<blockquote>
+  <p></p>
+  
+</blockquote>
+<p>You may need to install OpenGL. OpenGL extensions come with OS 9.0 or higher, 
+  but not with previous systems. You can download these extensions from <a href="http://www.apple.com/opengl/">Apple</a>.</p>
+<p>After installing VPython, later versions of individual component zip files 
+  can be <a href="../all_download.html">downloaded</a>. These components are included 
+  with the complete VPython package for Mac but can be updated without reinstalling 
+  the whole package</p>
+<p><font color="#FF0000">For help with installation problems</font>, see <a href="FAQ.html#redhat">FAQ</a> 
+  or <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://lists.sourceforge.net/lists/listinfo/visualpython-users">Read 
+  archives or subscribe to the VPython user group</a> </p>
+<h4><font color="#0000FF">To start using VPython:</font></h4>
+<h4>Running a program: </h4>
+<p>Drag a program file (for example, bounce2.py, found in the /Programs/Demos 
+  folder) onto PythonInterpreter, an application in the Python folder. To zoom 
+  into and out of the scene, drag the mouse with the CONTROL button held down. 
+  To rotate around the center of the scene, hold down the SHIFT key and drag the 
+  mouse. </p>
+<h4>Writing a program: </h4>
+<p>Use the editor of your choice. BBEdit Lite (<a href="http://www.barebones.com/products">http://www.barebones.com/products</a>) 
+  is a nice free editor. Save your program as a text file, and (from the Finder) 
+  drag the file onto PythonInterpreter. For cross-platform portability, save your 
+  program files with a ".py" extension. </p>
+<p>In the future we hope to offer a working Mac version of IDLE, the standard 
+  Python interactive development environment, from which you can edit and run 
+  programs, and which offers various useful features such as colorization of code, 
+  Python formatting options, and help locating errors. The version of IDLE that 
+  came with your Python installation does not work properly with VPython. </p>
+<p>The IDE that comes with the Python installation can also be used as an editor, 
+  but if you run a program from the IDE, when you stop running the IDE quits as 
+  well, and you have to restart it. </p>

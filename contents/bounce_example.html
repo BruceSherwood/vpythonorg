@@ -1,0 +1,114 @@
+<!-- InstanceBegin template="/contents/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>bounce example</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+
+
+
+
+
+<link href="VisualRef.css" rel="stylesheet" type="text/css" />
+<link href="VisualRef.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {font-family: Arial, Helvetica, sans-serif}
+-->
+</style>
+<style type="text/css">
+<!--
+.style7 {color: #0000A0}
+-->
+</style>
+<!-- InstanceEndEditable -->
+<link href="VisualRef.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="800" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutDefaultTable-->
+  <tr>
+    <td width="10" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="10" height="272" valign="top" bgcolor="#DDDDDD"><p>&nbsp;</p>    </td>
+    <td width="142" valign="top" bgcolor="#DDDDDD"><p class="Normal"><a href="../index.html" target="mainFrame">Home</a></p>
+      <p class="Normal"><a href="doc.html">Documentation</a></p>
+      <p class="Normal">Download:<br />
+      &nbsp;&nbsp;&nbsp;<a href="download_windows.html">Windows</a><br />
+      &nbsp;&nbsp;&nbsp;<a href="download_mac.html">Macintosh</a><br />
+      &nbsp;&nbsp;&nbsp;<a href="download_linux.html">Linux</a></p>
+      <p class="Normal"><a href="new_features.html">New in VPython 6</a></p>
+      <p class="Normal"><a href="history.html">Change log</a></p>
+      <p class="Normal"><a href="https://groups.google.com/forum/?fromgroups&amp;hl=en#!forum/vpython-users" target="_blank">User forum</a></p>
+      <p class="Normal"><a href="contributed.html">Contributed programs</a></p>
+      <p class="Normal"><a href="developers.html">For developers</a></p>
+    <p class="Normal"><a href="http://www.python.org" target="_blank">Python web site</a></p></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="628" rowspan="2" valign="top"><!-- InstanceBeginEditable name="content" -->
+      <table width="100%" border="1">
+        <tr>
+          <td width="56%"><h1 align="center" class="attribute style1">Simple
+          Example</h1></td>
+          <td width="44%"><span class="Normal"><img src="images/bounce.gif" alt="bounce" width="274" height="196" /></span></td>
+        </tr>
+      </table>
+     
+        <p class="Normal" style="margin-bottom: 0"><strong>This is documentation for Classic VPython (VPython 6), which continues to be available but is no longer supported. See <a href="https://vpython.org" target="_blank">vpython.org</a> for information on installing VPython 7 or using GlowScript VPython. Documentation is available at <a href="http://www.glowscript.org" target="_blank">glowscript.org</a> by clicking Help.</strong></p>
+        <p class="Normal">Here is a complete VPython
+          program that produces a 3D animation of a red ball bouncing on a blue
+          floor as shown above. Note that in the &quot;while&quot; loop
+          there are no graphics commands, just computations to update the position
+          of the ball and check whether it hits the floor. The 3D animation is
+        a side effect of these computations.</p>
+        <p class="program"><font face="ProgramTwo" size="3"><b>from visual import
+        *</b></font><br />
+        <br />
+        <font size="3"><b><font face="ProgramTwo">floor = box (pos=(0,0,0), length=4,
+        height=0.5, width=4,</font> <font face="ProgramTwo">color=color.blue)</font></b></font><br />
+        <font face="ProgramTwo" size="3"><b>ball = sphere (pos=(0,4,0), radius=1,
+        color=color.red)</b></font><br />
+        <font face="ProgramTwo" size="3"><b>ball.velocity = vector(0,-1,0)</b></font><br />
+        <font face="ProgramTwo" size="3"><b>dt = 0.01</b></font><br />
+        <br />
+        <font face="ProgramTwo" size="3"><b>while 1:</b></font><br />
+        <font face="ProgramTwo" size="3"><b>&nbsp;&nbsp;&nbsp;&nbsp;rate (100)</b></font><br />
+        <font face="ProgramTwo" size="3"><b>&nbsp;&nbsp;&nbsp;&nbsp;ball.pos
+        = ball.pos + ball.velocity*dt</b></font><br />
+        <font face="ProgramTwo" size="3"><b>&nbsp;&nbsp;&nbsp;&nbsp;if ball.y &lt; ball.radius:</b></font><br />
+        <span style="line-height: 100%; margin-left: 40; margin-top: 0; margin-bottom: 0"><font face="ProgramTwo" size="3"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.velocity.y
+        = abs(ball.velocity.y</b></font>)</span><br />
+        <font face="ProgramTwo" size="3"><b>&nbsp;&nbsp;&nbsp;&nbsp;else:</b></font><br />
+        <font face="ProgramTwo" size="3"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ball.velocity.y
+        = ball.velocity.y - 9.8*dt</b></font></p>
+        <p class="Normal" style="line-height: 100%; margin-left: 0; margin-top: 0; margin-bottom: 0">The
+          program starts by importing the module &quot;visual&quot; which enables
+          3D graphics.</p>
+        <p class="Normal" style="line-height: 100%; margin-left: 0; margin-top: 0; margin-bottom: 0">A
+          box and a sphere are created and given names &quot;floor&quot; and &quot;ball&quot; 
+        so one can refer to these objects.</p>
+        <p class="Normal" style="line-height: 100%; margin-left: 0; margin-top: 0; margin-bottom: 0">The
+          ball is given a vector velocity.</p>
+        <p class="Normal" style="line-height: 100%; margin-left: 0; margin-top: 0; margin-bottom: 0">In
+          the while loop, &quot;rate(100&quot; has the effect &quot;no more
+          than 100 loops per second on fast  computers.&quot;</p>
+        <p class="Normal" style="line-height: 100%; margin-left: 0; margin-top: 0; margin-bottom: 0">The
+          ball's velocity is used to update its position, in a single vector
+          statement that updates x, y, and z.</p>
+        <p class="Normal" style="line-height: 100%; margin-left: 0; margin-top: 0; margin-bottom: 0">Visual
+          periodically use the current values of the objects' attributes,
+          including ball.pos, to paint a 3D picture.</p>
+        <p class="Normal" style="line-height: 100%; margin-left: 0; margin-top: 0; margin-bottom: 0">The
+          program checks for the ball touching the floor and if necessary reverses
+          the y-component of velocity, otherwise
+          the velocity is updated due to the gravitational force.</p>
+        <p class="Normal"><br />
+      </p>
+    <!-- InstanceEndEditable --></td>
+  </tr>
+  <tr>
+    <td height="16" colspan="4"></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

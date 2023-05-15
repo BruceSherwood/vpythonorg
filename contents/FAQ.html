@@ -1,0 +1,237 @@
+<!-- InstanceBegin template="/contents/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Documentation</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+
+
+
+
+
+<link href="VisualRef.css" rel="stylesheet" type="text/css" />
+<link href="VisualRef.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {font-family: Arial, Helvetica, sans-serif}
+-->
+</style>
+<!-- InstanceEndEditable -->
+<link href="VisualRef.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="800" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutDefaultTable-->
+  <tr>
+    <td width="10" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="10" height="272" valign="top" bgcolor="#DDDDDD"><p>&nbsp;</p>    </td>
+    <td width="142" valign="top" bgcolor="#DDDDDD"><p class="Normal"><a href="../index.html" target="mainFrame">Home</a></p>
+      <p class="Normal"><a href="doc.html">Documentation</a></p>
+      <p class="Normal">Download:<br />
+      &nbsp;&nbsp;&nbsp;<a href="download_windows.html">Windows</a><br />
+      &nbsp;&nbsp;&nbsp;<a href="download_mac.html">Macintosh</a><br />
+      &nbsp;&nbsp;&nbsp;<a href="download_linux.html">Linux</a></p>
+      <p class="Normal"><a href="new_features.html">New in VPython 6</a></p>
+      <p class="Normal"><a href="history.html">Change log</a></p>
+      <p class="Normal"><a href="https://groups.google.com/forum/?fromgroups&amp;hl=en#!forum/vpython-users" target="_blank">User forum</a></p>
+      <p class="Normal"><a href="contributed.html">Contributed programs</a></p>
+      <p class="Normal"><a href="developers.html">For developers</a></p>
+    <p class="Normal"><a href="http://www.python.org" target="_blank">Python web site</a></p></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="628" rowspan="2" valign="top"><!-- InstanceBeginEditable name="content" -->
+      <table width="100%" border="1">
+        <tr>
+          <td width="59%"><h1 align="center" class="attribute style1">Frequently
+          Asked Questions</h1></td>
+          <td width="41%"><img src="images/heightfield.jpg" alt="height field" width="247" height="162" /></td>
+        </tr>
+      </table>
+      <p align="left" class="Normal"><strong>This is documentation for Classic VPython (VPython 6), which continues to be available but is no longer supported. See <a href="../index.html" target="_blank">vpython.org</a> for information on installing VPython 7 or using GlowScript VPython. Documentation is available at <a href="http://www.glowscript.org/" target="_blank">glowscript.org</a> by clicking Help.</strong></p>
+      <p align="left" class="Normal"><b>Q: Is there a way to run a VPython program in a browser web page?</b></p>
+      <p class="Normal">A: Python itself does not run in a browser, so this is not possible. However, there is a similar 3D programming environment called GlowScript (<a href="http://www.glowscript.org" target="_blank">glowscript.org</a>) which makes it easy to write 3D animations that run in a browser web page. Here is an <a href="https://matterandinteractions.wordpress.com/2011/09/23/glowscript-3d-animations-in-a-browser/" target="_blank">overview</a> of GlowScript.</p>
+<p align="left" class="Normal"><b>Q: Is there a way to generate POV-Ray source files automatically
+        from a VPython program?</b></p>
+      <p class="Normal">A: Yes, the povexport module in the <a href="contributed.html">Contributed</a> programs will do this.</p>
+      <p class="Normal"><b>Q: Is there a way to capture VPython graphical output as a movie?</b></p>
+      <p class="Normal">A: There is no built-in feature to do this. Jay Wang has posted  a <a href="http://www.faculty.umassd.edu/j.wang/vp/movie.htm" target="_blank"><strong>detailed description</strong></a> of how to make a movie, along with many interesting examples.</p>
+      <p class="Normal">Martin Ligare has posted a <strong><a href="http://www.eg.bucknell.edu/~mligare/captureVPython.html" target="_blank">simple scheme</a></strong> that can be used on Linux.</p>
+      <p class="Normal">On Windows, <a href="http://taksi.sourceforge.net" target="_blank">Taksi</a> is
+        an excellent, easy to use freeware video capture tool for Windows. It
+        produces avi files which are playable not only on Windows but also on
+        the Mac with QuickTime.</p>
+      <p class="Normal"><a href="http://www.freedownloadscenter.com/Reviews/r1075.html" target="_blank">CamStudio</a> is
+        also a good freeware program for capturing to avi format on Windows;
+        at one time the help menu didn't seem to work, but you can get help from
+        the start menu entry for CamStudio. For capturing VPython animations
+        you probably want to choose the menu option &quot;Region&quot; in which
+        case when you start recording it waits for you to draw a capture rectangle. </p>
+      <p class="Normal">A screen and audio capture tool for Linux is <a href="https://github.com/vkohaupt/vokoscreen" target="_blank">vokoscreen</a>.</p>
+      <p class="Normal">A good shareware utility for Windows is Snagit (<a href="http://www.techsmith.com">www.techsmith.com</a>,
+        $40). Let us know of other utilities you have used. Or google &quot;screen
+        capture utilities&quot;. </p>
+      <p class="Normal">In the <a href="contributed.html">contributed programs</a> is
+        a program by Kelvin Chu for creating a QuickTime movie on MacOSX.</p>
+      <p class="Normal">From Ruth Chabay: I use a somewhat complex method to make large, high-quality
+        movies from VPython animations, that can include sophisticated effects
+        such as shadows, transparency, refraction, etc. It involves several steps.</p>
+      <blockquote>
+        <p class="Normal">1) Import the module &#8220;povexport&#8221; at the beginning of your
+          program (available at vpython.org). At intervals, call povexport.export()
+          to export the display as a PovRay scene description file. I put a counter
+          in my program, and use it to name the exported files sequentially,
+          e.g. &#8220;myanimation001.pov&#8221;, etc. </p>
+        <p class="Normal">2) I use <a href="http://www.povray.org" target="_blank">Pov-Ray</a>,
+          a very sophisticated free raytracer that runs on all platforms, to
+          render all the files. This can be done in batch mode, using the Queue.
+          I set PovRay to output Targa files (.tga, raw rgb values), with anti-aliasing
+          turned on. I choose the size of the output files to correspond to the
+          size of the movie I want.</p>
+        <p class="Normal">3) Targa files are large, so I convert them to jpg files. I have been
+          using Photoshop, but it would probably be easier to do this with Python
+          Image Library (PIL).</p>
+        <p class="Normal">4) To assemble the numbered files into a movie,
+            the simplest and best tool I&#8217;ve found (on Windows) is QuickTime Pro, which costs $30.00.
+          I find that a frame rate of 10 frames per second works well for computer-generated
+          movies. (Fewer frames/second is jerky; more frames/second just makes
+          the movie take up more disk space). You may have another favorite tool &#8211; I
+          don&#8217;t recommend Premiere for this, because its orientation to
+          actual video makes it difficult to produce something at a wildly different
+          frame rate.</p>
+        <p class="Normal">That&#8217;s it. The &#8220;3D Ball and Spring
+            Model of a Solid&#8221; <a href="https://www.youtube.com/watch?v=p6VeDd0ukXI&feature=youtu.be" target="_blank">movie</a> was produced this way.</p>
+      </blockquote>
+      <p class="Normal">Michael Cobb produced a video of a very lengthy VPython computation
+        (see <a href="contributed.html">contributed</a> programs) by doing this: &quot;On
+        Windows the <a href="http://www.pythonware.com/products/pil" target="_blank">Python
+        Imaging Library</a> (PIL) has a grab image function that I used periodically
+        to capture (screen dump) a pre-defined section of the screen and make
+        a jpg. I then used&nbsp; <a href="http://www.gimp.org" target="_blank">Gimp</a> to
+        encode all the files (933 of them) together into an avi file. I wish
+        the ImageGrab function worked on Ubuntu as computations are about 2-3
+        times faster than on Windows.&quot; This is adequate for his purposes,
+        but of course lower quality than the raytraced images produced using
+        PovRay. Details: </p>
+      <blockquote>
+        <p class="Normal">import Image # from PIL <br />
+          import ImageGrab # from PIL<br />
+          ....<br />
+          im = ImageGrab.grab((0,0,600,600)) # if window located at (0,0), width=height=600<br />
+          im.save(filename.jpg) # where filename is incremented for each image</p>
+      </blockquote>
+      <p class="Normal"><b>Q: Is there a way to create a stand-alone VPython application?</b></p>
+      <p class="Normal">A: From Andrei Makhanov, for Windows: <br />
+        <br />
+        1) To compile a vPython program to exe, you need to download py2exe and install it. <br />
+&nbsp;&nbsp;&nbsp;        There exists a Python 2.7.3 version.<br />
+        <br />
+2) py2exe require msvcp90.dll to be installed, which is a Microsoft distribution.<br />
+&nbsp;&nbsp;&nbsp; Find the .dll online and put it into C:\Python27\DLLs.<br />
+<br />
+3) Edit C:\\Python27\Lib\site-packages\visual_common\materials.py with VIDLE.<br />
+<br />
+4) In materials.py, find texturepath. Find where it says &quot;visual\\&quot; and change it to &quot;&quot;.<br />
+<br />
+5) Create a file called setup.py containing the following (change the name &quot;stars.py&quot; to your py file):      </p>
+      <p class="program">from distutils.core import setup<br />
+import py2exe<br />
+<br />
+setup(<br />
+console = [&quot;stars.py&quot;],<br />
+)</p>
+      <p class="Normal">Alternatively, you can use the file <strong><a href="setup.py" target="_blank">setup.py</a></strong><a href="setup.py" target="_blank"></a>, in which case you don't need to perform step 8 below. You will need to change the &quot;script&quot; option to replace the name &quot;stars.py&quot; with the name of your own file.</p>
+      <p class="Normal">6) Place the files setup.py and stars.py (or your file name) in a folder that's easy to get to.<br />
+        <br />
+7) In a command prompt, go to this folder and execute the following code: <br />
+&nbsp;&nbsp;&nbsp;&nbsp;C:\Python27\python setup.py py2exe<br />
+<br />
+8) From C:\\Python27\Lib\site-packages\visual_common copy the following files to your folder: <br />
+&nbsp;&nbsp;&nbsp; turbulence3.tga, wood.tga, BlueMarble.tga, brickbump.tga, earth.tga, and random.tga.<br />
+<br />
+9) The program should now execute and work.      </p>
+      <p align="left" class="Normal"><strong>Q: What stereo glasses should I buy to use with
+          scene.stereo?</strong></p>
+      <p align="left" class="Normal">A from Bruce Sherwood: The cheapest reasonably good scheme
+        is red-cyan glasses, with the red lens on the left eye (scene.stereo
+        = 'redcyan'). Google red-cyan stereo glasses for options; cost is less than a dollar each. For occasional use I find the handheld variety to be preferable
+        to ones with earpieces, because the flat handheld glasses are easier
+        to store, hand out, and retrieve. Red-cyan is far preferable to the older
+        red-blue (scene.stereo = 'redblue'), because red-blue scenes are essentially
+        monochrome (red or blue), with ugly magenta in overlap regions, whereas
+        red-cyan permits full color (albeit pastel), and overlap regions are
+        white.</p>
+      <p class="Normal">Red-cyan glasses can be used with any computer, including laptops or
+        computer projectors. No special graphics card is required. Colors are
+        not true due to the necessity of adding some white to pure colors in
+        order to get stereo. For example, a pure red sphere would provide no
+        image for the right (cyan) eye, so some white is added to the red to
+        make a pink. The effect is that all colors are pastel. Another disadvantage
+        of red-cyan glasses is that there is some bleed-through of the red or
+        left image through the cyan filter to the right eye, and some bleed-through
+        of the cyan or right image through the red filter to the left eye. This
+        is probably unavoidable, because not only are the cheap filters not perfect,
+        but the standard red-green-blue emitters used in displays are not pure
+        red, green, and blue but contain some colors in the other regions of
+        the spectrum. Nevertheless, the stereo effect with red-cyan glasses is
+        quite striking, no special graphics equipment is needed, and the price
+        is right.</p>
+      <p class="Normal">Another option is to use side-by-side stereo (scene.stereo
+      = 'passive') with relatively inexpensive stereoscopic viewers such as those available at   <a href="http://www.berezin.com/3d/viewers1.htm" target="_blank">http://www.berezin.com/3d/viewers1.htm</a>. As with red-cyan stereo, no special computer equipment is required.</p>
+      <p class="Normal">Some people are able to train themselves to see
+          small stereo scenes with no glasses (scene.stereo = 'crosseyed'). Put
+          your finger between your eyes and the screen and focus on the finger.
+          Move the finger toward or away from you until the two screen images
+          merge. Then, without changing the directions your eyes are pointing,
+          change the focus to the screen, and you'll see a full stereo view.
+          Similarly, if you're able to look &quot;walleyed&quot; (eyes
+        pointing nearly parallel, to the far distance, but focussed on the screen),
+      you can see stereo for small scenes using scene.stereo = 'passive'.</p>
+      <p class="Normal">With all of these scheme, the effect is enhanced by rotating the scene
+        as you view it.</p>
+      <p class="Normal"><strong>Quad-buffered stereo</strong></p>
+      <p class="Normal"><em>Due to a bug, quad-buffered stereo did not work with VPython 5.x previous to 5.41.</em></p>
+      <p class="Normal">A good option for showing high-quality stereo (scene.stereo
+          = 'passive') to large groups is to buy an appropriate &quot;quad-buffered&quot; graphics
+        card such as the NIVIDA Quadro series that can present the left and right views to two side-by-side (or
+        over and under) computer projectors, each with a polarizer, projecting
+        onto a special non-depolarizing (metallic) screen. The audience wears
+        polarizing glasses (again, you can find these from the same sources identified
+        through Google, and these glasses are only about 50 cents each). Ordinary
+        screens don't work, because the polarization is destroyed on reflection.
+        For a lot of detail on this option, Google Geowall, a consortium of people
+        using this option in geography research and education. Polarization can
+        be either linear (horizontal and vertical) or circular (left and right
+        circular polarization); you need different polarizers and different glasses
+        for the two schemes. A minor disadvantage of the linear polarization
+        scheme is that the stereo effect is more easily disturbed when you tip
+        your head.</p>
+      <p class="Normal">What is &quot;quad-buffered&quot;? A standard graphics card is &quot;double-buffered&quot;:
+        it holds an image in one buffer and continually hands it to the display
+        to refresh the screen. At the same time in a second buffer the card can
+        be accepting from the computer the creation of a new image. Upon completion
+        of drawing the new image (in the case of VPython, using OpenGL to create
+        that new image), the card switches to refreshing the screen from the
+        second buffer. A quad-buffered graphics card has two double buffers (&quot;quad&quot;),
+        one for the left image and one for the right. It can give two computer
+        projectors left and right images.</p>
+      <p class="Normal">With a quad-buffered graphics card, &quot;shutter glasses&quot;,
+          and a fast 120 Hz display, you can achieve very high-quality
+        stereo on a computer (scene.stereo = 'active'). Shutter glasses alternate
+        opaque and transparent states of the lenses in front of the left and
+        right eyes, so that any instant you only see the view appropriate to
+        the eye. To avoid flicker, ideally the display should run at 100 Hz or
+        more (50 or more images for the left eye per second), which is why this
+        scheme isn't good with most displays that run at only 60 Hz. The graphics card must
+        also furnish (as quad-buffered cards normally do) a synchronization signal
+        to the shutter glasses to switch view. This can be infrared (wireless
+        shutter glasses) or wired; Google &quot;shutter glasses&quot;.      </p>
+      <p class="Normal"><strong>Important</strong>: The NVIDIA &quot;3D Vision&quot; GeForce graphics cards do NOT currently support OpenGL stereo (they only support Microsoft DirectX stereo applications). Only the NVIDIA Quadro cards can be used for VPython active stereo.</p>
+    <!-- InstanceEndEditable --></td>
+  </tr>
+  <tr>
+    <td height="16" colspan="4"></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

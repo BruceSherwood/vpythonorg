@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /contents/docs/
+Disallow: /contents/docs5/
+Disallow: /contents/docs_vp5/
+Disallow: /contents3/
+Disallow: /experimental/
+Disallow: /vidle/
+Disallow: /webdoc/

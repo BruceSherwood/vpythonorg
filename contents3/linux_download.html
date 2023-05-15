@@ -1,0 +1,252 @@
+<html>
+<head>
+<title>Download VPython for Linux</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link href="master.css" rel="stylesheet" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<table width="700" border="0" cellspacing="2" cellpadding="2">
+  <tr> 
+    <td width="318"><img src="vpython_small.gif" width="300" height="96"></td>
+    <td width="368"><h2><font color="#FF0000">Installing VPython on Linux/Unix:</font></h2></td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><a href="index3.html" target="_top" onClick="MM_nbGroup('down','group1','VPhome','',1)" onMouseOver="MM_nbGroup('over','VPhome','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPhome.gif" alt="" name="VPhome" width="102" height="35" border="0" onload=""></a></td>
+    <td><a href="download.html" target="_top" onClick="MM_nbGroup('down','group1','VPdownloads','',1)" onMouseOver="MM_nbGroup('over','VPdownloads','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPdownloads.gif" alt="" name="VPdownloads" width="199" height="35" border="0" onload=""></a></td>
+    <td><a href="webdoc/index.html" target="_top" onClick="MM_nbGroup('down','group1','VPdocs','',1)" onMouseOver="MM_nbGroup('over','VPdocs','','',1)" onMouseOut="MM_nbGroup('out')"><img name="VPdocs" src="VPdocs.gif" border="0" alt="" onLoad=""></a></td>
+  </tr>
+</table>
+<h3 align="center"><strong><font color="#FF0000" size="4">Important: This is a 
+  limited, out of date version and is no longer supported.</font></strong><br>
+Go to <a href="http://vpython.org">vpython.org</a></h3>
+<p>The following instructions apply if you are installing the older stable version
+  of VPython. <br>
+</p>
+<p>Before following the instructions below, first check to see whether your Linux
+  distribution already has an easy-to-install package for Visual (the 3D module
+  for Python). </p>
+<p><strong>Ubuntu 7.10:</strong> On the latest version of Ubuntu (7.10), there
+  is a package &quot;python-visual&quot;  which works but is rather old (Visual
+  3.1.1). After installing python-visual, an attempt to build the most recent
+  production version of Visual (3.2.9) from the source offered below gave
+  a configuration error with pkg-config for gtk+, with error message &quot;sh:
+  gtk-config: not found&quot;, which is not yet understood. After using the package
+  manager to install libboost-python and libboost-thread devlibraries, it was
+  possible to install the beta version of Visual from the package available at
+  sourceforge. However, the package gtkglextmm is missing from Ubuntu 7.10 and
+  can be difficult to build from source, so binaries are provided <a href="developers.htm">here</a>. </p>
+<p>Here are  <a href="contributed/Fedora7/Fedora7_download.html">Fedora Core
+7 and 9</a> packages, both stable and beta versions. </p>
+<p><font color="#008000"><b>1) Install Python 2.3 or 2.4 or 2.5 if necessary:</b></font></p>
+  <blockquote>
+    <p>Start a 
+      &quot;terminal emulator&quot; or &quot;typescript&quot;, then type this
+      command:<br>
+      <b>python</b> (you should see&quot;Python 2.3&quot; or &quot;Python 2.4&quot; or
+      &quot;Python 2.5&quot; );
+      type 4+2, press Enter, and you should see 6)<br>
+       <b>Ctrl-D</b> to exit from Python.<br>
+      If Python has been successfully installed, skip to <font color="#008000">Step 
+        2)</font><b>.</b>
+      </dd>
+    </p>
+  </blockquote>
+  <dt><b></b></dt>
+  <blockquote>
+    <p>If possible, obtain Python by rpm or similar package mechanism.<br>
+      If not available, download the file <a href="http://www.python.org/ftp/python/2.5/Python-2.5.tar.bz2">Python-2.5.tar.bz2</a> </p>
+  </blockquote>
+  <dd>    Start a &quot;terminal emulator&quot; or &quot;typescript&quot;, then type
+     these commands:<br>
+    <b>tar -jxf Python-2.5.tar.bz2</b> (uncompress and extract files; produces
+    Python  directory)<br>
+    <b>cd Python-2.5</b><strong></strong> (enter the Python directory)<br>
+    <b>./configure</b> (run configure program in this directory; creates Makefile
+     for your machine)<br>
+    <b>make</b> (compiles Python)<br>
+    <b>&nbsp;&nbsp;&nbsp;</b>This will take many minutes and generate lots of
+     output on the screen.<b><br>
+    su root</b> (and give password; need root access to install software)<br>
+    <b>make install</b> (install Python)<br>
+    Repeat <font color="#008000">Step 1)</font> to check that Python has been
+     successfully installed.</dd>
+  <dl>
+  <dt><font color="#008000"><b>2) Install the stable version of Visual and other
+        needed components:</b></font> </dt>
+  <blockquote> 
+    <p>Download the file <a href="download/visual-3.2.9.tar.bz2"><strong>visual-3.2.9.tar.bz2</strong></a><br>
+      <b>tar -jxf visual-3.2.9.tar.bz2</b> (uncompress and extract files; produces
+       visual-x.x.x directory)<br>
+      In the visual directory, <font color="#FF0000"><strong>read INSTALL.txt
+       for instructions on what packages you need.</strong></font><br>
+       &nbsp;&nbsp;In addition to other packages, you may need to install <strong>gtkgl-dev</strong>.<br>
+      &nbsp;&nbsp;Because there is now little support for gtkglarea, you may
+      need  this: <a href="download/gtkglarea-1.2.3.tar.gz">gtkglarea-1.2.3.tar.gz</a><br>
+      <strong><font color="#FF0000">&nbsp;&nbsp;&nbsp;<font color="#000000">Important: 
+      </font><a href="../Building VPython on SuSE.html">Special procedures</a> 
+      <font color="#000000">are needed on SuSE Linux</font></font></strong> </p>
+  </blockquote>
+  <blockquote> 
+    <p>If you did not obtain Numeric for Python (Numpy) by rpm or similar package
+       mechanism:<br>
+      Go to the <a href="http://sourceforge.net/projects/numpy">Numerical Python
+       Project Page</a>.<br>
+      Click numpy download and download the platform-independent version Numeric-24.2.tar.gz.<br>
+      <b>tar -zxf Numeric-24.2.tar.gz</b> (uncompress and extract files; produces
+       Numeric directory) <br>
+      After unpacking, <strong>cd into the Numeric-24.2 folder</strong> and execute 
+      <b>python setup.py install</b>.</p>
+    <p>Notes for SuSE 9.0:<br>
+      <b>&nbsp;&nbsp;&nbsp;</b>Go to the YaST Control Center, enter root password.
+       Click Install and Remove Software. <br>
+      <b>&nbsp;&nbsp;&nbsp;</b>Set Filter to Package Groups, Development, Languages.
+       Check gcc, gcc-c++, tcl-devel, and tk-devel.<br>
+      <b>&nbsp;&nbsp;&nbsp;</b>In Development, Libraries, check glib-devel, gtk-devel,
+       XFree86-devel, and XFree86-Mesa-devel.<br>
+      <b>&nbsp;&nbsp;&nbsp;</b>Set Filter to Search and search for gtkglarea
+      and  check this package. <br>
+      <b>&nbsp;&nbsp;&nbsp;</b>Also search for pkgconfig and check this package.<br>
+      <b>&nbsp;&nbsp;&nbsp;</b>Click Accept to install all these packages.<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong><font color="#FF0000"><font color="#000000">Important: 
+      </font><a href="../Building VPython on SuSE.html">Special procedures</a> 
+      <font color="#000000">are needed to install the Boost libraries on SuSE
+       Linux</font></font></strong></p>
+  </blockquote>
+  <dd><b>Next to the visual-x.x.x directory, mkdir build<br>
+    cd build</b><br>
+  </dd>
+</dl>
+  <blockquote>
+  <p><b>which python</b> (find out where Python is located)<b><br>
+    </b>&nbsp;&nbsp;&nbsp;Make a note of the <i>prefix</i> preceding /bin/python, 
+    such as /usr or /usr/local.  </p>
+  <p><em>For SuSE 9.0:</em> Because gtkglarea.h is in a nonstandard location 
+      on SuSE (/opt/gnome/include/gtkgl), <br>
+      before running ./configure execute this: <strong>CPPFLAGS=-I/opt/gnome/include</strong> (note
+      the &quot;-&quot; before the I).<br>
+      And you need to use <strong>CXX=g++-3.3.3</strong> (see <font color="#FF0000"><a href="../Building VPython on SuSE.html">Special 
+  procedures</a></font>).</p>
+  <p><b></b>(a) If <i>prefix</i> is /usr/local, execute<br>
+&nbsp;&nbsp;&nbsp;&nbsp; <b>../visual-x.x.x/configure</b><br>
+    (b) If <i>prefix</i> is something else, and Visual can go into prefix/lib/python/site-packages, 
+    execute <br>
+&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;../visual-x.x.x/configure --prefix=</b><i>prefix</i><br>
+(c) If you want to use a different version of Python than the one found with 
+    &quot;which python&quot;,<br>
+&nbsp;&nbsp;&nbsp;or (b) is not appropriate, specify both the particular
+    Python and where to install Visual:<br>
+&nbsp;&nbsp;&nbsp;<b>&nbsp;&nbsp;&nbsp;PYTHON=/somewhere1/bin/python ../visual-x.x.x/configure
+--prefix=/somewhere2</b><br>
+&nbsp;&nbsp;&nbsp;If &quot;somewhere1&quot; and &quot;somewhere2&quot; are 
+    different, you must also add the &quot;somewhere2&quot;<br>
+&nbsp;&nbsp;&nbsp;directory to Python's module search path. For details,
+    at <a href="http://www.python.org" target="_blank">www.python.org</a> read section 
+    4.1 <br>
+&nbsp;&nbsp; (Modifying Python's Search Path)&nbsp;in the section Installing
+    Python Modules of the Python 2.3<br>
+&nbsp;&nbsp; on-line documentation.<br>
+    <b>make</b> (compiles the Visual module)<br>
+&nbsp;&nbsp;&nbsp;This will take many minutes and generate lots of output
+    on the screen.<br>
+&nbsp;&nbsp;&nbsp;You may see some warning messages, which normally you can
+    ignore.<br>
+  <b>sudo </b><b>make install</b> (installs all components)</p>
+</blockquote>
+<dl>
+  <dt>The following components were installed into <i>prefix</i>/lib/python2.X/site-packages/visual:</dt>
+  <dd><b>visual</b> (the *.py components of Visual)<br>
+    <b>3D demo programs</b><br>
+    <b>documentation</b> for Visual</dd>
+  <DT> 
+    <p>You may wish to create a <strong>vpython</strong> convenience shell script 
+      containing these statements, suitably modified for version and location:</p>
+  </DT>
+  <dd> <strong>cd /usr/local/lib/python2.4/site-packages/visual/examples<br>
+    /usr/local/bin/python2.4 &nbsp;/usr/local/lib/python2.4/idlelib/idle.pyw</strong><BR>
+  </dd>
+  <dd>&nbsp;</dd>
+  <dt><font color="#008000"><b>3) Running VPython:</b></font> 
+    <dl>
+      <dt>To run VPython demos if you created a <strong>vpython</strong> shell 
+        script (or execute the statements above):<BR>
+        <b>vpython </b>(starts the IDLE program editor, starting in the VPython 
+        demos directory)<br>
+        &nbsp;&nbsp;&nbsp;You may find it useful to change the default behavior 
+        of IDLE. On the Options menu choose <br>
+        &nbsp;&nbsp;&nbsp;Configure IDLE, click General, and specify &quot;Open 
+        Edit Window&quot; and &quot;No Prompt&quot;.<br>
+        &nbsp;&nbsp;&nbsp;With &quot;No Prompt&quot;, you will be prompted to 
+        save a new file the first time you run,<br>
+        &nbsp;&nbsp;&nbsp;but your file will be automatically saved on all later 
+        runs. <br>
+        Open demo file bounce2.py in demos directory, press F5.<br>
+        &nbsp;&nbsp;&nbsp;You should see a ball bouncing around in a box.<br>
+        &nbsp;&nbsp;&nbsp;Right button rotates the camera; middle (left+right) 
+        button zooms. </dt>
+    </dl>
+  </dt>
+</dl>
+<dl><dd> 
+    <h3><font color="#FF0000">For help with installation problems</font>, see 
+      <a href="morelinux.html">additional info</a> or <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://lists.sourceforge.net/lists/listinfo/visualpython-users">Read 
+      archives or subscribe to the VPython user group</a> </h3>
+</dl>
+<p>[<a href="index3.html">VPython 
+home page</a>] [<a href="download.html">other platforms</a>]</p>
+</body>
+</html>

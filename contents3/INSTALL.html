@@ -1,0 +1,678 @@
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<title>The purpose of this file is to fully document the installation</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:LastAuthor>Bruce</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>0</o:TotalTime>
+  <o:Created>2007-12-23T00:32:00Z</o:Created>
+  <o:LastSaved>2007-12-23T00:32:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1522</o:Words>
+  <o:Characters>8678</o:Characters>
+  <o:Company>NCSU</o:Company>
+  <o:Lines>72</o:Lines>
+  <o:Paragraphs>20</o:Paragraphs>
+  <o:CharactersWithSpaces>10180</o:CharactersWithSpaces>
+  <o:Version>11.6568</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"Times New Roman";}
+p.MsoPlainText, li.MsoPlainText, div.MsoPlainText
+	{margin:0in;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 65.95pt 1.0in 65.95pt;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<p class=MsoPlainText>The purpose of this file is to fully document the
+installation</p>
+
+<p class=MsoPlainText>procedure for VPython from source on all supported
+platforms.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>Table of Contents:</p>
+
+<p class=MsoPlainText>I:<span style='mso-spacerun:yes'>   </span>Prerequisites</p>
+
+<p class=MsoPlainText>II:<span style='mso-spacerun:yes'>  </span>Configuration</p>
+
+<p class=MsoPlainText>III: Building</p>
+
+<p class=MsoPlainText>IV:<span style='mso-spacerun:yes'>  </span>Final
+Installation</p>
+
+<p class=MsoPlainText>V:<span style='mso-spacerun:yes'>  
+</span>Troubleshooting</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>I. <span style='mso-spacerun:yes'> </span>Prerequisites:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>Most or all of
+these may be provided by your operating system </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>distributor.<span
+style='mso-spacerun:yes'>  </span>In every case, you must have the
+&quot;developer&quot; version</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>of the
+packages to ensure that the required header files are </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>available.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>See the file
+MSWINDOWS.txt for details on how to build Visual on Windows.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>This file is
+maintained in CVS at sourceforge.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>GNU g++
+version 3.2.x or &gt;= 3.3.1 (3.4.6 reccomended) (gcc.gnu.org).</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>Python 2.2.x
+or 2.3.x or 2.4.x or 2.5.x (www.python.org), including</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>the
+development (dev) package.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>numpy
+(numpy.sourceforge.net).</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>An
+implementation of OpenGL.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>The Boost C++
+libraries version 1.31 and higher (1.33.1 reccomended)</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>(www.boost.org).
+Note that 1.31 is required if you are using Python </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>2.3 or
+higher, and is recommended in any case due to getting much</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>better
+error messages. 1.32.0 or higher is required if you want to use</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>GNU G++
+3.4.0 or higher to build the suite.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>Specifically,
+you need libboost-python-dev and libboost-threads-dev.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>The autoconf,
+automake, libtool, and pkg-config packages.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>gtkmm
+(www.gtkmm.org), which depends on gtk2 (www.gtk.org)</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>gtkglext and
+gtkglextmm 1.2.x (gtkglext.sourceforge.net).</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>To install
+gtkglextmm:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>1) Download
+the bz2 file.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>2) Unpack the
+file: tar -xjf gtkglextmm-1.2.0.tar.bz2</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>3) cd to the
+unpacked directory</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>4) ./configure</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>5) make</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>6) sudo make
+install</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>libglademm
+(there may be a package, or www.gtkmm.org).</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>Apple OSX
+(Version 10.2.x) WARNING: This is woefully out of date</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>- Go to
+www.apple.com/macosx/features/x11/download and download</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>both X11
+and the X11 SDK.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>-
+Install fink from fink.sourceforge.net.<span style='mso-spacerun:yes'> 
+</span>Answer 'y' when asked</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>about
+adding a line to ~/.cshrc.<span style='mso-spacerun:yes'>  </span>You do not
+need to run</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>'dselect'.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>- In a
+terminal editor run the following:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>rehash</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>sudo
+apt-get update</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>sudo
+apt-get install pkgconfig gtk+ gtkglarea python22</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>rehash</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>which
+python2.2 (Verify this reports /sw/bin/python2.2)</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>Install
+GCC from source using version 3.3.1 or higher.<span style='mso-spacerun:yes'> 
+</span>First</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>install
+the Apple Developer's Tools (called XCode in 10.3)</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>including
+an installation of GCC 3.3.<span style='mso-spacerun:yes'>  </span>Download and
+unpack</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>the
+sources for GCC from gcc.gnu.org.<span style='mso-spacerun:yes'>  </span>This
+creates a directory </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>named
+like 'gcc-3.3.3'.<span style='mso-spacerun:yes'>  </span>Make a new directory
+alongside this </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>directory,
+such as 'buildgcc3.3.3'. cd into the new directory and</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span><span
+style='mso-spacerun:yes'> </span>run: </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>`../gcc-3.3.3/configure
+--enable-languages=c,c++ --disable-shared \</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>--enable-version-specific-runtime-libs
+--program-suffix=-3.3.3 \</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>--enable-threads=posix`</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>Build
+the new compiler with `make bootstrap`.<span style='mso-spacerun:yes'> 
+</span>Optionally, to save</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>some
+disk space, build with `make CXXFLAGS=-O2`, instead.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>install
+the compiler with `sudo make install`</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>Download</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>OpenGL
+is provided with the standard OS installation.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span># TODO:
+include directions for building Boost.Python on OSX(gulp).</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>II.<span style='mso-spacerun:yes'>   </span>Configuration
+</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>On most
+systems, configuration should be automatic.<span style='mso-spacerun:yes'> 
+</span>Just run './configure'.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>However,
+configure also provides a large number of options and is sensitive to </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>several
+environment variables to properly configure VPython for unique use cases. </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>Additionally,
+it is a good idea to build VPython in a directory separate from the</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>source
+tree.<span style='mso-spacerun:yes'>  </span>Just run configure with the
+fully-qualified path to it, eg (from a</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>directory
+alongside visual-2.9) `../visual-2.9/configure`</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>Run `configure
+--help` for the complete list of options and brief descriptions.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>If you have
+multiple versions of Python installed, and the one named 'python' that</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>is first on
+your PATH (identified with `which python`) is not the one you want to </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>build Visual
+for, specify the correct interpreter by setting the PYTHON</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>environment
+variable to the desired interpreter's full path.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>If you have
+multiple versions of GNU G++ installed, and the default is inadequate</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>for VPython,
+specify the correct one by setting the CXX environment variable to</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>its
+fully-qualified path.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>If you are
+using G++ 3.3.x on Darwin, you must set the CXXFLAGS environment </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>variable to<span
+style='mso-tab-count:1'> </span>include &quot;-finline-functions&quot;.<span
+style='mso-spacerun:yes'>  </span>You should also include &quot;-O2&quot;.<span
+style='mso-spacerun:yes'>  </span>All of </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>these options
+must be separated by whitespace.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>You should
+generally supply the --prefix option to cause Visual to be installed to</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>the same
+prefix that Python is installed (default is /usr/local).</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>On Linux, do
+this: which python</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>Make a note of
+the prefix preceding /bin/python, typically /usr or /usr/local.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>(a) If prefix
+is /usr/local, execute</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>     </span><span
+style='mso-tab-count:1'> </span>../visual-x.x.x/configure</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>(b) If prefix
+is something else, and Visual can go into prefix/lib/python/site-packages,
+execute</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>     </span><span
+style='mso-tab-count:1'> </span>../visual-x.x.x/configure --prefix=prefix</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>(c) If you
+want to use a different version of Python than the one found with &quot;which
+python&quot;,</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>   </span><span
+style='mso-tab-count:2'>         </span>or (b) is not appropriate, specify both
+the particular Python and where to install Visual:</p>
+
+<p class=MsoPlainText><span style='mso-spacerun:yes'>      </span><span
+style='mso-tab-count:1'>      </span>PYTHON=/somewhere1/bin/python
+../visual-x.x.x/configure --prefix=/somewhere2</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>If
+&quot;somewhere1&quot; and &quot;somewhere2&quot; are different, you must also
+add the &quot;somewhere2&quot;</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>directory to
+Python's module search path. For details, at www.python.org read section 4.1</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>(Modifying
+Python's Search Path) in the section Installing Python Modules of the Python</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>on-line
+documentation.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>If you are
+only building VPython once, you may pass the option</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>--disable-dependancy-tracking
+to make the build itself go a little faster.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>If your GNOME
+libraries are installed in a non-standard location (such as </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>/sw in OSX
+fink, or /opt/gnome in SUSE), you must set the CPPFLAGS </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>environment
+variable to -I/other_prefix/include to ensure that you pick up</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>the gtkglarea
+header files.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>Compling a
+prebuilt binary for MS Windows is configured with (in MSYS):</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>PYTHON=/c/Python25/python.exe
+CXXFLAGS=&quot;-O2 -march=i686&quot; ./configure</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>NOTE: The
+variable MSC_VER is apparently set only by the Visual Studio</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>build
+procedure created by Arthur Siegel in early 2007 but not currently used.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>The prebuilt
+binary for Apple OSX is configured with (in Bash):</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>CXX=/usr/local/bin/g++-3.3.3
+CXXFLAGS=&quot;-O2 -finline-functions&quot; \</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>PYTHON=/sw/bin/python
+CPPFLAGS=-I/sw/include ../visual-2.9/configure \</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>--prefix=/sw</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>Another
+interesting configuration is to install VPython into a prefix other than</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>the same
+prefix that Python is installed in.<span style='mso-spacerun:yes'>  </span>This
+may be useful to test your</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>VPython
+programs with different versions of Visual on the same system</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>simultaneously.<span
+style='mso-spacerun:yes'>  </span>After choosing an approprate prefix, such as
+/home/jonathan, run</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>configure as
+normally but specify the PYTHONPATH environment variable to be</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>[prefix]/lib/python2.5/site-packages,
+replacing python2.5 with python2.2 if that</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>is your
+interpreter.<span style='mso-spacerun:yes'>  </span>You must create this
+PYTHONPATH directory if it does not</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>already exist.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText>III.<span style='mso-spacerun:yes'>  </span>Build</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>Just run
+'make'.<span style='mso-spacerun:yes'>  </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>Optionally,
+you may override the following variables by</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>specifying
+them in the form VARIABLE=value as arguments to make:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>LDFLAGS, LIBS,
+CXXFLAGS, and CPPFLAGS affect options passed to the linker,</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>compiler, and
+preprocessor, respectively.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>DESTDIR may be
+used to prepend DESTDIR to the 'prefix' specified when running</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>configure.<span
+style='mso-spacerun:yes'>  </span>This option is mostly useful to binary
+redistributors of VPython.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>If you want
+debugging symbols in your build (adds roughly 70 MB of data to the</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>final object
+file), you must manually edit cvisual/Makefile and remove `-g0` from</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>the CXXFLAGS
+variable.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>The Makefiles
+support the following targets:</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>all: (the
+default) compiles all the required software</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>clean: deletes
+files created by the compiler</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>distclean:
+deletes all files created by the configure and make programs.<span
+style='mso-spacerun:yes'>  </span>This</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>option
+is useful if you want to start over from a clean source tree.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>install:
+copies all required files in the locations specified by configure</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>install-strip:
+Performs the 'install' target and strips the final object files.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:2'>            </span>It also
+makes getting a backtrace impossible on most platforms. </p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>IV.<span style='mso-spacerun:yes'>  </span>Install</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>You must have
+write privileges to the installation directory to proceed.<span
+style='mso-spacerun:yes'>  </span>Unless</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>you are
+installing into your home directory, that generally means becoming root</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>with a program
+like `sudo` or `su`. Just run `sudo make install`.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>On MS Windows,
+you CANNOT use &quot;make install&quot;.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>Instead, you
+need to install innosetup (www.jrsoftware.org/isinfo.php).</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>1) Make sure
+that C:\Python25\Lib\idlelib\config-main.def has edit startup and </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>autosave set
+to 1 and that help is set for Visual before building the package.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>2)
+Double-click MakeVPython.iss in the make directory. </p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>3) Near the
+start of the file, update AppVerName if necessary.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>4) Do Build
+&gt; Compile to produce a Windows installer.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>5) Run the
+installer, then run compilevisual.py from the Visual source package to</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>Python-compile
+all the Visual .py files (produces .pyc files).</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>6) Run inno
+setup again, but uncomment the line that copies .pyc files.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>This produces
+a Windows installer that can be used by an administrator to</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>install a
+fully-compiled Visual into a protected area that users can't write</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>to. Without
+this second inno setup to get the .pyc files, every user would</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>have to
+recompile some of the site-packages/visual/*.py files. No big deal,</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>but nicer to
+have these files already compiled.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>Alternatively,
+you may run 'make install-strip' to install a somewhat smaller</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>executable.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+<p class=MsoPlainText>V:<span style='mso-spacerun:yes'>  
+</span>Troubleshooting</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>The single
+most likely cause of an error in the build is that one or more</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>develoment
+header files could not be found.<span style='mso-spacerun:yes'>  </span>VPython
+logs its configuration stage</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>in config.log,
+and its build stage in src/build.log.<span style='mso-spacerun:yes'>  </span>If
+the build fails you</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>must read
+src/build.log to see what happened.<span style='mso-spacerun:yes'>  </span>In
+the event that you cannot</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>solve the
+problem, compress config.log and src/build.log and include them with</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>your request
+for assistance to visualpython-users@lists.sourceforge.net.</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span></p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>But before you
+do that, it is a good idea to read the archives of the mailing list</p>
+
+<p class=MsoPlainText><span style='mso-tab-count:1'>      </span>since someone
+else has probably worked through your problem already.</p>
+
+<p class=MsoPlainText><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

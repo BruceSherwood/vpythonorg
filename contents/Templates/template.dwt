@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Template</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link href="../VisualRef.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="800" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutDefaultTable-->
+  <tr>
+    <td width="10" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="10" height="272" valign="top" bgcolor="#DDDDDD"><p>&nbsp;</p>    </td>
+    <td width="142" valign="top" bgcolor="#DDDDDD"><p class="Normal"><a href="../../index.html" target="mainFrame">Home</a></p>
+      <p class="Normal"><a href="../doc.html">Documentation</a></p>
+      <p class="Normal">Download:<br />
+      &nbsp;&nbsp;&nbsp;<a href="../download_windows.html">Windows</a><br />
+      &nbsp;&nbsp;&nbsp;<a href="../download_mac.html">Macintosh</a><br />
+      &nbsp;&nbsp;&nbsp;<a href="../download_linux.html">Linux</a></p>
+      <p class="Normal"><a href="../new_features.html">New in VPython 6</a></p>
+      <p class="Normal"><a href="../history.html">Change log</a></p>
+      <p class="Normal"><a href="http://vpython.wikidot.com" target="_blank">VPython wiki</a></p>
+      <p class="Normal"><a href="https://groups.google.com/forum/?fromgroups&amp;hl=en#!forum/vpython-users" target="_blank">User forum</a></p>
+      <p class="Normal"><a href="../contributed.html">Contributed programs</a></p>
+      <p class="Normal"><a href="../developers.html">For developers</a></p>
+    <p class="Normal"><a href="http://www.python.org" target="_blank">Python web site</a></p></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="628" rowspan="2" valign="top"><!-- TemplateBeginEditable name="content" --><!-- TemplateEndEditable --></td>
+  </tr>
+  <tr>
+    <td height="16" colspan="4"></td>
+  </tr>
+</table>
+</body>
+</html>

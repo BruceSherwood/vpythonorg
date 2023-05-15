@@ -1,0 +1,215 @@
+<html><head><title>Download VPython for Mac OSX</title>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link href="file:///C|/Sites/OSX_download_files/master.css" rel="stylesheet" type="text/css">
+<link href="master.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+-->
+</style>
+</head><body bgcolor="#ffffff">
+<table border="0" cellpadding="2" cellspacing="2" width="727">
+  <tbody><tr> 
+      <td width="318"><img src="vpython_small.gif" width="300" height="96"></td>
+    <td width="395"><h2><font color="#ff0000">Installing VPython on a Mac </font></h2></td>
+  </tr>
+</tbody></table>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><a href="../index.html" target="_top" onClick="MM_nbGroup('down','group1','VPhome','',1)" onMouseOver="MM_nbGroup('over','VPhome','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPhome.gif" alt="" name="VPhome" width="102" height="35" border="0" onload=""></a></td>
+    <td><a href="download.html" target="_top" onClick="MM_nbGroup('down','group1','VPdownloads','',1)" onMouseOver="MM_nbGroup('over','VPdownloads','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPdownloads.gif" alt="" name="VPdownloads" width="199" height="35" border="0" onload=""></a></td>
+    <td><a href="webdoc/index.html" target="_top" onClick="MM_nbGroup('down','group1','VPdocs','',1)" onMouseOver="MM_nbGroup('over','VPdocs','','',1)" onMouseOut="MM_nbGroup('out')"><img name="VPdocs" src="VPdocs.gif" border="0" alt="" onLoad=""></a></td>
+  </tr>
+</table>
+<h3 align="center"><strong><font color="#FF0000" size="4">Important: This is a 
+  limited, out of date version and is no longer supported.</font></strong><br>
+Go to <a href="http://vpython.org">vpython.org</a></h3>
+<h3><font color="#008000"><font color="#ff0000">Installing VPython on OSX 10.5
+  (Leopard) </font></font></h3>
+<p>If you are running Leopard (OS X 10.5), and you don't   intend to use the
+  Fink package manager for anything other than installing VPython, you can use
+a quick and easy VPython installer:</p>
+<p>   <a href="download/VPython3.2.11_IntelOSX_5.pkg">VPython3.2.11_IntelOSX_5.pkg</a> for
+  an Intel Mac, prepared by John Armstrong. </p>
+<p><a href="download/VPython3.2.11_PowerPC_OSX_5.pkg.dmg">VPython3.2.11_PowerPC_OSX_5.pkg.dmg</a> for a PowerPC Mac, prepared by Bruce Sherwood. </p>
+<p>The installer  creates a folder /sw containing just   those Fink packages,
+  created by Martin Costabel, that are needed for VPython (Python 2.5, the Visual
+  module, and the Numeric module, for a total download file of 23 MB).</p>
+<p> Before running VPython programs, go to the X11 preferences, and in the Input
+  section choose "Emulate three button mouse", in order to be able to rotate
+  (Command-drag) and zoom (Option-drag). </p>
+<p>The installer   creates in the   Applications folder a convenient
+VPython icon for starting up the IDLE program editor. </p>
+<p>After starting up IDLE, the File open menu offers
+  you many demo programs you can run.</p>
+<h3><font color="#008000"><font color="#ff0000">Installing VPython on using the
+      Fink package manager (OS X 10.3 and later)</font></font></h3>
+<p>If you already use the Fink package manager, </p>
+<p><font color="#008000"><font color="#000000">There is now an up-to-date Fink
+  package for VPython installable on OSX 10.3 or later.</font></font></p>
+<p>The following instructions usually work. More <a href="mac_install_guide.pdf">detailed
+    instructions</a> are provided by Danny Caballero. </p>
+<p><font color="#008000"><b> 1) Make sure you have installed X11 and the Xcode 
+  package:</b></font></p>
+<blockquote> 
+  <p><font color="#008000"><font color="#000000">On OSX 10.5, X11 is automatically
+        installed.<br>
+        Otherwise, scroll
+        down on the installer DVD to "Optional Installs" and install
+    X11. <br>
+    &nbsp;&nbsp;&nbsp;Also, you need to install the XCode package from the installer
+  DVD. </font></font></p>
+</blockquote>
+<p><font color="#008000"><b>2) Use fink (a program used to install Unix-based
+       OSX applications) to install VPython:</b></font></p>
+<blockquote> 
+  <p>Download fink from <a href="http://fink.sourceforge.net/" target="_blank">http://fink.sourceforge.net</a> 
+    for your version of OSX.<br>
+  Despite what the Fink documenation says, Fink Commander is not included.<br>
+  Get Fink Commander from <a href="http://finkcommander.sourceforge.net" target="_blank">http://finkcommander.sourceforge.net</a>.<br>
+  Run Fink Commander scroll to visual-py25 and select it.<br>
+  Choose Binary &gt; Install.<br>
+  You will be asked for a password.<br>
+  Select visual-py25 again, choose Binary &gt; Install, and you will again
+  be asked for a password.<br>
+  Accept the default when asked. </p>
+</blockquote>
+<h3><font color="#008000"><font color="#ff0000"><a name="run"></a>To run VPython,
+      open the X Window  system, and type this into an X Terminal window:</font></font></h3>
+<dl>
+  <blockquote> 
+    <p><b><font color="#008000"> </font></b>Prior to OS X 10.5, you  must enter
+      the following into an X Terminal window, not the standard Terminal program.<br>
+      &gt;&gt;      /sw/bin/vpython2.5<br>
+      This starts IDLE, and on the file menu you can choose an example program
+         to run. <br>
+      On the Run menu, choose Run Module or press fn-F5.<br>
+      After starting IDLE, on the file menu you can choose an example program
+    to run. </p>
+    <p>To zoom, hold down the Command key (Apple key)
+      and the mouse button (emulating &quot;right mouse button&quot;).<br>
+    To rotate the camera angle, hold down the Option
+    key and the mouse button (emulating &quot;middle mouse button&quot;).</p>
+    <p>If there is no /sw/bin/vpython2.4, execute the following commands (or
+    create a shell script containing these statements):</p>
+    <blockquote>
+      <p>cd /sw/lib/python2.4/site-packages/visual/examples<br>
+    /sw/bin/python2.4&nbsp; /sw/lib/python2.4/idlelib/idle.pyw</p>
+    </blockquote>
+  </blockquote>
+</dl>
+<p><font color="#008000"><b>To customize IDLE:</b></font></p>
+<blockquote>
+  <p>    You may find it useful to change the default behavior of IDLE. In<br>
+    Configure IDLE, click General, and specify "Open Edit Window" and "No Prompt".<br>
+    With "No Prompt", you will be prompted to save a new file the first time
+    you  run,<br>
+  but your file will be automatically saved on all later runs. </p>
+</blockquote>
+<dl>
+  <h3><font color="#008000"><b><em><a name="expert"></a>For experts: Installing
+    from source</em></b></font></h3>
+  <blockquote> 
+    <p>Warning: this procedure takes a VERY long time; try this only if the binary
+      install doesn't work. <br>
+      If necessary, set Fink to use the "unstable&quot; packages. There are
+      two ways to do this:</p>
+    <blockquote> 
+      <p> Method 1. In Fink Commander, from the FinkCommander menu, choose Preferences. 
+        <br>
+        Choose the Fink tab, and check the boxes for "Use unstable packages".
+        Click "Apply". Wait for processing to finish (&#8220;barber pole&#8221; 
+        stops spinning).</p>
+      <p>Method 2. Edit the file /sw/etc/fink.conf. Add unstable/main to the "Trees:" 
+        line.</p>
+      <p>Note: unstable packages are newer versions that have not yet been moved
+        into the "stable" releases. They may not really be any buggier than
+        the 
+        "stable" packages. If you have a real reason to avoid updating all packages
+        with new ("unstable") versions, then see:</p>
+      <p>http://fink.sourceforge.net/faq/usage-fink.php#unstable</p>
+      <p>for instructions on how to update only selected packages.</p>
+    </blockquote>
+    <p>Quit Fink Commander. Run Terminal (in the Applications &gt; Utilities
+      folder)  and type this: </p>
+  </blockquote>
+  <dl>
+    <dd>&gt;&gt; /sw/bin/fink -y selfupdate</dd>
+  </dl>
+  <blockquote> 
+    <p>This process takes a long time. The "-y" option makes default choices,
+      which is fine and means you don't have to keep entering "y" during the
+      lengthy  process. </p>
+    <p>Next, in a Terminal window type this:</p>
+    <p>&gt;&gt; /sw/bin/fink install visual-py25</p>
+    <p>This process takes a very long time. It has to compile a large number
+      of  programs. If at some later time you want to install a newer version
+      of visual-py25 
+      it will not take long.</p>
+    <p>See above to <a href="#run">run VPython</a>.</p>
+  </blockquote>
+</dl>
+<dl>
+  <dd> 
+    <h3>[<a href="http://vpython.org/index.html">VPython home page</a>] [<a href="http://vpython.org/contents3/download.html">other 
+      platforms</a>]</h3>
+  </dd>
+</dl>
+
+</body></html>

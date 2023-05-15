@@ -1,0 +1,141 @@
+<html>
+<head>
+<title>Contributed demo programs</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link href="master.css" rel="stylesheet" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<table width="700" border="0" cellspacing="2" cellpadding="2">
+  <tr> 
+    <td width="318"><img src="vpython_small.gif" width="300" height="96"></td>
+    <td width="368"><h2><font color="#FF0000">Programs contributed by VPython 
+        users</font></h2></td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><a href="index3.html" target="_top" onClick="MM_nbGroup('down','group1','VPhome','',1)" onMouseOver="MM_nbGroup('over','VPhome','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPhome.gif" alt="" name="VPhome" width="102" height="35" border="0" onload=""></a></td>
+    <td><a href="download.html" target="_top" onClick="MM_nbGroup('down','group1','VPdownloads','',1)" onMouseOver="MM_nbGroup('over','VPdownloads','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPdownloads.gif" alt="" name="VPdownloads" width="199" height="35" border="0" onload=""></a></td>
+    <td><a href="webdoc/index.html" target="_top" onClick="MM_nbGroup('down','group1','VPdocs','',1)" onMouseOver="MM_nbGroup('over','VPdocs','','',1)" onMouseOut="MM_nbGroup('out')"><img name="VPdocs" src="VPdocs.gif" border="0" alt="" onLoad=""></a></td>
+  </tr>
+</table>
+<ul>
+  <li><font size="-1" face="Arial, Helvetica, sans-serif"><a href="http://pygeo.sourceforge.net/" target="_blank">PyGeo</a> 
+    a projective geometry toolbox(Arthur Siegel, who unfortunately died in 2007;
+        write to Joel Kahn &lt;<a href="mailto:jj2kk4@yahoo.com">jj2kk4@yahoo.com</a>&gt;</font> if
+        you are interested in helping maintain this orphan software) </li>
+  <li><font size="-1" face="Arial, Helvetica, sans-serif"><a href="http://www.physics.syr.edu/%7Esalgado/software/vpython/" target="_blank">Physics 
+    projects</a> and links (Rob Salgado)</font></li>
+  <li><font size="-1" face="Arial, Helvetica, sans-serif"><a href="http://kineticskit.sourceforge.net/" target="_blank">KineticsKit</a> 
+    a module for quickly building ball-and-spring models (Markus Gritsch)</font></li>
+  <li><a href="http://lurbano-5.memphis.edu/GeoMod/index.php/Main_Page" target="_blank">Earth 
+    Science</a> a collection of Earth Science programs (Lensyl Urbano)</li>
+  <li> <a href="contributed/bodies.py" target="_blank">New objects</a>: hollow 
+    tube, frustum (cone with tip cut off), and partial sphere (Thom Ives)</li>
+  <li><a href="contributed/cherry_tree.py" target="_blank">Cherry tree</a> made 
+    by recursion (Viktor Ferenczi)</li>
+  <li><a href="contributed/cxvp_clock.py" target="_blank">Analog clock</a> (Viktor 
+    Ferenczi)</li>
+  <li><a href="contributed/chessboard.py" target="_blank">Chess board</a> -- doesn't 
+    actually play but will execute moves (Shaun Press)</li>
+  <li><a href="contributed/monkey.py" target="_blank">Shoot the monkey</a> (John 
+    Keck)</li>
+  <li>Complete but experimental <a href="contributed/Experimental_distutils.zip" target="_blank">distutils 
+    package</a>, Windows-oriented (Arthur Siegel; minor revisions by Bruce Sherwood)</li>
+  <li><a href="contributed/setup.py" target="_blank">setup.py</a> from the experimental 
+    distutils package (Arthur Siegel; minor revisions by Bruce Sherwood)</li>
+  <li><a href="contributed/stereo.py" target="_blank">stereo.py</a> creates a 
+    &quot;wall-eyed&quot; stereo pair (Bruce Sherwood)</li>
+  <li><a href="contributed/grayscale.py" target="_blank">grayscale.py</a> changes 
+    a color scene to grayscale; useful for testing redblue stereo (Bruce Sherwood)</li>
+  <li><a href="contributed/boids.py" target="_blank">boids.py</a> generates bird 
+    flocking behavior (Eric Nilsen)</li>
+  <li><a href="contributed/movie.py" target="_blank">movie.py</a> generates a 
+    QuickTime movie on MacOSX (Kelvin Chu)</li>
+  <li><a href="contributed/kepler.py" target="_blank">kepler.py</a> illustrates 
+    Kepler's &quot;equal area&quot; rule for planetary motion ( Peter Borcherds)</li>
+  <li><a href="contributed/EMWave.py" target="_blank">EMWave.py</a> illustrates 
+    the relationships among electric and magnetic fields in electromagnetic radiation 
+    (Rob Salgado)</li>
+  <li><a href="contributed/face.py" target="_blank">face.py</a> makes an amusing 
+    face (Joel Kahn)</li>
+  <li><a href="contributed/capital_letters.py" target="_blank">capital_letters.py</a> 
+    displays capital letters using curves (Joel Kahn)</li>
+  <li><a href="contributed/visualjoints.py" target="_blank">visualjoints.py</a> 
+    uses pyODE (<a href="http://pyode.sourceforge.net" target="_blank">http://pyode.sourceforge.net</a>), 
+    an open-source physics engine (Miles Jacobs)</li>
+  <li><a href="contributed/movecamera.py" target="_blank">movecamera.py</a> saves 
+    a user-selected view (after zoom and spin), then restores that view later 
+    (Bill Ward and Bruce Sherwood)</li>
+  <li><a href="http://www.longwood.edu/staff/dunningrb/vpnbody" target="_blank">VPNBody</a> 
+    multibody solar system dynamics (Rodney Dunning)</li>
+  <li><a href="contributed/SaraivaDemo.py" target="_blank">SaraivaDemo.py</a> 
+    is a fun and attractive demonstration of various VPython capabilities (Eduardo 
+    Saraiva).</li>
+  <li><a href="contributed/pipes.py" target="_blank">pipes.py</a> is a screen-saver-like 
+    animation of connecting pipes; press ESC to get out of this full-screen program 
+    (William Wright).</li>
+  <li><a href="http://www2.semo.edu/mlcobb/Gravity-rings/" target="_blank">Computation</a> using
+    VPython of planetary ring formation (Michael Cobb). See <a href="FAQ.html">FAQ</a> for details on
+  how the VPython displays were captured and then made into a video. </li>
+  <li><a href="contributed/look_around.py">look_around.py</a> shows how to rotate a camera at the origin and look around at a surrounding scene (Bruce Sherwood). </li>
+  <li><a href="contributed/vspace.py">vspace.py</a> is a space voyaging demo (Ron Adam).</li>
+  <li><a href="contributed/pixelplot.py">pixelplot.py</a> shows a way to do pixel-oriented plotting in VPython (Bruce Sherwood).  <br>
+  </li>
+</ul>
+<p>[<a href="index3.html">VPython home page</a>]</p>
+<p>&nbsp;</p>
+</body>
+</html>

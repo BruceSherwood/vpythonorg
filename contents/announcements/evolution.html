@@ -1,0 +1,468 @@
+<head>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1107305727 0 0 415 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536870145 1073786111 1 0 415 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:10pt;
+	font-family: Arial, Helvetica, sans-serif}
+a:link, span.MsoHyperlink
+	{mso-style-priority:99;
+	color:blue;
+	mso-themecolor:hyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:10pt;
+	font-family: Arial, Helvetica, sans-serif}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:10pt;
+	font-family: Arial, Helvetica, sans-serif}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:10pt;
+	font-family: Arial, Helvetica, sans-serif}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	mso-add-space:auto;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:10pt;
+	font-family: Arial, Helvetica, sans-serif}
+.MsoChpDefault
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+.MsoPapDefault
+	{mso-style-type:export-only;
+	margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:845363550;
+	mso-list-type:hybrid;
+	mso-list-template-ids:130604708 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l0:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l0:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0B7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l0:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l0:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:\F0A7;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+div.MsoNormal1 {mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:10pt;
+	font-family: Arial, Helvetica, sans-serif}
+li.MsoNormal1 {mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:10pt;
+	font-family: Arial, Helvetica, sans-serif}
+p.MsoNormal1 {mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:10pt;
+	font-family: Arial, Helvetica, sans-serif}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin-top:0in;
+	mso-para-margin-right:0in;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'><b style='mso-bidi-font-weight:normal'>The
+Evolution of VPython<o:p></o:p></b></p>
+<p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+text-align:center;line-height:normal'>&nbsp;</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>Recent developments in VPython have modernized and improved the
+language and environment.</p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:.0001pt;
+mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>GlowScript (<a href="http://www.glowscript.org" target="_blank">glowscript.org</a>)
+is a browser-based implementation that requires no installation, and that
+utilizes significantly more of the capabilities of modern graphics hardware.<span
+style='mso-spacerun:yes'>  </span>The browser environment is accessible and
+easy to use.<span style='mso-spacerun:yes'>  </span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:.0001pt;
+mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
+Symbol'><span style='mso-list:Ignore'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>VPython 7 can now be used in the increasingly
+popular browser-based Jupyter scientific notebook environment, which provides
+advanced users full access to the computational ecology of Python (either 2.7
+or 3.x). Jupyter is automatically included with either the Anaconda or Canopy
+Python distributions. As of June 2017 VPython 7 can also be run from IDLE or Spyder, with the 3D displays shown in a browser window rather than in a Jupyter notebook.<span class="MsoListParagraphCxSpLast" style="margin-bottom:0in;margin-bottom:.0001pt;
+mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:l0 level1 lfo1"><span style='mso-spacerun:yes'>&nbsp;</span>See <a href="../../index.html" target="_blank">vpython.org</a></span> for details.</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>After extended discussions we have decided that these two
+environments,<span style='mso-spacerun:yes'> </span>GlowScript VPython and VPython 7,
+will be the VPython implementations to be further supported and developed.<span
+style='mso-spacerun:yes'>  </span>The older “Classic” VPython, which required
+the separate installation of Python 2.7 and visual (as well as Tcl on the
+Macintosh), will continue to exist in its current form, but will no longer
+receive updates or bug fixes, though Matt Craig has offered to continue to
+build an Anaconda conda&nbsp;package until&nbsp;the official end-of-life of
+Python 2.7 in 2020, as long as&nbsp;building&nbsp;the&nbsp;package does not
+require substantial modification to&nbsp;the Classic VPython codebase.</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>Moving to browser-based environments has already made possible the
+addition of graphics features not available in Classic VPython, and has opened
+the door to more sophisticated graphics features in the future, such as shadows.<span
+style='mso-spacerun:yes'>  </span>This has also significantly simplified the
+code base of VPython, making it easier for others to contribute to the
+development and maintenance of VPython. </p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>In both implementations the VPython syntax is the same (although slightly
+different from Classic VPython), so the same program can run in either
+environment as long as it does not import modules that are not available in
+both. </p>
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>&nbsp;</p>
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>Both of these VPython implementations utilize the same 3D graphics
+  library, based on WebGL, which enables sophisticated use of modern graphics hardware
+  in a browser environment. <span style='mso-spacerun:yes'> </span>The browser
+  and the GPU play an increasingly important role in the world of computing. <span
+style='mso-spacerun:yes'> </span>One of the major advantages to browser-based
+  graphics is the elimination of operating-system-specific code, system-specific
+  installers, and of dependency on supporting libraries that are less well
+  supported than those in the browser-based environments. The reason that we have
+  chosen to implement the GlowScript syntax rather than the Classic syntax is
+  that it is significantly better suited to the new computer environments.</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b style='mso-bidi-font-weight:normal'>Which environment is right for
+your situation?<o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>GlowScript: In recent months there have been many reports that new
+users of VPython (especially students) are unusually enthusiastic about the
+browser environment because no installation is required to get going. Moreover,
+it is unnecessary to talk an IT department into installing VPython, an
+important consideration in many institutions.<span style='mso-spacerun:yes'> 
+</span>GlowScript VPython programs may be easily shared through web links, and
+may be embedded in other web pages. </p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>VPython 7: This environment is particularly appropriate for
+professional and scientific users, including advanced students, because it
+provides access to the very large catalog of Python modules, which cannot be
+referenced from the GlowScript JavaScript-based environment. Jupyter notebooks
+have become very popular with sophisticated users of Python. Jupyter notebooks
+can include images, LaTeX, text, etc., and can be shared (or submitted as
+assignment reports). For some purposes it may be more convenient to run from IDLE or Spyder.</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b style='mso-bidi-font-weight:normal'>How do I try GlowScript or VPython 7?
+  <o:p></o:p></b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>See the instructions at <a href="../../index.html" target="_blank">vpython.org</a><span
+class=MsoHyperlink>
+<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b style='mso-bidi-font-weight:normal'>History</b></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>VPython 7was initiated by John Coady in May 2014, initially for the Jupyter notebook environment, and is 
+being further developed by John Coady, Ruth Chabay, Bruce Sherwood,  Steve
+Spicklemire, and Matt Craig. This work was extended to the IDLE/Spyder environment in June 2017 by Bruce Sherwood<span style='mso-spacerun:yes'>  </span>GlowScript was initiated by
+Bruce Sherwood and David Scherer in 2011; continued development is being done
+by Bruce Sherwood.<span style='mso-spacerun:yes'>  </span>Classic VPython was
+initiated by David Scherer in 2000. The blog article <a href="https://brucesherwood.net/?p=136" target="_blank">A time line for VPython development</a> documents the whole history.</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+<p class=MsoNormal1 style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><b style='mso-bidi-font-weight:normal'>Technical details
+  <o:p></o:p>
+</b></p>
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>In the VPython 7 environment, VPython programs run on a local server,
+  using standard Python, and output is sent to a browser,
+  where the GlowScript graphics library is used to display the 3D animation. In
+  the GlowScript environment, VPython programs are compiled in the browser itself
+  by the RapydScript Python-to-JavaScript compiler, and the program is run in the
+  browser.</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>The GlowScript libraries are based on WebGL and use GPU (Graphics
+Processing Unit) hardware. Use of the GPU makes possible much more
+sophisticated 3D graphics than the CPU-based OpenGL graphics library used in
+Classic VPython can provide. The effort that would be required to restructure
+Classic VPython to take advantage of the new developments would be enormous,
+and probably unfeasible. Moreover, classic VPython is increasingly difficult to
+maintain and install, due to its dependence on sophisticated C++ code and on libraries
+that have significantly less support than those used by VPython 7 and GlowScript VPython.</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>Ruth Chabay<br>
+Bruce Sherwood<br>
+John Coady<br>
+Danny Caballero<br>
+Matt Craig<br>
+Steve Spicklemire<br>
+Aaron Titus</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>2016/01/25</p>
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>Minor updates 2016/09/21</p>
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'>Updated to refer to VPython 7 2017/06/08</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+normal'><o:p>&nbsp;</o:p></p>
+
+</div>
+
+</body>
+
+</html>

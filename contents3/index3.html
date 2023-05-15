@@ -1,0 +1,241 @@
+<html>
+
+
+
+<head>
+
+<meta http-equiv="Content-Language" content="en-us">
+
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+<meta name="keywords" content="visual, visual python, vpython, scientific visualization, 3D, 3-D, 3 D">
+
+<title>VPython</title>
+
+<link href="master.css" rel="stylesheet" type="text/css">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<style type="text/css">
+<!--
+.style1 {
+	color: #FF0000;
+	font-weight: bold;
+}
+-->
+</style>
+</head>
+
+
+
+<body bgcolor="#FFFFFF">
+<table width="700" border="0" cellspacing="2" cellpadding="2">
+  <tr>
+    <td width="318"><img src="vpython_small.gif" width="300" height="96"></td>
+    <td width="368"><h2><font color="#FF0000"><font face="Verdana, Arial, Helvetica, sans-serif">3D 
+        Programming for Ordinary Mortals</font></font></h2>
+    <p><strong>This information is for the old, obsolete Visual 3.<br>
+    Here is  the new <a href="../index.html">Visual 5</a></strong>.</p></td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><a href="index3.html" target="_top" onClick="MM_nbGroup('down','group1','VPhome','',1)" onMouseOver="MM_nbGroup('over','VPhome','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPhome.gif" alt="" name="VPhome" width="102" height="35" border="0" onload=""></a></td>
+    <td><a href="download.html" target="_top" onClick="MM_nbGroup('down','group1','VPdownloads','',1)" onMouseOver="MM_nbGroup('over','VPdownloads','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPdownloads.gif" alt="" name="VPdownloads" width="199" height="35" border="0" onload=""></a></td>
+    <td><a href="webdoc/index.html" target="_top" onClick="MM_nbGroup('down','group1','VPdocs','',1)" onMouseOver="MM_nbGroup('over','VPdocs','','',1)" onMouseOut="MM_nbGroup('out')"><img name="VPdocs" src="VPdocs.gif" border="0" alt="" onLoad=""></a></td>
+  </tr>
+</table>
+<p><b><font size="+1" face="Arial, Helvetica, sans-serif">VPython is a package 
+  that includes: </font></b></p>
+<ul>
+  <li><font face="Arial, Helvetica, sans-serif"><b>the Python programming language</b></font></li>
+  <li><font face="Arial, Helvetica, sans-serif"><b>the IDLE interactive development 
+    environment </b></font></li>
+  <li><font face="Arial, Helvetica, sans-serif"><b>&quot;Visual&quot;, a Python 
+    module that</b> <b> offers real-time 3D output, and is easily usable by novice 
+    programmers</b></font></li>
+  <li><b><font face="Arial, Helvetica, sans-serif">&quot;Numeric&quot;, a Python 
+    module for fast processing of arrays</font></b></li>
+</ul>
+<p><font size="+1" face="Arial, Helvetica, sans-serif"><b>VPython is free and 
+  open-source.</b></font></p>
+
+    
+<br>
+<table width="736" height="102" border="0" cellpadding="0" cellspacing="0">
+  <tr valign="middle" bordercolor="#00FFFF" bgcolor="#CCCCCC"> 
+    <td width="249"> 
+      <p><b><font face="Verdana, Arial, Helvetica, sans-serif"><a href="VisualOverview.html">Brief
+               overview</a> of VPython;<br>
+        Python for <a href="ExperiencedProgrammers.html">experienced programmers</a> </font></b></p>
+    </td>
+    <td width="260" bgcolor="#CCCCCC"><b><font face="Verdana, Arial, Helvetica, sans-serif"><a href="download.html">Download</a> 
+      VPython <br>
+      <font size="-1">(Windows, Mac, Linux, Unix)</font></font></b></td>
+    <td width="227"> 
+      <p><b><font face="Verdana, Arial, Helvetica, sans-serif"><a href="http://sourceforge.net/mail/?group_id=6013">Subscribe</a> 
+        to mailing list</font> </b><font size="-1" face="Arial, Helvetica, sans-serif"><span class="style1"><br>
+        NEW! </span><a href="http://vpython.wikidot.com" target="_blank"><strong>VPython
+        Wiki</strong></a></font><br>
+      (Thanks to Tim Korb) </p>
+    </td>
+  </tr>
+  <tr valign="middle" bordercolor="#00FFFF" bgcolor="#CCCCCC"> 
+    <td width="249"> 
+      <p><b><font face="Verdana, Arial, Helvetica, sans-serif"><a href="vpythonprog.htm">Simple 
+        program example</a></font></b></p>
+    </td>
+    <td width="260"><b><font face="Verdana, Arial, Helvetica, sans-serif"><a href="webdoc/index.html">Documentation</a></font></b></td>
+    <td width="227"><b><font face="Verdana, Arial, Helvetica, sans-serif"><a href="featurelog.html">Recent 
+      developments</a></font></b></td>
+  </tr>
+  <tr valign="middle" bordercolor="#00FFFF" bgcolor="#CCCCCC"> 
+    <td width="249"> 
+      <p><b><font face="Verdana, Arial, Helvetica, sans-serif"><a href="VPython_Intro.pdf" target="_blank">Tutorial 
+        Introduction</a> (pdf)</font></b></p>
+    </td>
+    <td width="260"><b><font face="Verdana, Arial, Helvetica, sans-serif"><a href="FAQ.html">FAQ</a> 
+      (including stereo use)</font></b></td>
+    <td width="227"> 
+      <p><b><font face="Verdana, Arial, Helvetica, sans-serif"> <a href="http://sourceforge.net/projects/visualpython" target="_blank">Source 
+        files at SourceForge</a><br>
+        </font></b></p>
+    </td>
+  </tr>
+</table>
+<h3 align="left"><font size="-1" face="Arial, Helvetica, sans-serif">Other links:</font></h3>
+<table width="735" height="129" border="0" cellpadding="0" cellspacing="0">
+  <tr valign="middle" bgcolor="#CCCCCC"> 
+    <td width="257" height="54"> <blockquote> 
+        <p><font size="-1" face="Arial, Helvetica, sans-serif"><b>The Python language 
+          <a href="http://www.python.org">www.python.org</a></b></font></p>
+    </blockquote></td>
+    <td width="256"><font size="-1" face="Arial, Helvetica, sans-serif"><b>The povexport module 
+      by Ruth Chabay in the <a href="../contents/contributed.html">Contributed programs</a> section let's you export a VPython scene to POV-Ray<br>
+    </b></font></td>
+    <td width="222" align="center"> 
+      <blockquote> 
+        <p><font size="-1" face="Arial, Helvetica, sans-serif"><b><a href="developers.htm">For 
+          developers</a></b></font></p>
+      </blockquote></td>
+  </tr>
+  <tr valign="middle" bgcolor="#CCCCCC"> 
+    <td width="257" height="37"> <blockquote> 
+        <p><font size="-1" face="Arial, Helvetica, sans-serif"><b><i><a href="https://matterandinteractions.org">Matter 
+          &amp; Interactions</a></i>, intro physics with VPython</b></font></p>
+    </blockquote></td>
+    <td width="256"><font size="-1" face="Arial, Helvetica, sans-serif"><b><a href="contributed.html">Contributed 
+      programs</a> from users<br>
+      </b></font></td>
+    <td width="222" align="center"> 
+      <div align="center"><font size="-1" face="Arial, Helvetica, sans-serif"><a href="../contents/cTsource/cToverview.html">The 
+    cT archives</a><b></b></font></div></td>
+  </tr>
+  <tr valign="middle" bgcolor="#CCCCCC"> 
+    <td height="38" align="center"><a href="http://showmedo.com/videos/series?name=pythonThompsonVPythonSeries" target="_blank"><font size="-1">Erik
+        Thompson's video<br> 
+      introduction to VPython</font></a></td>
+    <td align="center"><a href="http://wiki.python.org/moin/VPython#preview"><font size="-1" face="Arial, Helvetica, sans-serif"><strong>Python
+            entry</strong></font></a><strong><font size="-1" face="Arial, Helvetica, sans-serif"> about<br>
+VPython projects</font></strong></td>
+    <td><div align="center"></div></td>
+  </tr>
+</table>
+<h3 align="left"><font size="-1" face="Arial, Helvetica, sans-serif">Major contributors
+to  VPython:</font></h3>
+<blockquote>  <b>David Scherer, </b>David 
+    Andersen, Jonathan Brandmeyer, Ruth Chabay, Ari Heitner, Ian Peters, Bruce 
+    Sherwood. 
+  <p><font size="-1" face="Arial, Helvetica, sans-serif">Others who have contributed
+      significant code to the Visual module include Shawn Press, Hugh Fisher,
+      John Zelle, Arthur Siegel, and Michael Temkhine. See <a href="featurelog.html">&quot;Recent developments&quot;</a> for
+  details.</font></p>
+</blockquote>
+
+    Write to <script>
+
+<!--
+
+function zippy(){
+ var a,b,c,d
+ a='<a href=\"mai'
+ b='Bruc'
+ b+='e_Sherwo'
+ c='\">'
+ a+='lto:'
+ b+='od@n'
+ e='</a>'
+ b+='cs'
+ b+='u.edu'
+
+ document.write(a+b+c+b+e)
+}
+
+zippy()
+
+//-->
+
+</script>
+    <font size="-1" face="Arial, Helvetica, sans-serif"> if you
+    don't find what you need, or to tell us how you are using VPython.</font></p>
+<h3><font size="-1" face="Arial, Helvetica, sans-serif">The development of VPython
+     was supported in part by the National Science Foundation</font></h3>
+<h3>&nbsp; </h3>
+<blockquote> 
+  <p>&nbsp;</p>
+</blockquote>
+
+</body>
+
+
+
+</html>
+

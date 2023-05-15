@@ -1,0 +1,376 @@
+<!-- InstanceBegin template="/contents/Templates/template.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>History</title>
+<!-- InstanceEndEditable -->
+<!-- InstanceBeginEditable name="head" -->
+
+
+
+
+
+<link href="VisualRef.css" rel="stylesheet" type="text/css" />
+<link href="VisualRef.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+<!--
+.style1 {font-family: Arial, Helvetica, sans-serif}
+-->
+</style>
+<!-- InstanceEndEditable -->
+<link href="VisualRef.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="800" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutDefaultTable-->
+  <tr>
+    <td width="10" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="10" height="272" valign="top" bgcolor="#DDDDDD"><p>&nbsp;</p>    </td>
+    <td width="142" valign="top" bgcolor="#DDDDDD"><p class="Normal"><a href="../index.html" target="mainFrame">Home</a></p>
+      <p class="Normal"><a href="doc.html">Documentation</a></p>
+      <p class="Normal">Download:<br />
+      &nbsp;&nbsp;&nbsp;<a href="download_windows.html">Windows</a><br />
+      &nbsp;&nbsp;&nbsp;<a href="download_mac.html">Macintosh</a><br />
+      &nbsp;&nbsp;&nbsp;<a href="download_linux.html">Linux</a></p>
+      <p class="Normal"><a href="new_features.html">New in VPython 6</a></p>
+      <p class="Normal"><a href="history.html">Change log</a></p>
+      <p class="Normal"><a href="https://groups.google.com/forum/?fromgroups&amp;hl=en#!forum/vpython-users" target="_blank">User forum</a></p>
+      <p class="Normal"><a href="contributed.html">Contributed programs</a></p>
+      <p class="Normal"><a href="developers.html">For developers</a></p>
+    <p class="Normal"><a href="http://www.python.org" target="_blank">Python web site</a></p></td>
+    <td width="10" valign="top" bgcolor="#FFFFFF"><!--DWLayoutEmptyCell-->&nbsp;</td>
+    <td width="628" rowspan="2" valign="top"><!-- InstanceBeginEditable name="content" -->
+      <table width="100%" border="1">
+        <tr>
+          <td width="65%"><h1 align="center" class="attribute style1">Change Log</h1></td>
+          <td width="35%"><img src="images/toroid.jpg" alt="toroid" width="210" height="162" /></td>
+        </tr>
+      </table>
+      <p class="Normal"><strong>This is documentation for Classic VPython (VPython 6), which continues to be available but is no longer supported. See <a href="../index.html" target="_blank">vpython.org</a> for information on installing VPython 7 or using GlowScript VPython. Documentation is available at <a href="http://www.glowscript.org/" target="_blank">glowscript.org</a> by clicking Help.</strong></p>
+      <p class="Normal">Here is a log of changes to VPython since the initial release of  VPython 5 in December 2008, continuing with VPython 6, first released in February 2013.</p>
+      <p class="Normal">&nbsp;</p>
+      <p class="Normal">2016-01-25: See the important <a href="announcements/evolution.html" target="_blank"><strong>announcement</strong></a> on the future evolution of VPython.</p>
+      <p class="Normal">&nbsp;</p>
+      <p class="Normal">2015-01-12: VPython 6.11 corrects an error in setting the axis of an object, in which sometimes the orientation of the object would flip 180 degrees, most noticeably when setting the axis of a frame.</p>
+      <p class="Normal">2014-07-11: VPython 6.10 introduces ways to delete displays and wxPython windows without ending the program, which lets you clear everything away and create new displays or windows. Suppose w = window() and d = display(window=w): then w.delete() deletes the wxPython window and all the widgets contained in that window, including the d display; d.delete() just deletes the display from the window it appears in unless d.window = None, in which case the entire window is deleted; window.delete_all(), not w.delete_all(), deletes all VPython windows and displays. Moreover, w.cursor.visible or d.cursor.visible can now be set to True or False (only d.cursor.visible works on a Macintosh). You can now specify a window style when creating a wxPython window; see the example program widgets.py for an example. Something that was either a bug or a feature has been addressed: If you set shaftwidth to be nonzero for an arrow, you also had to set fixedwidth = True, which seemed awkward. Now when you set shaftwidth this automatically sets fixedwidth = True. If you set fixedwidth = False later in the program, you get the somewhat quirky behavior currently seen with this combination. Creation of displays or wxPython windows now checks for part of the area being off screen and decreases the width and/or height to make all of the area appear on screen. Setting scene.fullscreen = True now works properly (but is inactive on a Macintosh). Pressing CTRL while dragging the mouse now rotates the camera on all platforms. The statement exit() kills the program. Many bugs have been fixed; a list is available <strong><a href="https://github.com/BruceSherwood/vpython-wx/issues?direction=desc&amp;page=1&amp;sort=updated&amp;state=closed" target="_blank">here</a></strong>. A history of source-code changes is available <strong><a href="https://github.com/BruceSherwood/vpython-wx/commits/master" target="_blank">here</a></strong><a href="https://github.com/BruceSherwood/vpython-wx/commits/master" target="_blank"></a>. </p>
+      <p class="Normal">2013-04-20: VPython 6.05 released to fix  bugs and improve documentation.</p>
+      <p class="Normal">2013-03-02: VPython 6.04 released to fix minor bugs and improve documentation.</p>
+      <p class="Normal">2013-02-19: VPython 6.03 released by Bruce Sherwood and Steve Spicklemire. This version is based on the wxPython cross-platform GUI library, which has made possible the elimination of almost all platform-dependent code, and of the threading structure of VPython 5. Moreover, wxPython makes it possible for a window to contain a VPython 3D animation along with standard widgets such as buttons and sliders. VPython 5 on the Macintosh was based on the Carbon framework, which is no longer supported, whereas VPython 6 uses the supported Cocoa framework (through wxPython). VPython 6 includes improved mechanisms for handling mouse and keyboard events.      </p>
+      <p class="Normal"><br />
+      </p>
+      <p class="Normal">2012-04-23: Visual 5.74 fixes a bug in the display of ellipsoids</p>
+      <p class="Normal">2012-04-15: Visual 5.73 with minor bug fixes (controls module, text object).</p>
+      <p class="Normal">2012-04-01: Aaron Mavrinac moved the VPython source files from the increasingly obsolete CVS-format repository at sourceforge.net to an up-to-date git repository at github.com.</p>
+      <p class="Normal">2011-12-10: Rebuilt Visual 5.72 source package for Linux to replace a Linux routine that is broken on recent releases of Ubuntu and Debian (and probably Fedora). This fixes the crashes of Visual on Linux that happened with the simplest programs.</p>
+      <p class="Normal">2011-10-24 Visual 5.72 rebuilt to include a patch by Jason Morgan to fix a bug in packaging materials when using py2exe.</p>
+      <p class="Normal">2011-10-19 Visual 5.72: Corrects a bug in graphs where plotting (0,.001) followed by (.001,.001) failed to autoscale correctly. Also added documentation explaining what objects are used to represent gdots, gcurves, ghbars, and gvbars.</p>
+      <p class="Normal">2011-05-06 Visual 5.71: Adds log-log and semilog plots to graphs, and the ability to offset the graph origin. Thanks to a diagnosis by David Scherer, random dots around the text of label objects (Windows and Linus) are (nearly) eliminated. A bug that occasionally prevented a graph from displaying has been fixed.</p>
+      <p class="Normal">2011-03-27 Visual 5.70: Adds an easy to use way to <strong><a href="docs/trail.html">leave a trail</a></strong> behind a moving object.</p>
+      <p class="Normal">2011-03-23 Visual 5.61: Adds mouse crosshairs to graphs, simplifies the use of controls (no need to call interact), fixes a long-standing inconsistency in the background of a label object's box, and fixes bugs in materials.bricks and in the checking for the presence of Polygon and font modules.</p>
+<p class="Normal">2011-03-13 Visual 5.60: Add facilities to extract faces data from extrusion and text objects, and to make extrusion and text objects single-sided for speed. Kadir Haldenbilen contributed improved gear facilities to the shapes library, including rack gears.</p>
+<p class="Normal">2011-03-01 Visual 5.51: Fix memory leak on Windows and Mac. Correct errors in assigning color and material to a text object. </p>
+      <p class="Normal">2011-02-20 Visual 5.50 for all platforms introduces the powerful extrusion object developed by Kadir Haldenbilen and Bruce Sherwood. Included are shapes and paths libraries that simplify the creation of complex extrusions. Haldenbilen has also contributed new materials which can be viewed in the updated example program material_test.py. The curve object has been modified to be able to use the new shapes and paths libraries. </p>
+      <p class="Normal">2010-12-02 Visual 5.41 for Windows, to fix bugs in active and passive stereo.</p>
+      <p class="Normal">2010-11-22 Visual 5.4 package for Python 2.6 for Windows and Mac, which includes numpy 1.5.1. It was pointed out that there was no scipy module for Python 2.7 or Python 3.1, and the existing Visual 5.32 for Python 2.6 included numpy 1.3, whereas scipy now requires numpy 1.4.</p>
+      <p class="Normal">2010-11-03 Visual 5.4 package for Python 2.5, 2.6, or 2.7 for Linux. This package can presumably also be used to build on Python 3.1, but this would require building Boost libraries for Python 3.1, for which there may not be Linux packages.</p>
+      <p class="Normal">2010-10-27 Visual 5.4 for Python 2.7 and Python 3.1, for Windows and Mac.This release includes a new module, &quot;vis&quot;, which permits selective import of Visual objects without the importing of math and numpy that is done for &quot;from visual import *&quot;. See the main page of the full documentation for details. The font modules included in this VPython installer have been updated to work with Python 3.1, but tested only to the extent that they work with VPython. It is quite possible that additional work is needed to make them fully functional with Python 3.1. Ned Deily fixed a problem with IDLE (and VIDLE) on Macs; it was recently noticed that quitting on the Mac did not prompt you to save unsaved code.</p>
+      <p class="Normal">2010-09-14 Beta test version of Visual 5.32 for Python 3.1, currently only for Windows. </p>
+      <p class="Normal">2010-09-04 Visual 5.32 for Python 2.7 rebuilt for Intel Mac to use production version of numpy 1.5.0..      </p>
+      <p class="Normal">2010-08-31 Visual 5.32 for Python 2.7 rebuilt for Windows to use production version of numpy 1.5.0.      </p>
+      <p class="Normal">2010-08-16 Visual 5.32 is now available for Python 2.7 for Windows and Intel Macs using beta version of numpy 1.5.0.</p>
+      <p class="Normal">2010-04-10 Visual 5.32 released for all platforms. Now
+        the 3D text object handles multiline text containing newline characters
+        (&quot;\n&quot;), and Kadir Haldenbilen made a 20% speedup in the creation of the
+        text object.</p>
+      <p class="Normal">2010-04-02 Visual 5.31 released for all platforms. Kadir
+        Haldenbilen made further corrections to the ttfquery and FontTools modules,
+        which fixed a variety of errors in rendering 3D text.</p>
+      <p class="Normal">2010-03-30   Visual 5.3 released for all platforms. Thanks
+        to great work by Kadir Haldenbilen, there is a new &quot;text&quot; object
+        that from any True Type (.ttf) font produces extruded 3D text. This supercedes
+        the very limited old visual.text machinery (which however is being left
+        in place for upward compatibility). The Windows and Mac versions install
+        some font-handling modules that include Polygon, for which the following
+        conditions apply:   &quot;Polygon is being distributed subject to the following
+        conditions: This distribution contains code from the GPC Library,
+        and/or code resulting from the use of the GPC Library. This usage has
+        been authorized by The University of Manchester, on the understanding
+        that the GPC-related features are used only in the context of this distribution.
+        It is not permitted to extract the GPC code from the distribution as
+        the basis for commercial exploitation, unless a GPC Commercial Use Licence
+        is obtained from The University of Manchester, contact: http://www.cs.man.ac.uk/~toby/gpc/&quot;.
+        There are new faces functions make_normals() and make_twosided(), and
+        you can now specify your own criterion for smooth(). The gcurve object
+        for making graphs now has an option &quot;dot=True&quot; that highlights
+        the currently plotted point on the curve. Some minor bugs were fixed
+        in faces, points, and helix.</p>
+      <p class="Normal">2010-02-17 Gary Pajer pointed out that numpy 1.4.0 had been withdrawn, so Visual 5.24 for Windows and for Mac were built to use numpy 1.3.0 instead.</p>
+      <p class="Normal">2010-02-03 Mirko Bordignon fixed a bug in the Mac build
+        procedure that made Visual 5.22 not work on OSX 10.5. Visual 5.23 for
+        the Mac should work on OSX 10.4 or later.</p>
+      <p class="Normal">2010-01-28 Thanks to work by Mirko Bordignon on threading
+        problems, Visual 5.21 released for the Mac, which may address problems
+        seen on the Mac with VPython refusing to start. It was discovered that
+        5.21 didn't work on OSX 10.5, so Mirko rebuilt the Boost libraries on
+        OSX 10.5 and verified that VPython would then work on both 10.5 and 10.6,
+        and a Visual
+        5.22 installer was released based on these libraries.</p>
+      <p class="Normal">2010-01-26 Visual 5.2 released for Windows, Mac, and
+        Linux includes new faces function &quot;smooth()&quot; which averages
+        similar normals at shared vertices to make an object look smoother. See
+        faces documentation. </p>
+      <p class="Normal">2009-12-23 Visual 5.14 released for Windows for any version
+        of Python 2.6. This fixes a problem that until the development of Boost
+        1.41 it was not possible to build an installer for Visual that worked
+        with Python 2.6.4. Visual 5.14 is otherwise identical to Visual 5.13.
+        Work is proceeding to deal with the same problem on Macintosh (work completed
+        2010-01-23, thanks to help from Mirko Bordignon). For Linux, simply use
+      Boost 1.41 to build Visual.</p>
+<p class="Normal">2009-10-13 Visual 5.13 released for Windows (Python 2.6),
+        Mac (Python 2.6, Intel, OSX 10.4 and above), and Linux. Bugs fixed on Linux
+        concerned with making windows visible and invisible, and with reporting
+        correct values of scene.x, scene.y, scene.width, and scene.height. Bugs
+        fixed on all platforms: vector.mag now is ordinary number instead of
+        numpy.ndarray; helix.color is (red,green,blue) instead of an array (the
+        array of colors in the helical curve is helix.helix.color); corrected
+        documentation error which erroneously claimed that that you couldn't
+        specify a list of points for   gcurve, gvbars, or ghbars; error in VIDLE
+        corrected by Guilherme Polo -- sometimes initially scrolled so that
+        the first line was not visible.</p>
+      <p class="Normal">2009-08-21 Visual 5.12 released for Windows (Python 2.6),
+        Mac (Python 2.6, Intel, OSX 10.4 and 10.5), and Linux. New: frame_to_world
+        and world_to_frame functions for converting between frame and &quot;world&quot;
+        coordinates, stimulated by a suggestion of Robert Xiao. Fixes: bug in
+        frame manipulations (pointed out by Robert Xiao), bug in helix that didn't
+        permit creating additional attributes when creating a helix. There are
+        significant improvements to VIDLE thanks to Guilherme Polo, including
+        the ability to edit and test without first saving a file, and the shell
+        window coming forward when there is an error, to alert you. The VIDLE
+        startup icon on the Mac (in /Applications/VPython) has been simplified
+        and is probably more robust.</p>
+      <p class="Normal">2009-06-19 Visual 5.11 released for Windows (Python 2. 5 and 2.6 ), Mac (Python 2.6, Intel and PowerPC, OSX 10.4 and 10.5), and Linux. Not yet released for Mac with Python 2.5. Visual 5.11 fixes a minor bug in the handling of arrow attributes fixedwidth, shaftwidth, headwidth, and headlength to make behavior consistent with Visual 3. The  documentation on these arrow attributes has been made clearer.</p>
+      <p class="Normal">2009-05-15 Visual 5.1 for Python 2.6 released for Windows, Mac, and Linux. David Scherer provided crucial help for getting Visual to work on Python 2.6. Visual 5.1 includes formerly missing features of Visual 3, including right-button and middle-button mouse event handling. Visual 5 provides the basic mouse event functionality that was present in Visual 3 for handling events from right and middle buttons when userspin or userzoom is disabled, out of concern for supporting old programs. However, it has become evident that there are limitations to this approach which could preclude some kinds of mouse handling that people might want to do in the future. For example, you might want to allow userspin with right drags yet also pick up right clicks. For that reason it is conceivable that future developments in this area might break existing programs, and therefore for maximum forward compatibility it is prudent to use only left-button interactions in new programs.</p>
+      <p class="Normal">2009-03-27 Release of VIDLE, an alternative to IDLE which
+        fixes some long-standing problems; David Scherer, assisted by Bruce Sherwood.</p>
+      <p class="Normal">2009-01-20 Visual 5.03 for all platforms
+         incorporates a fix to handling keyboard events proposed by CL Cheung
+        after his careful analysis of a deadlock condition.</p>
+      <p class="Normal">2009-01-17 Visual 5.02 for all platforms incorporates
+        corrections made by CL Cheung: fixing a bug associated with changing
+        the opacity of an object in a frame, and, on Windows, changing some details
+        of mouse handling which affected docking/undocking operations in the
+        wxpython context. Tests of the frame bug which failed on Windows did
+        not fail on Mac or Ubuntu, but the fix has been incorporated anyway,
+        as there really was a bug in the code.</p>
+      <p class="Normal">2008-12-31 Visual 5.01 for Linux corrects an error in the size attribute of the points object. New documentation of size and shape attributes for graphing gdots. Package now includes threadpool files.</p>
+      <p class="Normal">2008-12-30 Visual 5.01 for Windows and Mac corrects an error in the size attribute of the points object. New documentation of size and shape attributes for graphing gdots.</p>
+      <p class="Normal">2008-12-8 Release of Visual 5.0 by David Scherer and
+        Bruce Sherwood: opacity, local lights, materials such as wood. Includes
+        for the first time a native-mode version for the Mac.</p>
+      <p class="Normal">2008-06-20 John Armstrong contributed an easy-to-use installer for VPython
+        3.2.11 for Intel Macs running OS X 10.5 (Leopard). </p>
+      <p class="Normal">2008-03-10 A major redesign for Visual-4 Beta is
+          underway. The central goal of the new design is to create an architecture
+          which is more robust, easier to maintain and to extend, and easier
+          to install and to use. The principal architects are David Scherer and
+          Bruce Sherwood. Steve Spicklemire and Ruth Chabay have also been involved
+          in discussions. As a result, a number of changes to the current beta
+          version are likely. Support for textures will change. Rather than creating
+          a texture bitmap, a programmer will be able to specify a material (such
+          as wood). Transparency will be supported. At this point it is unclear
+          exactly what support there will be for bitmapped images; they may be
+          supported only as &quot;decals&quot; which
+        can be applied to flat surfaces. Lighting options may change; it is likely
+        that spotlights will not be supported at first in this version. You can
+        look forward to higher-quality rendering of scenes on computers with
+        modern graphics cards. A Macintosh version which does not require X11
+        or Fink will be created. Both the Windows version and the Mac version
+        will no longer depend on the large GTK libraries, which will however
+        still be the foundation for Linux. </p>
+      <p class="Normal">2008-02-13 4.beta26 for Windows and Linux: This addresses a problem
+        in Windows Vista in which there could be a two-minute freeze on a label
+        object. It is possible the problem is still present in reduced form,
+        with this freeze happening only the first time you use the new software;
+        reports from Vista users would be helpful. This package includes much
+        enhanced documentation on what is required for a developer to build Visual
+        4 on Windows and Mac. Some of this documentation may be of interest to
+        Linux users because of the details given concerning library dependencies. </p>
+      <p class="Normal">2008-01-23 4.beta25 for Windows and Linux: Fixed
+          not being able to close the window while waiting for scene.mouse.getclick()
+          or in a very tight, nearly empty loop. Curves, points, and faces now
+          accept color arrays that are either red-green-blue or red-green-blue-opacity.
+          Fixed bugs in helix object. Implemented stereo mode &ldquo;crosseyed&rdquo; (all
+        stereo modes now implemented).</p>
+      <p class="Normal">2008-01-13 4.beta24 for Windows and Linux: For
+          the new points object, remove the &quot;antialias&quot; attribute and create a shape attribute
+        (currently &quot;round&quot; or &quot;square&quot;). Updated the summary
+        of the features in the beta version. Added mandelbrot.py to examples,
+        to show how to do pixel-oriented graphing. Fixed a bug which prevented
+        specifying a color array in a curve or points constructor.</p>
+      <p class="Normal">2008-01-04 4.beta23 for Windows and Linux: Significant speed-up in rendering
+        of boxes and curves. </p>
+      <p class="Normal">2007-12-31 4.beta22 for Windows and Linux: Fixed bug that made the rendering
+        of spheres very slow. </p>
+      <p class="Normal">2007-12-25 4.beta21 for Windows and Linux: Default window now 600x600,
+        which includes titlebar, toolbar, and borders. Now display max 10000
+        points of a curve (old Visual did max 1000). Implement and document curve.retain=N,
+        meaning retain only the N most recently appended points. Improved tuning
+        of balance between computational thread and render thread. Implemented
+        toolbar option to restore to standard values center, forward, and up.
+        Documentation for new display.get_titlebar_height(), display.get_toolbar_height().
+        Added rate statements to tictac.py, hanoi.py, and toroid_drag.py as a
+        workaround for a problem with quitting a program with a loop that contains
+        very little computation. The statement scene.show_rendertime = True triggers
+        a display in the bottom left corner of the screen of the cycle time (milliseconds
+        between rendering of the scene) and render time (milliseconds required
+        to render the scene). The cycle time minus the render time is the approximate
+        number of milliseconds in the cycle devoted to your Python computations.</p>
+      <p class="Normal">2007-11-10 4.beta20 for Windows: Eliminate almost all Windows-specific
+        code in favor of gtk2, so that the source code for Visual is nearly universal
+        across all platforms. This version works at least as well as 4.beta16
+        but does not address all issues on Windows. The version number was advanced
+        from 4.beta16 to 4.beta20 as a marker that this represents a major change.</p>
+      <p class="Normal">2007-09-25 Danny Caballero provides a more detailed version of instructions
+        for installing on a Mac. </p>
+      <p class="Normal">2007-09-05 Brad Longo provides installation packages for Fedora Core
+        7 Linux for stable and beta versions at <a href="http://www.bradlongo.com/VPD/vpd.html">http://www.bradlongo.com/VPD/vpd.html</a>.</p>
+      <p class="Normal">2007-07-12 Production version 3.2.11 for Python 2.5 for Windows. Fixes
+        a bug in handling zero-length strings in the text of label objects. </p>
+      <p class="Normal">2007-07-06 4.beta16 for Windows and Linux: Fixed a bug with faces, introduced
+        in 4.beta15. </p>
+      <p class="Normal">2007-04-27 4.beta15 for Windows and Linux: Michael Temkine fixed some
+        bugs, added new lighting to boxes, implemented keyboard input for Windows,
+        and added boxlighttest.py to the example programs. </p>
+      <p class="Normal">2006-12-30 4.beta14 for Windows and Linux (some of these were corrected
+        in 4.beta12 and 4.beta13): Corrects width of arrows, positioning of cones,
+        compatibility of old and new formats for specifying lighting, and putting
+        a helix in a frame.</p>
+      <p class="Normal">2006-12-11 4.beta11 for Windows: Arthur Siegel fixes bugs which made
+        quitting a program error-prone on Windows. </p>
+      <p class="Normal">2006-12-02 4.beta10: Graphing is now as fast as it was in Visual 3. </p>
+      <p class="Normal">2006-12-02 4.beta9: Changes to make graphing go much faster, though
+        still not as fast as Visual 3 unless the axes are fixed.</p>
+      <p class="Normal">2006-11-30 4.beta8: Thanks to Arthur Siegel, this beta version uses
+        the new numpy, eliminating dependence on Numeric, which is no longer
+        supported.The Windows installer will install numpy if it is not already
+        installed.</p>
+      <p class="Normal">2006-10-10 Version 3.2.10 for Python 2.5 for Windows. Essentially no
+        change from 3.2.9, but runs on the now standard Python 2.5. There is
+        also at sourceforge.net a beta version 4.beta7 for Python 2.5 on Windows.</p>
+      <p class="Normal">2006-08-10 4.beta5: Fixed many bugs. Documentation now included, including
+        a description of remaining known bugs, some of which are serious. </p>
+      <p class="Normal">2006-08-06 4.beta4: Improvements to scene viewing
+          and autoscaling, including hysteresis that prevents fibrillation, where
+          the camera jitters in and out. The hysteresis feature can be seen by
+          running the example program bounce.py. It used to be that the camera
+          zoomed in and out as the ball bounced up and down, but now the camera
+          stays rock steady. Everywhere you can now use &quot;opacity&quot; 
+        instead of &quot;alpha&quot;. Graph and stonehenge now work. Labels still
+        problematic on Windows. Also still true that rings have fixed radius
+        and setting axis other than in x direction makes mouse coordinates wrong.
+        Arrows still get picked by mousing far from the arrow.</p>
+      <p class="Normal">2006-07-30 Significant restructuring of the beta version (now 4.beta3):
+        simplified scaling and viewing; various bugs fixed. Known remaining bugs:
+        Rings have fixed radius, and setting axis other than in x direction has
+        side effect of making mouse coordinates wrong. Arrows get picked by mousing
+        far from the arrow. Labels not working at all well on Windows. Graphing
+        not finished, though it works if x and y axes are comparable in scale.
+        Mouse handling buggy (e.g. in stonehenge example rotation is way too
+        fast; right drag and rotate are commingled). Some view stuff still not
+        quite right (move in toward stonehenge and the front disappears too soon).</p>
+      <p class="Normal">2006-06-01 Beta test version 4.beta1 created by
+          Jonathan Brandmeyer with major enhancements: surface textures, transparency,
+          sophisticated lighting. It also offers a new points object useful for
+          plotting data and a working 
+        &quot;visible&quot; attribute for frames that governs all objects in
+        the frame. </p>
+      <p class="Normal">Here is a <strong><a href="../contents3/index3.html">historical archive describing VPython 3</a></strong>.</p>
+      <p class="Normal">2006-03-02 Version 3.2.9: Corrects a bug in the
+          helix object (initial specification of an axis didn't treat the length
+          properly) and in the faces object (didn't 
+        &quot;broadcast&quot; a single vector across all normals). Improved documentation
+        of label and of stereo options.</p>
+      <p class="Normal">2006-02-14 Version 3.2.8: Corrects a bug in histograms (visual.graph);
+        didn't handle negative x values. Corrects a missing reference to GLU
+        for Linux installers.</p>
+      <p class="Normal">2006-02-12 Version 3.2.7: Corrects a bug in sliders (visual.controls)
+        in the case that the minimum value is nonzero. Improves the documentation
+        on dragging objects with the mouse.</p>
+      <p class="Normal">2006-01-29 Version 3.2.6: Corrects an error in the plotting of the last
+        portion of a many-point curve (introduced in version 3.2.4). Curves with
+        more than 1024 data points are now rendered by 1024 displayed points
+        spread uniformly across all the data points, whereas in the past for
+        example 1026 data points were rendered by 513 displayed points.</p>
+      <p class="Normal">2005-12-20 Version 3.2.5: Restores missing component of (optional) numarray
+        module; corrects spelling in documentation of display.get_selected();
+        uses this feature in graph.py rather than the old kludge of creating
+        an invisible sphere to save and restore the currently selected display
+        when creating a gdisplay object.</p>
+      <p class="Normal">2005-12-19 Version 3.2.4 fixes the following errors:<br />
+        1) curve now always plots final point (so there isn't a gap at the end),<br />
+        2) diff_angle(a,b) is 0 if either a.mag or b.mag is 0 instead of pi/2
+        (one could argue that it should be an error, or NaN, &quot;not a number&quot;,
+        but making the result zero is consistent with norm(vector(0,0,0)) is
+        also zero),<br />
+        3) frame documentation changed to explain that frame.objects list only
+        visible objects,<br />
+        4) makes display.exit = False again work (only a single graphics window closes
+        when you click its close box).</p>
+      <p class="Normal">2005-05-10 Version 3.2.0 fixes known errors except that ESC does not
+        quit the special full-screen mode (scene.fullscreen = True). This also introduces
+        the new feature scene.stereo = 'crosseyed', which is like 'passive' but
+        places the view for the left eye on the right (and vice versa).</p>
+      <p class="Normal">2004-07-22 Jonathan Brandmeyer releases major restructuring of VPython;
+        connection between Python and Visual now uses the Boost libraries rather
+        than the old CXX mechanism. There is a new built-in object, helix, and
+        it is used in a new, very fast version of the demo program crystal.py.
+        There is a new __copy()__ routine for copying objects; it replaces the
+        old __members__ attribute. There are two new functions to use with vectors:
+        vec1.diff_angle(vec2) returns the angle (in radians) between vectors
+        vec1 and vec2. You can convert a vector to a tuple by tuple(vec1) or
+        by the much faster option vec1.as_tuple(). Its known errors are that
+        in full stereo mode (redcyan, shutter glasses, etc.) the graphics windows
+        is sometimes all black. There was also a report of graphs not working
+        on some machines.</p>
+      <p class="Normal">2003-10-05 Implement greenmagenta stereo, contributed by Bruce Sherwood.
+        Rob Salgado pointed out that LCD projectors polarize green horizontally
+        (horizontal electric field) and red and blue vertically. This mode therefore
+        may be useful for LCD projection with passive polarizing glasses oriented
+        to pass horizontal electric field to the left eye and vertical electric
+        field to the right eye. (But note that often polarizing stereo glasses
+        pass electric field at 45 and 135 degrees, not 0 and 90 degrees.)</p>
+      <p class="Normal">2003-10-04 Change redcyan and yellowblue stereo to display in color.
+        The colors are 50% unsaturated to ensure that there is some signal in
+        the views for both eyes. Contributed by Bruce Sherwood. Thanks to Rob
+        Salgado for suggesting this capability.</p>
+      <p class="Normal">2003-10-01 Major bug fixed by Jonathan Brandmeyer; typically caused
+        problems with graphing. Locking/unlocking resources in the case of changing
+        obj.visible was inconsistent between the main Visual thread and the render
+        thread.</p>
+      <p class="Normal">2003-09-21 New installer for Linux/Unix that goes with either Python
+        2.2 or Python 2.3. If installed to accompany Python 2.3, it uses the
+        new IDLE that comes with Python 2.3. Thanks to Jonathan Brandmeyer.</p>
+      <p class="Normal">2003-09-18 Finish implementation of redblue, redcyan, yellowblue stereo
+        modes begun by John Zelle; Bruce Sherwood. Linux/Unix/MacOSX version
+        available 9/20.</p>
+      <p class="Normal">2003-09-14 Add ellipsoid object, contributed by Shaun Press.</p>
+      <p class="Normal">2003-09-04 Add support for stereo displays, contributed by John Zelle.</p>
+      <p class="Normal">2003-08-10 Windows installer to accompany Python 2.3. This does not
+        include IDLE for VPython, because its capabilities are provided by the
+        new IDLE component of Python 2.3.</p>
+      <p class="Normal">2003-06-27 Add pyramid object, contributed by Shaun Press, and fullscreen
+        display option, contributed by Hugh Fisher. Also add color.orange.</p>
+      <p class="Normal">2003-03-29 New self-configuring installer by Jonathan Brandmeyer for
+        Linux/Unix/Mac OSX. </p>
+      <p class="Normal">2002-07-22 Add fixedwidth attribute to arrow object; turns off scaling
+        of very short or very long arrows.</p>
+      <p class="Normal">2002-07-07 Add mag2 function to vectors; if V.mag is 5, V.mag2 is 25.</p>
+      <!-- InstanceEndEditable --></td>
+  </tr>
+  <tr>
+    <td height="16" colspan="4"></td>
+  </tr>
+</table>
+</body>
+<!-- InstanceEnd --></html>

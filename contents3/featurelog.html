@@ -1,0 +1,258 @@
+<html>
+<head>
+<title>Untitled Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link href="master.css" rel="stylesheet" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<table width="700" border="0" cellspacing="2" cellpadding="2">
+  <tr> 
+    <td width="318"><img src="vpython_small.gif" width="300" height="96"></td>
+    <td width="368"><h2><font color="#FF0000">Recent developments</font></h2></td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><a href="index3.html" target="_top" onClick="MM_nbGroup('down','group1','VPhome','',1)" onMouseOver="MM_nbGroup('over','VPhome','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPhome.gif" alt="" name="VPhome" width="102" height="35" border="0" onload=""></a></td>
+    <td><a href="download.html" target="_top" onClick="MM_nbGroup('down','group1','VPdownloads','',1)" onMouseOver="MM_nbGroup('over','VPdownloads','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPdownloads.gif" alt="" name="VPdownloads" width="199" height="35" border="0" onload=""></a></td>
+    <td><a href="webdoc/index.html" target="_top" onClick="MM_nbGroup('down','group1','VPdocs','',1)" onMouseOver="MM_nbGroup('over','VPdocs','','',1)" onMouseOut="MM_nbGroup('out')"><img name="VPdocs" src="VPdocs.gif" border="0" alt="" onLoad=""></a></td>
+  </tr>
+</table>
+<blockquote> 
+  <p>There is a beta test version of VPython which offers transparency, surface
+    textures, and sophisticated lighting. The example program texture_and_lighting.py
+    displays many of the new features of version 4 (a swinging spotlight illuminates
+    a translucent beach ball that rolls on a wood-texture table). Also see the
+    example program boxlighttest.py. Here is a <a href="webdoc/texture-opacity-lighting.html">summary</a> of
+    the new features and known bugs. You can download this beta version from <a href="http://sourceforge.net/projects/visualpython/" target="_blank">sourceforge</a>.
+    In the <a href="contributed.html">contributed</a> programs are a texture
+  generator and an image displayer that exploit the new capabilities.</p>
+  <p>2008-06-20 John Armstrong contributed an easy-to-use installer for VPython 3.2.11 for Intel Macs running OS X 10.5 (Leopard). </p>
+  <p>2008-03-10 A major redesign for Visual-4 Beta is underway. The central goal
+    of the new design is to create an architecture which is more robust, easier
+    to maintain and to extend, and easier to install and to use. The principal
+    architects are David Scherer and Bruce Sherwood. Steve Spicklemire and Ruth
+    Chabay have also been involved in discussions. As a result, a number of changes
+    to the current beta version are likely. Support for textures will change.
+    Rather than creating a texture bitmap, a programmer will be able to specify
+    a material (such as wood). Transparency will be supported. At this point
+    it is unclear exactly what support there will be for bitmapped images; they
+    may be supported only as "decals" which can be   applied to flat surfaces.
+    Lighting options may change; it is likely that spotlights will not be supported
+    at first in this version. You can look forward to higher-quality rendering
+    of scenes on computers with modern graphics cards. A Macintosh version which
+    does not require X11 or Fink will be created. Both the Windows version and
+    the Mac version will no longer depend on the large GTK libraries, which will
+  however still be the foundation for Linux. </p>
+  <p>2008-02-13 4.beta26 for Windows and Linux:
+    This addresses a problem in Windows Vista in which there could be a two-minute
+    freeze on a label object. It is possible the problem is still present in
+    reduced form, with this freeze happening only the first time you use the
+    new software; reports from Vista users would be helpful. This package includes
+    much enhanced documentation on what is required for a developer to build
+    Visual 4 on Windows and Mac. Some of this documentation may be of interest
+    to Linux users because of the details given concerning library dependencies. </p>
+  <p>2008-01-23 4.beta25 for Windows and Linux: Fixed not being able to close
+    the window while waiting for scene.mouse.getclick() or in a very tight, nearly
+    empty loop. Curves, points, and faces now accept color arrays that are either
+    red-green-blue or red-green-blue-opacity. Fixed bugs in helix object. Implemented
+  stereo mode &ldquo;crosseyed&rdquo; (all stereo modes now implemented).</p>
+  <p>2008-01-13 4.beta24 for Windows and Linux: For the new points object, remove
+    the "antialias" attribute and create a
+    shape attribute (currently "round" or "square"). Updated the summary of the
+    features in the beta version. Added mandelbrot.py to examples, to show how
+    to do pixel-oriented graphing. Fixed a bug which prevented specifying a color
+  array in a curve or points constructor.</p>
+  <p>2008-01-04 4.beta23 for Windows and Linux: Significant speed-up in rendering of boxes and curves. </p>
+  <p>2007-12-31 4.beta22 for Windows and Linux: Fixed bug that made the rendering of spheres very slow. </p>
+  <p>2007-12-25 4.beta21 for Windows and Linux: Default window now 600x600, which includes titlebar, toolbar, and borders. Now display max 10000 points of a curve (old Visual did max 1000). Implement and document curve.retain=N, meaning retain only the N most recently appended points. Improved tuning of balance between computational thread and render thread. Implemented toolbar option to restore to standard values center, forward, and up. Documentation for new display.get_titlebar_height(), display.get_toolbar_height(). Added rate statements to tictac.py, hanoi.py, and toroid_drag.py as a workaround for a problem with quitting a program with a loop that contains very little computation.   The statement scene.show_rendertime = True triggers a display in the  bottom left corner of the screen of the cycle time (milliseconds  between rendering of the scene) and render time (milliseconds required  to render the scene). The cycle time minus the render time is the  approximate number of milliseconds in the cycle devoted to your Python  computations.</p>
+  <p>2007-11-10 4.beta20 for Windows: Eliminate almost all Windows-specific code
+    in favor of gtk2, so that the source code for Visual is nearly universal
+    across all platforms. This version works at least as well as 4.beta16
+    but does not address all issues on Windows. The version number was advanced
+    from 4.beta16 to 4.beta20 as a marker that this represents a major change.</p>
+  <p>2007-09-25 Danny Caballero provides a more detailed version of instructions
+    for installing on a Mac. </p>
+  <p>2007-09-05 Brad Longo provides installation packages for Fedora Core 7 Linux
+    for stable and beta versions at <a href="http://www.bradlongo.com/VPD/vpd.html">http://www.bradlongo.com/VPD/vpd.html</a>.</p>
+  <p>2007-07-12 Production version 3.2.11 for Python 2.5 for Windows. Fixes a
+    bug in handling zero-length strings in the text of label objects. </p>
+  <p>2007-07-06 4.beta16 for Windows and Linux: Fixed a bug with faces, introduced
+    in 4.beta15. </p>
+  <p>2007-04-27 4.beta15 for Windows and Linux: Michael Temkine fixed some bugs,
+    added new lighting to boxes, implemented keyboard input for Windows, and
+    added boxlighttest.py to the example programs. </p>
+  <p>2006-12-30 4.beta14 for Windows and Linux (some of these were corrected
+    in 4.beta12 and 4.beta13): Corrects width of arrows, positioning of cones,
+    compatibility of old and new formats
+    for
+    specifying
+    lighting, and
+    putting a helix in a frame.</p>
+  <p>2006-12-11 4.beta11 for Windows: Arthur Siegel fixes bugs which made quitting
+    a program error-prone on Windows. </p>
+  <p>2006-12-02 4.beta10: Graphing is now as fast as it was in Visual 3. </p>
+  <p>2006-12-02 4.beta9: Changes to make graphing go much faster, though still
+      not as fast as Visual 3 unless the axes are fixed.</p>
+  <p>2006-11-30 4.beta8: Thanks to Arthur Siegel, this beta version uses the
+      new numpy, eliminating dependence on Numeric, which is no longer supported.The
+      Windows installer will install numpy if it is not already installed.</p>
+  <p>2006-10-10 Version 3.2.10 for Python 2.5 for Windows. Essentially no change
+      from 3.2.9, but runs on the now standard Python 2.5. There is also at sourceforge.net
+      a beta version 4.beta7 for Python 2.5 on Windows.</p>
+  <p>2006-08-10 4.beta5: Fixed many bugs. Documentation now included, including
+    a description of remaining known bugs, some of which are serious. </p>
+  <p>2006-08-06 4.beta4: Improvements to scene viewing and autoscaling, including 
+    hysteresis that prevents fibrillation, where the camera jitters in and out. 
+    The hysteresis feature can be seen by running the example program bounce.py. 
+    It used to be that the camera zoomed in and out as the ball bounced up and 
+    down, but now the camera stays rock steady. Everywhere you can now use &quot;opacity&quot; 
+    instead of &quot;alpha&quot;. Graph and stonehenge now work. Labels still 
+    problematic on Windows. Also still true that rings have fixed radius and setting 
+    axis other than in x direction makes mouse coordinates wrong. Arrows still 
+    get picked by mousing far from the arrow.</p>
+  <p>2006-07-30 Significant restructuring of the beta version (now 4.beta3): simplified 
+    scaling and viewing; various bugs fixed. Known remaining bugs: Rings have 
+    fixed radius, and setting axis other than in x direction has side effect of 
+    making mouse coordinates wrong. Arrows get picked by mousing far from the 
+    arrow. Labels not working at all well on Windows. Graphing not finished, though 
+    it works if x and y axes are comparable in scale. Mouse handling buggy (e.g. 
+    in stonehenge example rotation is way too fast; right drag and rotate are 
+    commingled). Some view stuff still not quite right (move in toward stonehenge 
+    and the front disappears too soon).</p>
+  <p>2006-06-01 Beta test version 4.beta1 created by Jonathan Brandmeyer with 
+    major enhancements: surface textures, transparency, sophisticated lighting. 
+    It also offers a new points object useful for plotting data and a working 
+    &quot;visible&quot; attribute for frames that governs all objects in the frame. 
+  </p>
+  <p>2006-03-02 Version 3.2.9: Corrects a bug in the helix object (initial specification 
+    of an axis didn't treat the length properly) and in the faces object (didn't 
+    &quot;broadcast&quot; a single vector across all normals). Improved documentation 
+    of label and of stereo options.</p>
+  <p>2006-02-14 Version 3.2.8: Corrects a bug in histograms (visual.graph); didn't 
+    handle negative x values. Corrects a missing reference to GLU for Linux installers.</p>
+  <p>2006-02-12 Version 3.2.7: Corrects a bug in sliders (visual.controls) in 
+    the case that the minimum value is nonzero. Improves the documentation on 
+    dragging objects with the mouse.</p>
+  <p>2006-01-29 Version 3.2.6: Corrects an error in the plotting of the last portion 
+    of a many-point curve (introduced in version 3.2.4). Curves with more than 
+    1024 data points are now rendered by 1024 displayed points spread uniformly 
+    across all the data points, whereas in the past for example 1026 data points 
+    were rendered by 513 displayed points.</p>
+  <p>2005-12-20 Version 3.2.5: Restores missing component of (optional) numarray 
+    module; corrects spelling in documentation of display.get_selected(); uses 
+    this feature in graph.py rather than the old kludge of creating an invisible 
+    sphere to save and restore the currently selected display when creating a 
+    gdisplay object.</p>
+  <p>2005-12-19 Version 3.2.4 fixes the following errors:<br>
+    1) curve now always plots final point (so there isn't a gap at the end),<br>
+    2) diff_angle(a,b) is 0 if either a.mag or b.mag is 0 instead of pi/2 (one 
+    could argue that it should be an error, or NaN, &quot;not a number&quot;, 
+    but making the result zero is consistent with norm(vector(0,0,0)) is also 
+    zero),<br>
+    3) frame documentation changed to explain that frame.objects list only visible 
+    objects,<br>
+    4) makes display.exit = False again work (only a single graphics window closes 
+    when you click its close box).</p>
+  <p>2005-05-10 Version 3.2.0 fixes known errors except that ESC does not quit 
+    the special full-screen mode (scene.fullscreen = True). This also introduces 
+    the new feature scene.stereo = 'crosseyed', which is like 'passive' but places 
+    the view for the left eye on the right (and vice versa).</p>
+  <p>2004-07-22 Jonathan Brandmeyer releases major restructuring of VPython; connection 
+    between Python and Visual now uses the Boost libraries rather than the old 
+    CXX mechanism. There is a new built-in object, helix, and it is used in a 
+    new, very fast version of the demo program crystal.py. There is a new __copy()__ 
+    routine for copying objects; it replaces the old __members__ attribute. There 
+    are two new functions to use with vectors: vec1.diff_angle(vec2) returns the 
+    angle (in radians) between vectors vec1 and vec2. You can convert a vector 
+    to a tuple by tuple(vec1) or by the much faster option vec1.as_tuple(). Its 
+    known errors are that in full stereo mode (redcyan, shutter glasses, etc.) 
+    the graphics windows is sometimes all black. There was also a report of graphs 
+    not working on some machines.</p>
+  <p>2003-10-05 Implement greenmagenta stereo, contributed by Bruce Sherwood. 
+    Rob Salgado pointed out that LCD projectors polarize green horizontally (horizontal 
+    electric field) and red and blue vertically. This mode therefore may be useful 
+    for LCD projection with passive polarizing glasses oriented to pass horizontal 
+    electric field to the left eye and vertical electric field to the right eye. 
+    (But note that often polarizing stereo glasses pass electric field at 45 and 
+    135 degrees, not 0 and 90 degrees.)</p>
+  <p>2003-10-04 Change redcyan and yellowblue stereo to display in color. The 
+    colors are 50% unsaturated to ensure that there is some signal in the views 
+    for both eyes. Contributed by Bruce Sherwood. Thanks to Rob Salgado for suggesting 
+    this capability.</p>
+  <p>2003-10-01 Major bug fixed by Jonathan Brandmeyer; typically caused problems 
+    with graphing. Locking/unlocking resources in the case of changing obj.visible 
+    was inconsistent between the main Visual thread and the render thread.</p>
+  <p>2003-09-21 New installer for Linux/Unix that goes with either Python 2.2 
+    or Python 2.3. If installed to accompany Python 2.3, it uses the new IDLE 
+    that comes with Python 2.3. Thanks to Jonathan Brandmeyer.</p>
+  <p>2003-09-18 Finish implementation of redblue, redcyan, yellowblue stereo modes 
+    begun by John Zelle; Bruce Sherwood. Linux/Unix/MacOSX version available 9/20.</p>
+  <p>2003-09-14 Add ellipsoid object, contributed by Shaun Press.</p>
+  <p>2003-09-04 Add support for stereo displays, contributed by John Zelle.</p>
+  <p>2003-08-10 Windows installer to accompany Python 2.3. This does not include 
+    IDLE for VPython, because its capabilities are provided by the new IDLE component 
+    of Python 2.3.</p>
+  <p>2003-06-27 Add pyramid object, contributed by Shaun Press, and fullscreen 
+    display option, contributed by Hugh Fisher. Also add color.orange.</p>
+  <p>2003-03-29 New self-configuring installer by Jonathan Brandmeyer for Linux/Unix/Mac 
+    OSX. </p>
+  <p>2002-07-22 Add fixedwidth attribute to arrow object; turns off scaling of 
+    very short or very long arrows.</p>
+  <p>2002-07-07 Add mag2 function to vectors; if V.mag is 5, V.mag2 is 25.</p>
+</blockquote>
+<p>[<a href="index3.html">VPython home page</a>]</p>
+</body>
+</html>

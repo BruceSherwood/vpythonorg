@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0033)http://cil.andrew.cmu.edu/ct.html -->
+<HTML><HEAD><TITLE>The cT Programming Language</TITLE>
+
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MSHTML 6.00.2716.2200" name=GENERATOR></HEAD>
+<BODY bgcolor="#FFFFFF" text="#000000">
+<H3 align=center>The cT  Programming Language and Environment</H3>
+<H3 align=left>Important announcement about Python</H3>
+<P>We have an important announcement to make about the <A 
+href="http://cil.andrew.cmu.edu/ct.html#Overview">cT</A> programming language 
+that we have been developing in the Center for Innovation in Learning at 
+Carnegie Mellon University. We will continue to provide a certain level of 
+support for cT for some time, but we are now turning our attention to developing 
+a new programming environment, by adding 3D graphics to the Python programming 
+language. We hope that eventually this can be a replacement for cT, but there is 
+a lot of work required to get there.</P>
+<P>Python is a powerful programming language invented by Guido van Rossum about 
+ten years ago. Superficially Python resembles cT, in that there are few 
+extraneous brackets, etc., and loops and ifs have required indenting. Here are 
+equivalent subroutines to calculate a factorial in cT and in Python:</P>
+<P>unit&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; factorial(x; product)&nbsp;&nbsp; $$ 
+cT<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; f: x, 
+product<BR>calc&nbsp;&nbsp;&nbsp;&nbsp; product := x<BR>loop&nbsp;&nbsp;&nbsp; x 
+&gt; 1<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+calc&nbsp;&nbsp;&nbsp; x := 
+x-1<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+product := product*x<BR>endloop</P>
+<P>def factorial(x):&nbsp;&nbsp; # Python; note that there is no need to define 
+variables<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; product = 
+x<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; while x &gt; 
+1:<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+x = 
+x-1<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+product = product*x<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 
+product</P>
+<P>Python is quite different from cT in being object-oriented. As is the case 
+with cT, it is easy to start writing simple programs in Python, and even using 
+classes and objects involves a relatively gentle learning curve. Python is 
+cross-platform (Windows, Mac, Linux). It is open source (and therefore free) and 
+supported by a sizable developer community. The user community though small in 
+comparison with the users of C is quite large compared to the cT user community. 
+Python is a general-purpose language, though a very common use of Python is for 
+the same kinds of application for which Perl is used, to manage servers, 
+administer systems, etc. There is an extensive web site, <A 
+href="http://www.python.org/">https://www.python.org/</A>. A good textbook is 
+"Learning Python" by Mark Lutz and David Ascher, O’Reilly 1999.</P>
+<P>Python itself does not provide graphics output, though it is possible to do 
+2D graphics using the Tk graphics library (this is difficult however and really 
+intended only for expert programmers). Recently David Scherer, a sophomore in 
+computer science at Carnegie Mellon, created a 3D graphics module for Python, 
+called "Visual", that is exceptionally easy to use; the combination of Python 
+with Visual is called <A 
+href="http://virtualphoton.pc.cc.cmu.edu/projects/visual/">VPython</A>. Suppose 
+you want to write a program that calculates and displays the Earth orbiting the 
+Sun. You create two spheres and name them "Earth" and "Sun". Then in a loop, one 
+instant after another, you compute the new positions of the Earth, without 
+writing any graphics output statements. Visual, running in parallel to your 
+program, watches the current values of your Earth object and automatically 
+updates a 3D scene of the Earth and Sun. This allows you to focus on the 
+computational aspects and leave completely to VPython the difficult task of 
+making a corresponding display in three dimensions.</P>
+<P>Moreover, with no programming effort on your part, you can use the mouse to 
+navigate in the 3D scene, looking at the scene from different points of view 
+while the program is running.</P>
+<P>As an added bonus, VPython supports not only graphics objects such as spheres 
+and boxes and arrows but also full vector arithmetic. You can add or subtract 
+vectors, multiply them by scalars, take dot and cross products, etc. This makes 
+it much easier (and faster) to deal with vector quantitties. Often one writes a 
+single vector statement rather than two or three vector component 
+statements.</P>
+<P>Some physics students at Carnegie Mellon used cT to do computer modeling (see 
+<A 
+href="http://cil.andrew.cmu.edu/mi.html">http://cil.andrew.cmu.edu/mi.html</A>). 
+Students are now using VPython&nbsp; instead, because we see big advantages to 
+being able to focus better on the physics computations (without graphics 
+statements), with 3D visualization, and with the possibility of doing true 
+vector rather than component calculations.</P>
+<P>The Python language itself is cross-platform, but not with respect to 
+graphics. VPython works on Windows, Linux, and Macintosh (though some of the 
+nice editing features available for Windows and Linux do not yet work on the 
+Macintosh version).</P>
+<P>You might ask, why not build Visual on top of cT rather than on top of 
+Python? The answer is basically that because cT is not object-oriented, it would 
+be essentially impossible to do this. We think the advantages are so compelling 
+that we have moved from cT to VPython.</P>
+<P>We are also encouraged in this move by the fact that Guido van Rossum himself 
+has become very interested in what he calls "Programming for Everybody" (see 
+essay at www.python.org). Until recently Python was used mostly by expert 
+professional programmers. Guido believes (correctly, in our judgement) that 
+Python could make it possible for novice programmers to write useful programs, 
+and he wants to address the many difficulties that novice programmers face. cT 
+has attempted to support nonprofessional programmers, and we continue to be 
+interested in this challenge.</P>
+<P>The VPython group at Carnegie Mellon has consisted of computer science 
+students David Scherer, Ari Heitner, and Ian Peters, and Center for Innovation 
+in Learning personnel David Andersen, Ruth Chabay, and Bruce Sherwood. In 
+addition to work on Visual itself, the group has addressed various issues to 
+make Python easy to use by novice programmers. Significant improvements have 
+been made in installation procedures and in "Idle," the integrated Python 
+editing and testing environment.</P>
+<P>At present, VPython offers 3D graphics but does not offer everything that cT 
+offers, including buttons, sliders, and edit panels. One of the thrusts of our 
+future work is to bring these capabilities to VPython , in an easy-to-use form, 
+based on our experience with cT. In the long run we would hope that 
+nonprofessional programmers will be able to create in VPython the kinds of 
+applications for which they have used cT in the past.</P>
+<P>As far as support for cT is concerned, we expect to maintain cT for some 
+time, to the extent of fixing serious bugs and/or getting cT to run on new 
+versions of operating systems, but we don’t intend to add new features to cT. At 
+this time it is an open question whether we can provide in the VPython 
+environment capabilities comparable to those currently available in cT. If we 
+can do this, at some point we will stop supporting cT. If someone else would 
+like to take over support and development of cT, we would be happy to assist in 
+a transfer of technology and responsibility.</P>
+<P>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; David Andersen and Bruce 
+Sherwood</P>
+<H3><A name=Overview></A>Overview of cT</H3>
+<P>The cT programming language is an algorithmic language like C, Pascal, 
+Fortran, and Basic, but greatly enhanced by multimedia capabilities, including 
+easy-to-use support for color graphics, mouse interactions, and even movies in 
+QuickTime or Video for Windows format.<BR><BR>The cT programming 
+<STRONG>language</STRONG> offers easy</P>
+<BLOCKQUOTE>
+  <P><STRONG>programmability</STRONG> of multimedia programs, 
+  with<BR><STRONG>portability</STRONG> across Macintosh, Windows, Linux, and 
+  Unix.</P></BLOCKQUOTE>
+<P>The cT programming <STRONG>environment</STRONG> offers</P>
+<BLOCKQUOTE>
+  <P><STRONG>on-line help</STRONG> with executable program examples,<BR>a 
+  <STRONG>graphics editor</STRONG> for automatic generation of graphics 
+  commands,<BR><STRONG>incremental compiling</STRONG> to provide rapid 
+  turn-around, and<BR>detailed <STRONG>error diagnosis</STRONG>.</P></BLOCKQUOTE>
+<P>cT has been developed in the <A href="http://cil.andrew.cmu.edu/">Center for 
+Innovation in Learning</A> at <A href="http://www.cmu.edu/">Carnegie Mellon 
+University</A> in Pittsburgh by <A 
+href="http://cil.andrew.cmu.edu/david.andersen.html">David Andersen</A>, <A 
+href="http://cil.andrew.cmu.edu/bruce.sherwood.html">Bruce Sherwood</A>, Judith 
+Sherwood, and Kevin Whitley. cT is a trademark of Carnegie Mellon 
+University.</P>
+<OL>
+  <LI><A href="http://cil.andrew.cmu.edu/ct.html#Tool">When is cT the right 
+  tool?</A> 
+  <LI><A href="http://cil.andrew.cmu.edu/ct.html#Language Features">Major 
+  features of the cT <EM>language</EM></A> 
+  <LI><A href="http://cil.andrew.cmu.edu/ct.html#Environment Features">Major 
+  features of the cT <EM>programming environment</EM></A> 
+  <LI><A href="http://cil.andrew.cmu.edu/ct.html#Obtaining cT">Obtaining cT at 
+  no cost</A> 
+  <LI><A href="http://cil.andrew.cmu.edu/ct.html#Sample Programs">Sample 
+  Programs Included with cT</A> 
+  <LI><A href="http://cil.andrew.cmu.edu/ct.html#References">cT References</A> 
+  </LI></OL>
+<HR align=left>
+
+<H3><A name=Tool></A>When is cT the right tool?</H3>
+<P>There are many excellent applications available for creating pictures and 
+diagrams, and for making multimedia presentations, without having to write your 
+own computer program. <BR><BR>However, it is sometimes the case that doing 
+something really new and different is hard to do with these non-programming 
+applications, because they often don't provide enough control of interactions 
+and enough calculational capability to do what you really want to do. <BR><BR>cT 
+offers the open-ended flexibility and power associated with programming 
+languages but eliminates many of the difficulties and complexities usually 
+associated with using a programming language.<BR><BR>
+<HR align=left>
+
+<H3><A name="Language Features"></A>Major features of the cT 
+<EM>language</EM></H3>
+<UL>
+  <LI>interactive graphics in windowed environments 
+  <LI>instant portability across Macintosh, Windows, Linux, and Unix 
+  <LI>support for QuickTime and Video for Windows 
+  <LI>animation of bitmap images 
+  <LI>color support for palette color and true color 
+  <LI>built-in support for buttons, sliders, and scrolling text panels 
+  <LI>multi-font text and character-string variables 
+  <LI>"hot" text (for hypertext applications) 
+  <LI>pull-down menus 
+  <LI>mouse and keyset inputs 
+  <LI>optional rescaling of text and graphics to fit the window 
+  <LI>analysis of words and sentences 
+  <LI>analysis of numbers and algebraic expressions 
+  <LI>rich sequencing options 
+  <LI>standard calculational capabilities 
+  <LI>numeric and text files </LI></UL>
+<P>
+<HR align=left>
+
+<H3><A name="Environment Features"></A>Major features of the cT <EM>programming 
+environment</EM></H3>
+<UL>
+  <LI>integrated editing and execution environment 
+  <LI>incremental compilation for fast revision and execution 
+  <LI>on-line reference manual with executable examples 
+  <LI>graphics editor which generates cT graphics statements 
+  <LI>accurate and informative error diagnostics 
+  <LI>an extensive suite of <A 
+  href="http://cil.andrew.cmu.edu/ct.html#Sample Programs">sample programs</A> 
+  in source form </LI></UL>
+<HR align=left>
+
+<H3><A name="Obtaining cT"></A>Obtaining cT</H3>
+<P>Download cT 3.0 at no cost for <STRONG>Windows, Macintosh, or Linux</STRONG>: 
+<A href="http://cil.andrew.cmu.edu/projects/ct/">Click here to view the license 
+agreement and download cT</A>.<BR><BR>Programs written in cT run compatibly on 
+all these machines, with no changes required. All that is needed is to transfer 
+the file and compile it.<BR><BR>cT formerly was distributed by <A 
+href="http://www.aip.org/pas">Physics Academic Software</A>, whom we thank for 
+their professional work on behalf of cT. Vastly expanded use of the World Wide 
+Web has made it now appropriate to try a network distribution mechanism. 
+<BR><BR><STRONG>Earlier versions</STRONG>: If you have used an earlier version 
+of cT, be sure to invoke the on-line help and read the section on "New 
+Features," which describes new features and changes from earlier 
+versions.<BR><BR><STRONG>Unix</STRONG>: If you are at Carnegie Mellon, you can 
+run an older version on Unix by typing cT on an Andrew SparcStation, DECStation, 
+or HP workstation running X, execute <CITE>cT</CITE>. To run the latest version, 
+execute <CITE>xct</CITE>. <BR>
+<HR align=left>
+
+<H3><A name="Sample Programs"></A>Sample Programs Included with cT 3.0</H3>
+<P>Here are descriptions of the cT programs <A 
+href="http://www.andrew.cmu.edu/course/33-131/getct.htm">available in source 
+form</A> to give you&nbsp; ideas for your own work:</P>
+<H4>General</H4>
+<UL>
+  <LI><B>sample</B> -- This program is a sampler of many of the basic 
+  capabilities of cT: color graphics, animations, pull-down menus, mouse clicks 
+  and drags, multi-font text, "hot" text, calculations, graphing of functions, 
+  and response analysis. After running the program you might want to study the 
+  program code to see how the effects are achieved. 
+  <LI><B>exercise</B> -- A set of exercises to help you learn the basic concepts 
+  of programming in cT. The program contains a number of incomplete units with 
+  suggestions on how to complete them. The cT help contains the information 
+  needed to do these exercises. 
+  <LI><B>editfile</B> -- A more complex version of the example discussed in "A 
+  File Editor Application". The editfile.t version reads and writes styled files 
+  containing multiple sections (that is, created with multiple dataout-s). 
+  <LI><B>showicon</B> -- A program that displays the icons in an icon file. This 
+  can be useful in selecting icon numbers for use in a plot, move, cursor, or 
+  pattern command. 
+  <LI><B>icon</B> -- A program for designing icons, cursors, and patterns, 
+  except on the Macintosh, for which the program Icon Maker is supplied. 
+  <LI><B>japan</B> -- This program displays Japanese "Kanji" characters, using a 
+  set of icons "KANJI18.FCT". </LI></UL>
+<H4>Graphics</H4>
+<UL>
+  <LI><B>draw</B> -- A basic drawing editor, with many of the features of 
+  commercial drawing editors, such as grouping objects together, applying 
+  patterns, colors, and arrowheads, and designing your own palette of colors. 
+  Drawings are saved in the form of cT source code, so you may find draw.t 
+  useful in creating portions of your own programs, including color palette 
+  commands. This program also illustrates one approach to "object-oriented" 
+  programming in cT. 
+  <LI><B>map</B> -- A little program which displays a map of the 48 contiguous 
+  states of the United States, with an ability to zoom in and out. </LI></UL>
+<H4>Color</H4>
+<UL>
+  <LI><B>palette</B> -- A use file which provides a set of useful additional 
+  colors beyond the basic eight cT colors, including dark red, dark green, and 
+  light, regular, and dark versions of slate, teal, coral, gray, gold, lavender, 
+  and cerise. 
+  <LI><B>setcolor</B> -- A use file which lets you experiment with the color of 
+  an object, in the full context of your running program. This is useful for 
+  deciding exactly what color the object should be in relationship to other 
+  elements of your display. 
+  <LI><B>chaos</B> -- A plot of the chaos in a simple population growth scheme. 
+  Usually what is plotted is just the final-state population. This program uses 
+  hues from blue to red to show the approach to the final state. The red dots 
+  correspond to the usual plot. 
+  <LI><B>spiro</B> -- Make geometrical color designs by choosing the total 
+  number of vertices and the number of vertices to skip. It uses the use-file 
+  colorpic.t. </LI></UL>
+<H4>Video</H4>
+<UL>
+  <LI><B>video</B> -- A program which gives an example of how to build your own 
+  special-purpose video controller, using the basic video commands. This file 
+  can be used as a use file by other programs. A short video clip for testing 
+  purposes is provided for Macintosh and Windows. </LI></UL>
+<H4>Games</H4>
+<UL>
+  <LI><B>BigForty</B> -- A solitaire card game which uses touch regions, so that 
+  event-handling routines are driven automatically; there are no pause commands 
+  in the program. The program uses the use file animate to provide the option of 
+  sliding cards smoothly over the background on sufficiently fast computers. 
+  <LI><B>rilato</B> -- A Mah Jong-like game in which you match corresponding 
+  pairs of tiles. Pairs can be chemical elements and their symbols, American 
+  presidents and their years in office, English kings and their years of reign, 
+  or American states and their capital cities. You can also create your own 
+  lists of pairs. </LI></UL>
+<H4>Physics and Math</H4>
+<UL>
+  <LI><B>grapher</B> -- Solves and graphs systems of algebraic or ordinary 
+  differential equations. This program was a first prize winner in the 1990 
+  Educational Software Contest of the journal <EM>Computers in Physics</EM> 
+  (Sept./Oct. 1990, p. 540). The program includes an interactive explanation of 
+  how to use the program. 
+  <LI><B>hill</B> -- Draw a hill with the mouse, place a block on the hill, give 
+  it an initial speed, and watch it move. If there is a valley, the block may 
+  move back and forth forever (no friction), or slowly come to rest (if you add 
+  some friction with the slider control). While the block moves, bar graphs 
+  display the kinetic, potential, and total energy. At the beginning of the 
+  program, the program makes a measurement to determine the animation step size, 
+  so the animation runs at about the same speed on fast and slow computers. 
+  <LI><B>orbit</B> -- Launch a satellite near two stationary "earths," and watch 
+  the unusual orbits that result. At the end of the file is a 4th-order 
+  Runge-Kutta numerical integration procedure which may be useful in other 
+  contexts. 
+  <LI><B>optics</B> -- Place lens and mirrors along a bench, then flash a light. 
+  Rays spread out and are bent by the optical elements, producing a spot on a 
+  piece of film. There is an interactive explanation of how to use the program. 
+  <LI><B>quantumw</B> -- Study the quantum behavior of an electron in various 
+  kinds of potential wells. If the well is symmetrical, the bound states have 
+  symmetrical wave functions. 
+  <LI><B>sonar</B> and <EM>voltage</EM> -- Simple examples of 
+  microcomputer-based-laboratory software. Connect a Universal Lab Interface 
+  (ULI) and Sonic Ranger (distributed by Vernier Software of Portland, Oregon, 
+  phone 503-297-5317) to the serial port of either a Macintosh or an MS-DOS 
+  machine, and <EM>sonar</EM> will track your motion in front of the motion 
+  detector. If you don't have this equipment, use the mouse to make motions that 
+  are graphed on the screen. The program <EM>voltage</EM> uses the ULI to plot 
+  voltage as a function of time. 
+  <LI><B>xyplot</B> -- Plot a function of two variables, f(x,y), using a set of 
+  icons of differing dot densities (icon file random). </LI></UL>
+<H4>Inter-computer programs using sockets</H4>
+<UL>
+  <LI><B>InterDraw</B> -- Run this program on two different Macintoshes in the 
+  same AppleTalk zone, or two different Unix workstations on the same network 
+  (provided that a cT server has been established), and two people can draw on 
+  each other's screens, or run two copies of the program on one Unix 
+  workstation. This program is a simple example of the use of the socket command 
+  to link separate programs together. 
+  <LI><B>Battleship</B> -- The classic "battleship" game played on two different 
+  Macintoshes in the same AppleTalk zone, or two networked Unix workstations 
+  (provided that a cT server has been established). This is another example of 
+  the use of the socket command. It also provides another example of how to do 
+  object-oriented programming in cT. The program uses the icons file SHIPicn. 
+  </LI></UL>
+<HR align=left>
+
+<H3><A name=References></A>cT References</H3>
+<UL>
+  <LI>The March/April 1993 issue of the journal "Computers in Physics" (p. 136) 
+  contains an article by Bruce Sherwood and David Andersen describing cT and 
+  various applications written in cT. 
+  <LI>A discussion of some of the issues related to machine independence may be 
+  found in an article by David Andersen and Bruce Sherwood in the November 1991 
+  issue of Byte Magazine (p. 221). </LI></UL>
+<P>&nbsp;</P></BODY></HTML>

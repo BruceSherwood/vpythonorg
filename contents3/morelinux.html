@@ -1,0 +1,148 @@
+<html>
+<head>
+<title>VPython Linux installation details</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link href="master.css" rel="stylesheet" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<table width="700" border="0" cellspacing="2" cellpadding="2">
+  <tr> 
+    <td width="318"><img src="vpython_small.gif" width="300" height="96"></td>
+    <td width="368"><h2><font color="#FF0000"><font face="Verdana, Arial, Helvetica, sans-serif">More 
+        Linux installation details</font></font></h2></td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><a href="index3.html" target="_top" onClick="MM_nbGroup('down','group1','VPhome','',1)" onMouseOver="MM_nbGroup('over','VPhome','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPhome.gif" alt="" name="VPhome" width="102" height="35" border="0" onload=""></a></td>
+    <td><a href="download.html" target="_top" onClick="MM_nbGroup('down','group1','VPdownloads','',1)" onMouseOver="MM_nbGroup('over','VPdownloads','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPdownloads.gif" alt="" name="VPdownloads" width="199" height="35" border="0" onload=""></a></td>
+    <td><a href="webdoc/index.html" target="_top" onClick="MM_nbGroup('down','group1','VPdocs','',1)" onMouseOver="MM_nbGroup('over','VPdocs','','',1)" onMouseOut="MM_nbGroup('out')"><img name="VPdocs" src="VPdocs.gif" border="0" alt="" onLoad=""></a></td>
+  </tr>
+</table>
+<p>The VPython installation procedure should work on most versions of Red Hat 
+  Linux, and it may work in other Linux environments as well. Here are tips on 
+  installing VPython on Debian and on Mandrake.</p>
+<hr>
+<h3>Installing VPython on Debian by Andy Dougherty, Dept. of Physics, Lafayette 
+  College </h3>
+<p>Other packages you may need are commonly, but not universally, installed on 
+  many Linux systems. I can tell you that on my Debian system, I also needed to 
+  add glib, gtk+, and some sort of OpenGL library. You may need to check that 
+  you have the development versions of the libraries. [1] </p>
+<p>VPython includes gtkglarea, but if you can't use the supplied i386 rpm [2] 
+  you may also need to install gtkglarea from source. If so, I'd recommend using 
+  the slightly-newer gtkglarea-1.2.3 -- it worked marginally better for me. </p>
+<p>Where you get OpenGL may depend, in part, on which X server you're using. I'm 
+  currently trying Mesa as an OpenGL replacement, but with mixed success. The 
+  Visual window only seems to be updated occasionally; with the same program under 
+  Windows, the updating is nearly continuous. Hope this helps, </p>
+<p>[1] For some libraries, some Linux distributions sometimes ship both runtime 
+  and development versions. You need the development version if you want to compile. 
+</p>
+<p>[2] e.g. if you don't have an rpm command, or if if you're running on a different 
+  architecture, such as an Alpha or SPARC. </p>
+<hr>
+<h3>Installing VPython on Mandrake Linux by Francois Papa </h3>
+<p>1) I installed python 2.2, which is on the distribution CDs. </p>
+<p>2) I installed the "Numeric" library (found on sourceforge, but also available 
+  on the CDs) and libpython2.2-devel (on the CD). </p>
+<p>3) I installed libMesaGLU1, libMesaGLU1-devel, libMesaGL1, libMesaglut3 (Mesa 
+  already worked properly with Tuxracer). I also installed the official Nvidia 
+  drivers. </p>
+<p>4) I had to modify several files in the RedHat Linux installer. The modifications 
+  were essentially related to the path of the python2.2 executables and headers. 
+  I made the following modifications.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;- install (main directory):<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PREFIX=/usr instead of /usr/local 
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;For Numeric, (PREFIX}/lib/${PYTHON) 
+  instead of (PREFIX}/bin/${PYTHON) </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;- the Makefile in the cvisual directory:<br>
+  &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PYTHON_INCLUDES = -I/usr/include/python2.2/ 
+  instead of /usr/local/include/ </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;- the *.d files in the cvisual directory:<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; /usr/include/python2.2 instead of 
+  /usr/local/include/python2.2 </p>
+<p>5) I modified two #include statements in xgl.h in the cvisual directory: <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gtk-1.2/gdk/gdk.h instead of gdk/gdk.h 
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; gtk-1.2/gtk/gtk.h instead of gtk/gtk.h</p>
+<p>In addition, Andrew Morrison reported the following:</p>
+<p>I have successfully installed on Mandrake 8.1. The notes by Francois Papa were 
+  helpful, but conditions were not exactly the same for my system. The difference 
+  between our systems was that somehow my installation of python2.2 uses /usr/local/ 
+  and his used /usr/. I did have to make the other changes he suggested. Martin 
+  Lutz told me, &quot;When I tried to install the libMesaGLU1 and libMesaGLU1-devel 
+  rpms, I found I also needed libgcc3.0. Maybe installing that will allow your 
+  compile to work.&quot;</p>
+<p>In a separate note Martin Lutz reported that on a modified Mandrake 8.2 he 
+  was able to compile Visual using gcc-2.96, but compilation failed using gcc-3.1. 
+  He offers the following details: </p>
+<p>In configuration file /etc/colorgccrc you can "re-vive" the gcc-2.96 version 
+  by commenting out the lines with g++-3.1 and erasing the # at the beginning 
+  of the lines with g++-2.96: </p>
+<p># Define the paths to the actual location of the various compilers.<br>
+  # (Currently, colorgcc only understands these: g++ gcc c++ cc)<br>
+  #g++: /usr/bin/g++-3.1 <br>
+  #gcc: /usr/bin/gcc-3.1 <br>
+  #c++: /usr/bin/g++-3.1 <br>
+  #cc: /usr/bin/gcc-3.1 </p>
+<p>g++: /usr/bin/g++-2.96 <br>
+  gcc: /usr/bin/gcc-2.96 <br>
+  c++: /usr/bin/g++-2.96 <br>
+  cc: /usr/bin/gcc-2.96 </p>
+<p><a href="linux_download.html">Return to Linux download page</a></p>
+</body>
+</html>

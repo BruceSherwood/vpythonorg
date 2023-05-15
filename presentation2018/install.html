@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>VPython</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link type="text/css" href="vp.css" rel="stylesheet" />
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery-ui.custom.min.js"></script>
+</head>
+
+<body>
+
+<div><i>Click "Read more" to view the details of each topic</i></div>
+
+<table>
+    <col width="700">
+<tr>
+<th>
+<div id="content">
+        
+    <b>Using VPython with installed Python</b>
+    <p>We recommend installing the <a href="https://www.anaconda.com/download" target=_blank>Anaconda Python distribution</a>.    <br>
+      <br>
+      The vpython module currently works with Python versions 3.8, 3.9, and 3.10.<br>
+      <br>
+      The 3D displays are rendered by WebGL in a browser window. For details, see<br>
+&nbsp; &nbsp;&nbsp;https://vpython.org/contents/VPythonArchitecture.pdf<br>
+      <br>
+      The vpython module is available using<br>
+      &nbsp;&nbsp;&nbsp;&nbsp; "conda install -c vpython vpython" or    <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;conda install -c conda-forge vpython&quot; or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&quot;conda install -c conda-forge/label/cf202003 vpython&quot; or<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;      "pip install vpython"        
+      <br>
+    <p>    To update to later versions of vpython use<br>
+  &nbsp;&nbsp;&nbsp;&nbsp; "conda update -c vpython vpython" or<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"pip install -U vpython"    
+    <p><strong><em>When running from a terminal</em></strong>, if the program does not end with a loop<br>
+      containing a rate() statement,      you need to add &quot;while True: rate(30)&quot;<br>
+      to the end of the program. This is not necessary when      launching from <br>
+      environments such as Jupyter notebook, IDLE, or Spyder. <br>
+    <h4>Using the vpython module outside a Jupyter notebook</h4>
+    <div class="accordion">
+        <i>Read more</i>
+        <div>
+        You can launch a VPython program from applications such as IDLE, Spyder, or a terminal.
+        <p>This short program will display a white box on a black background:
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;from vpython import *<br>&nbsp;&nbsp;&nbsp;&nbsp;box()</p>
+        <p>Either with or without a Jupyter notebook, "from vpython import *" also imports all math functions, clock(), random(), and arange(). This simplifies moving programs between Web VPython and VPython 7.</p>
+        <p>In JupyterLab the default is for output to be displayed in a cell that has a very small height, and this includes a VPython display. You can scroll to see other parts of the display, but you may wish to right-click anywhere in the notebook and select &quot;Disable Scrolling for Outputs,&quot; in which case VPython displays normally.</p>
+        <p>In VPython 7.5.0 and later, the following code can be used to shut down a running program:</p>
+        <p>  &nbsp;&nbsp;&nbsp;&nbsp;from vpython.no_notebook import stop_server<br>
+&nbsp;&nbsp;&nbsp;&nbsp;stop_server() </p>
+        <p>There is a suite of demo programs for use without a Jupyter notebook (<a href="https://github.com/vpython/vpython-jupyter/raw/master/VPythonDemos_no_notebook.zip?raw=true">zip file</a>). </p>
+        <p>The newest Spyder requires using VPython 7.5.0 or later. For older versions of VPython, a simple option is to install the older Spyder 3.1.4 by executing "conda install spyder=3.1.4", though Spyder 3.1.4 doesn't work with Python 3.7, which is what Anaconda now installs. You can start Spyder by clicking the Spyder icon that is installed with Anaconda, or you can start Spyder from a command prompt by typing "spyder". In Spyder you must go to Tools &gt; Preferences &gt; Run and specify "Execute in a dedicated Python console".</p>
+<p>Some Mac users have reported that running from Spyder doesn't work. The following workaround, making and invoking a new environment, does work: "conda create -n vpclean -c vpython vpython python=3" followed by "source activate vpclean".</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p><br>
+          <br><br>
+        </p>
+        </div>
+    </div>
+    
+    <h4>Using the vpython module in a Jupyter notebook or Jupyter lab</h4>
+    <div class="accordion">
+        <i>Read more</i>
+        <div>
+          <div>To use  Jupyter lab (version 3 or higher) execute one of these commands:</div>
+          <div><br>
+          </div>
+          <div>    pip install jupyterlab-vpython<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;conda install -c conda-forge jupyterlab-vpython 
+             <div>
+               <div>
+                 <p>To uninstall  Jupyter lab, execute one of these commands (depending on whether you installed with pip or conda):</p>
+</div>
+               <div>    pip uninstall jupyterlab-vpython<br>
+               &nbsp;&nbsp;&nbsp;&nbsp;conda uninstall jupyterlab-vpython </div>
+             </div>
+             <br>
+          </div>
+          <p>There are two ways to start a Jupyter notebook or lab. In a terminal, execute "jupyter notebook" or &quot;jupyter lab&quot;. Or (depending on what operating system you're using), doubleclick the icon "Jupyter Notebook" or &quot;JupyterLab&quot; that is shown as one of the Anaconda-related tools.          </p>
+          <p>If you have a recent release of the Mac operating system, to start the Jupyter notebook you may need to execute this:<br>&nbsp;&nbsp;&nbsp;&nbsp;jupyter notebook --browser=Chrome</p>
+        <p>This short program will display a white box on a black background:
+        <br>&nbsp;&nbsp;&nbsp;&nbsp;from vpython import *<br>&nbsp;&nbsp;&nbsp;&nbsp;box()</p>
+        <p>Either with or without a Jupyter notebook or lab, "from vpython import *" also imports all math functions, clock(), random(), and arange(). This simplifies moving programs between Web VPython and VPython 7.</p>
+        <p>Click in the first cell (containing the vpython import statement), then click the run icon, the one that is a rightward-facing triangle touching a vertical line. Currently, to re-run a VPython program you need to click the circular arrow icon to "restart the kernel" and then click the red-highlighted button, then click in the first cell, then click the run icon. Some users find it convenient to include in the first cell just these statements:</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;from vpython import*<br>&nbsp;&nbsp;&nbsp;&nbsp;scene = canvas()</p>
+        <p>Then put the rest of the program in later cells. The result is that the 3D display will be shown just under the first cell instead of at the end of the last cell. It also ensures that the vpython module has been fully initialized before continuing. Moreover, you can re-run the program more easily.</p>
+        <p>There is a suite of demo programs for use with a Jupyter notebook or JupyterLab (<a href="https://github.com/vpython/vpython-jupyter/blob/master/JupyterPythonDemos.zip?raw=true">zip file</a>).</p>
+        <p>There is a <a href="http://mybinder.org/repo/BruceSherwood/vpython-jupyter">Binder package</a> of some demo programs, which lets you run Jupyter VPython programs even on computers or mobile devices that do not have Python installed. <a href="http://ivory.idyll.org/blog//2016-mybinder.html">Here is an explanation</a> of the Binder mechanism. Because the Binder servers are shared among a large number of people, performance can vary a great deal from day to day and from hour to hour.</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+        <p><br>
+          <br>
+          <br><br><br><br>
+        </p>
+</div>
+    </div>
+    
+    <h4>VPython 6, which is no longer supported</h4>
+    <div class="accordion">
+        <i>Read more</i>
+        <div>
+        <p><a href="https://vpython.org/index6.html">Here is documentation</a> on the older VPython 6 (the "visual" module), which as of January 2016 is still available but <a href="https://vpython.org/contents/announcements/evolution.html">no longer supported</a>. The main differences are that vectors must now be represented as vector(x,y,z) or vec(x,y,z), not as (x,y,z), the name "display" has been changed to "canvas", the name "gdisplay" has been changed to "graph", and the curve and points objects have a new set of methods. This <a href="https://www.glowscript.org/docs/GlowScriptDocs/VPtoGS.py">Python program</a> does an imperfect but useful job of converting old programs to the new syntax. 
+        <p><br>
+          <br>
+          <br>
+        </p>                
+</div>
+</th>
+</tr>
+</table>
+
+<script>
+$( ".accordion" ).accordion({
+    active: false,
+    collapsible: true,
+    animate: {duration: 0},
+    activate: function( event, ui ) {
+        ui.newHeader.html("<i>Read less</i>");
+        ui.oldHeader.html("<i>Read more</i>");
+    },
+});
+</script>
+<a href="https://www.coupontoaster.co.uk/blog/utiliser-vpython-avec-python-installe/" target="_blank">French translation</a> by Samuel Badree 
+
+</body>
+</html>

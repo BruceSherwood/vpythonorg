@@ -1,0 +1,98 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>How Python is Different</title>
+</head>
+
+<body>
+<p><strong>HOW PYTHON IS DIFFERENT</strong> (back to <a href="index3.html">home
+    page</a>) <br />
+  Comments for those with prior programming experience<br />
+  Bruce Sherwood, Fall 2006<br />
+(For more formal comparisons, see Google)</p>
+<p>In many respects Python is like any other algorithmic programming language
+  (C, Pascal, Java, etc.) and unlike, say, Lisp. There are a few features of
+  Python that an experienced programmer doesn't expect because they are embedded
+  in a seemingly familiar environment yet are quite different from most algorithmic
+  languages. This document attempts to point out the most important ones.</p>
+<p><strong>DYNAMIC TYPING</strong><br />
+  When you say &quot;z1 = Zork(cost=23)&quot; you create a Zork object and stick
+  a label on it, &quot;z1&quot;. There is no need (and no way) to declare &quot;z1&quot;  to
+  be of type &quot;Zork&quot; before labeling this instance of the class  &quot;Zork&quot; with
+the label &quot;z1&quot;.</p>
+<p>If you now say &quot;z2 = z1&quot; you have not created any new object, you
+  have merely stuck a second label &quot;z2&quot; on the existing Zork object.
+  Note carefully that this does NOT create a second instance of the class  &quot;Zork&quot;.
+  If you alter z1.cost it is just the same as altering z2.cost. Making a second,
+  independent copy of an object is a fairly unusual thing to do in Python, but
+  there exist special methods for doing this.</p>
+<p>If you now say &quot;z1 = 3.7&quot; the label &quot;z1&quot; no longer refers
+  to the Zork object, and a reference counter on the Zork object is decremented.
+  You can still refer to the object with expressions such as &quot;z2.cost&quot;.
+  If you then say &quot;z2 = 28.7/3.4&quot; there is no longer any way to refer
+  to the Zork object. The Zork object reference count is decremented again, to
+  zero, and the object is now marked as eligible to be deleted by the garbage
+  collection routine, since there is no longer any way to refer to it.</p>
+<p>Special case for VPython: Humanly visible objects such as boxes or spheres
+  in a graphics scene have an extra reference count so that even if there are
+  no labels on these objects, they are not deletable because a human viewer counts
+  as a reference. To delete a visual object it is first necessary to set the
+  visible attribute to False.</p>
+<p><strong>MUTABLE AND IMMUTABLE</strong><br />
+  An important Python structure is a list: mylist = [3, 'dog', 4.7, Zork(cost=23),
+    box()]. The 'dog' in this list can be referred to as mylist[1], the elements
+    being numbered starting with zero. If you say mylist[1] = 42 you've changed
+    'dog' to 42 in the list. The ability to change elements in a list means that
+lists are  &quot;mutable&quot;.</p>
+<p>A different list-like structure is a tuple: mytup = (3, 'dog', 4.7) is created
+  using parens instead of square brackets. You can read an element, so mytup[1]
+  refers to 'dog', but you cannot change an element. A tuple is  &quot;immutable&quot;.
+  The only way to achieve the effect is something like this:&nbsp; mytup = (mytup[0],
+  42, mytup[2]), which creates a new tuple.</p>
+<p>Lists and tuples are examples of what are called &quot;sequences&quot; in
+  Python. A third important kind of sequence is a dictionary, which is a container
+  of elements with keywords, and you index in not by position but by keyword
+  (as a string).</p>
+<p><strong>&quot;FOR&quot; LOOPS</strong><br />
+  A particularly delightful and powerful feature of Python is that you can loop
+    over any sequence. Suppose for example you have created objects for the planets.
+You can loop over them like this:</p>
+<p>for planet in [Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune,
+  Pluto]:<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print planet.pos,
+  planet.mass, planet.radius</p>
+<p>This could also be written like this:</p>
+<p>planets = [Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, Neptune,
+  Pluto]<br />
+  for planet in planets:<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; print planet.pos,
+  planet.mass, planet.radius</p>
+<p><strong>INTEGER DIVISION</strong><br />
+  As in many languages including C, 3/4 normally evaluates as zero rather than
+    0.75. There is a slow migration path for Python eventually to treat 3/4 as
+    0.75 rather than zero. You can invoke this behavior now by making the following
+statement the first statement in the program:</p>
+<p>from&nbsp; __future__&nbsp;  import division</p>
+<p>Note carefully that there are TWO underlines before &quot;future&quot; and
+  TWO underlines after &quot;future&quot;.</p>
+<p><strong>IDLE VS SHELL</strong><br />
+  If you run Python directly, or operate in the &quot;shell&quot; window of IDLE,
+  the editor that comes with Python, you can execute statements interactively.
+Many experienced programmers find this a useful mode.</p>
+<p>Some people much prefer to write whole programs, even small ones, because
+  it is easier to revise and easier to understand what state of module import
+  one is in. There are two features in IDLE that can be set in the Configure
+  IDLE menu option (if not already set at install time) which make edit/compile/run/revise
+  cycles almost as immediate as the shell window. One feature is to specify that
+  whenever you press F5 to run, the current version of your file is automatically
+  saved to disk (&quot;autosave&quot;; note that there is nearly infinite un-do
+  available). The other is an option to specify that at startup IDLE should open
+  an edit window rather than the shell window (you can always open a shell window
+  later, and one is created when you run a program, because that's where text
+  output goes). The first time you press F5 to run, you will be asked to specify
+  where to save the file, but with autosave turned on you won't be asked again.</p>
+<p>The effect is that when you start IDLE you're ready to enter a program, and
+  after the initial save, the programming cycle is extremely simple: just press
+  F5 to save and run. One-touch testing.</p>
+<p>For a more powerful interactive environment, you might be interested in ipython. </p>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>Why use Visual Python?</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link href="master.css" rel="stylesheet" type="text/css">
+<link href="master.css" rel="stylesheet" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<table width="700" border="0" cellspacing="2" cellpadding="2">
+  <tr> 
+    <td width="318"><img src="vpython_small.gif" width="300" height="96"></td>
+    <td width="368"><h2><font color="#FF0000"><font face="Verdana, Arial, Helvetica, sans-serif">VPython 
+        overview </font></font></h2></td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><a href="index3.html" target="_top" onClick="MM_nbGroup('down','group1','VPhome','',1)" onMouseOver="MM_nbGroup('over','VPhome','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPhome.gif" alt="" name="VPhome" width="102" height="35" border="0" onload=""></a></td>
+    <td><a href="download.html" target="_top" onClick="MM_nbGroup('down','group1','VPdownloads','',1)" onMouseOver="MM_nbGroup('over','VPdownloads','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPdownloads.gif" alt="" name="VPdownloads" width="199" height="35" border="0" onload=""></a></td>
+    <td><a href="webdoc/index.html" target="_top" onClick="MM_nbGroup('down','group1','VPdocs','',1)" onMouseOver="MM_nbGroup('over','VPdocs','','',1)" onMouseOut="MM_nbGroup('out')"><img name="VPdocs" src="VPdocs.gif" border="0" alt="" onLoad=""></a></td>
+  </tr>
+</table>
+<h3><font color="#FF0000">Why use VPython?</font></h3>
+<h3>Python</h3>
+<p>Python is a powerful object-oriented programming language initiated by Guido
+  van Rossum in 1990. It is easy to start writing simple programs in Python,
+  and even using classes and objects involves a relatively gentle learning curve.
+  Python is cross-platform
+  (Windows, Mac, Linux). It is open source (and  free) and supported
+  by a sizable developer community. Python is a general-purpose programming language
+  with significant numerical capabilities, though a common use of Python is managing
+  servers, administering systems, etc. See the extensive web site, <a href="http://www.python.org">www.python.org</a>.
+   There are various good textbooks available, as well as tutorials available
+  on the web.</p>
+<h3>Realtime 3D Graphics: Visual</h3>
+<p>Python itself does not provide graphics output. The Tk graphics library can 
+  be used to create 2D graphics, but it is difficult to use. In the spring of 
+  2000, while a sophomore in computer science at Carnegie Mellon University, David 
+  Scherer created a 3D graphics module for Python, called &quot;Visual,&quot; 
+  that is exceptionally easy to use. A program can create 3D objects (such as 
+  spheres, curves, etc.) and position them in 3D space. Visual, running in a separate 
+  thread, automatically updates a 3D scene many times per second, to reflect the 
+  current positions of the objects. The programmer does not need to deal with 
+  display management, but can focus on the computational aspects of the program. 
+  The user can navigate in the 3D scene by using the mouse to zoom and rotate 
+  while the program is running. Visual supports full vector algebra.</p>
+<p>The combination of Python plus the Visual module is called &quot;VPython&quot;.
+  (Visual  is dependent on an existing Numeric module, now superceded
+  by Numpy.) </p>
+<h3>Use in Classrooms</h3>
+<p>Students in <a href="https://matterandinteractions">introductory physics 
+  courses</a> have been using VPython to do computer modeling. VPython lets students 
+  focus on the physics computations without having to write explicit graphics 
+  statements yet obtain 3D visualization. Students can do true vector computations, 
+  which improves their understanding of the utility of vectors and vector notation.</p>
+<h3>Platforms Supported</h3>
+<p>The Python language itself is cross-platform. The Visual module, and the Idle 
+  integrated development environment, work with Python on Windows and Unix/Linux/MacOSX. 
+</p>
+<h3>Contributors</h3>
+<p>The original implementation in the spring of 2000 was carried out by a team
+  at Carnegie Mellon University led by David Scherer. Scherer did almost all
+  of the coding, but he was aided in various ways by <font size="-1" face="Arial, Helvetica, sans-serif">David
+  Andersen, Ruth Chabay, Ari Heitner, Ian Peters, and Bruce
+  Sherwood</font>.</p>
+<p>Jonathan Brandmeyer while an undergraduate student at North Carolina State 
+  University created an auto-configured installer that made it much easier to 
+  install the Visual module on many flavors of Linux systems. He also made two 
+  other major contributions: a major change to the architecture to use Boost libraries 
+  rather than CXX for connecting between C++ and Python, and major enhancements 
+  to support transparency, surface textures, and sophisticated lighting.</p>
+<p>Others who have contributed significant code to the Visual module include
+  Shawn Press, Hugh Fisher, John Zelle, Arthur Siegel, and Michael Temkhine.
+  See <a href="featurelog.html">&quot;Recent developments&quot;</a> for details. </p>
+<h3>Published Articles</h3>
+<p>A journal article about VPython has been published:</p>
+<blockquote> 
+  <p>Scherer, D., Dubois, P., & Sherwood, B. (2000). VPython: 3D Interactive Scientific 
+    Graphics for Students, <i>Computing in Science and Engineering</i>, Sept./Oct. 
+    2000, 82-88.</p>
+</blockquote>
+<p>&nbsp;</p>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<html>
+<head>
+<title>Download VPython for Mac OSX</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_nbGroup(event, grpName) { //v6.0
+  var i,img,nbArr,args=MM_nbGroup.arguments;
+  if (event == "init" && args.length > 2) {
+    if ((img = MM_findObj(args[2])) != null && !img.MM_init) {
+      img.MM_init = true; img.MM_up = args[3]; img.MM_dn = img.src;
+      if ((nbArr = document[grpName]) == null) nbArr = document[grpName] = new Array();
+      nbArr[nbArr.length] = img;
+      for (i=4; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+        if (!img.MM_up) img.MM_up = img.src;
+        img.src = img.MM_dn = args[i+1];
+        nbArr[nbArr.length] = img;
+    } }
+  } else if (event == "over") {
+    document.MM_nbOver = nbArr = new Array();
+    for (i=1; i < args.length-1; i+=3) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = (img.MM_dn && args[i+2]) ? args[i+2] : ((args[i+1])? args[i+1] : img.MM_up);
+      nbArr[nbArr.length] = img;
+    }
+  } else if (event == "out" ) {
+    for (i=0; i < document.MM_nbOver.length; i++) {
+      img = document.MM_nbOver[i]; img.src = (img.MM_dn) ? img.MM_dn : img.MM_up; }
+  } else if (event == "down") {
+    nbArr = document[grpName];
+    if (nbArr)
+      for (i=0; i < nbArr.length; i++) { img=nbArr[i]; img.src = img.MM_up; img.MM_dn = 0; }
+    document[grpName] = nbArr = new Array();
+    for (i=2; i < args.length-1; i+=2) if ((img = MM_findObj(args[i])) != null) {
+      if (!img.MM_up) img.MM_up = img.src;
+      img.src = img.MM_dn = (args[i+1])? args[i+1] : img.MM_up;
+      nbArr[nbArr.length] = img;
+  } }
+}
+//-->
+</script>
+<link href="master.css" rel="stylesheet" type="text/css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<table width="700" border="0" cellspacing="2" cellpadding="2">
+  <tr> 
+    <td width="318"><img src="vpython_small.gif" width="300" height="96"></td>
+    <td width="368"><h2><font color="#FF0000">Installing VPython on Mac OSX 10.2 
+        running X11</font></h2></td>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0">
+  <tr> 
+    <td><a href="index3.html" target="_top" onClick="MM_nbGroup('down','group1','VPhome','',1)" onMouseOver="MM_nbGroup('over','VPhome','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPhome.gif" alt="" name="VPhome" width="102" height="35" border="0" onload=""></a></td>
+    <td><a href="download.html" target="_top" onClick="MM_nbGroup('down','group1','VPdownloads','',1)" onMouseOver="MM_nbGroup('over','VPdownloads','','',1)" onMouseOut="MM_nbGroup('out')"><img src="VPdownloads.gif" alt="" name="VPdownloads" width="199" height="35" border="0" onload=""></a></td>
+    <td><a href="webdoc/index.html" target="_top" onClick="MM_nbGroup('down','group1','VPdocs','',1)" onMouseOver="MM_nbGroup('over','VPdocs','','',1)" onMouseOut="MM_nbGroup('out')"><img name="VPdocs" src="VPdocs.gif" border="0" alt="" onLoad=""></a></td>
+  </tr>
+</table>
+<p align="center"><strong><font color="#FF0000" size="4">Important: This is a 
+  limited, out of date version and is no longer supported.</font></strong><br>
+<strong>Go to</strong> <a href="http://vpython.org">vpython.org</a></p>
+<p>The installation instructions below assume that you have administrative permissions 
+  to install new software; you will be asked for your password at various stages 
+  of the installation. If you prefer, you may find it useful to be the &quot;root&quot; 
+  user when installing the software, but because of the dangers of operating as 
+  root, Apple hid the root account in OS X. To enable it, boot off the install 
+  CD (by holding down the &quot;C&quot; key), and look under the Install menu 
+  for the "Password Reset" option. You can use this to change your own password 
+  if you forget it, and to enable the root account. </p>
+<p><FONT COLOR="#008000"><B>1) Go to <A HREF="http://www.apple.com/macosx/features/x11/download">http://www.apple.com/macosx/features/x11/download</A> 
+  and download </B><strong>both <font color="#FF0000">X11 <em>and</em> SDK</font></strong><B> 
+  (includes necessary libraries)</B></FONT></p>
+<p><font color="#008000"><b>2) Install fink (a program used to install Unix-based 
+  OSX applications):</b></font></p>
+<blockquote> 
+  <p>Follow the instructions you find at <a href="http://fink.sourceforge.net">http://fink.sourceforge.net</a>. 
+    Answer &quot;y&quot; when asked about adding a line to ~/.cshrc. You do not 
+    need to run the &quot;dselect&quot; program that fink installs.</p>
+</blockquote>
+<dl>
+  <dt><font color="#008000"><b>3) Install Python 2.2:</b></font></dt>
+  <dd>In a &quot;terminal emulator&quot; or &quot;typescript&quot;, type the following 
+    commands.<br>
+    <b>rehash</b> (make sure the system knows about the recent installations)<br>
+    In the following, answer &quot;y&quot; when asked about installing dependency 
+    packages. <br>
+    <strong>&nbsp;&nbsp;&nbsp;sudo apt-get update</strong> (updates Fink's catalog 
+    of packages)<br>
+    <b>&nbsp;&nbsp;&nbsp;sudo apt-get install pkgconfig</b> (configuration package 
+    needed by VPython installer)<br>
+    <b>&nbsp;&nbsp;&nbsp;sudo apt-get install gtk+ </b> (graphics toolkit needed 
+    by VPython)<br>
+    <b>&nbsp;&nbsp;&nbsp;sudo apt-get install gtkglarea</b> (more graphics needed 
+    by VPython)<br>
+    <b>&nbsp;&nbsp;&nbsp;sudo apt-get install python22</b> (Python 2.2 for Mac 
+    OSX)<br>
+    <b>rehash</b> (make sure the system knows about the recent installations)<br>
+    <strong>which python2.2</strong> (you should see /sw/bin/python2.2)<br>
+    &nbsp;&nbsp;&nbsp;If not, your search path is not giving preference to /sw/bin, 
+    and installation won't work properly.<br>
+    <b>python2.2</b> (you should see &quot;Python 2.2&quot;; type 2+2, press Enter, 
+    and see 4)<br>
+    <b>Ctrl-D</b> to exit from Python</dd>
+</dl>
+<p><font color="#008000"><b>4) Install Visual and other needed components:</b></font></p>
+<dl>
+  <dt><font color="#008000"><b></b></font></dt>
+  <dd>Download VPython installer <a href="../download/VPythonOSX-20031017.tar.gz">VPythonOSX-20031017.tar.gz</a><br>
+    The download process normally puts on the desktop the *gz file, a *.tar file, 
+    and an unpacked folder.<br>
+    Discard the *.gz file and the unpacked folder.<br>
+    Move the *.tar file into your own folder.<br>
+    Open a typescript and <strong>cd</strong> to your folder.<br>
+    <B>sudo tar -Pxf VPythonOSX-20031017.tar</B> (extract files into /sw/lib and 
+    /sw/bin)<br>
+    &nbsp;&nbsp;&nbsp;(If you start from the .gz file, you say -Pxzf instead of 
+    -Pxf, in order to uncompress the .gz file.)</dd>
+</dl>
+<dl>
+  <DT>The following components were installed into /sw/lib/python2.2/site-packages/:<br>
+  </DT>
+  <DD><B>visual</B> (the *.py components of Visual) and <strong>cvisualmodule.so</strong> 
+    (the main Visual engine)&nbsp;<BR>
+    <B>3D demo programs</B><BR>
+    <B>IDLE for VPython</B> (convenient edit/run environment for writing and testing 
+    programs)<BR>
+    <B>documentation</B> for Visual<B><br>
+    Numeric</B> module which Visual uses<B><br>
+    </B>A convenience shell script <B>vpython</B> was installed in /sw/bin/vpython.</DD>
+  <dt>&nbsp;</dt>
+  <DD>Edit your environment file ~/.cshrc to include the following:<B><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</B><B>setenv BROWSER open</B> 
+    (to use Safari to read the on-line help)<br>
+    You can check this is set with &quot;echo $BROWSER&quot;.<BR>
+  </DD>
+  <DD>&nbsp;</DD>
+  <DT><FONT COLOR="#008000"><B>5) Running VPython:</B></FONT> 
+    <DL>
+      <DT>To run VPython, <B>start up X11</B>, and in a typescript execute this:<BR>
+        <B>vpython </B>(starts the IDLE for VPython program editor, starting in 
+        the VPython demos directory)<BR>
+        Open demo file bounce2.py in demos directory, press F5.<BR>
+        &nbsp;&nbsp;&nbsp;You should see a ball bouncing around in a box.<BR>
+        &nbsp;&nbsp;&nbsp;Right button rotates the camera; middle (left+right) 
+        button zooms. </DT>
+    </DL>
+  </DT>
+</dl>
+<dl>
+  <h3><font color="#008000">Updating one or more components of VPython:</font></h3>
+  <p>After installing Python 2.2 and VPython, the following individual component 
+    zip files can be downloaded and unzipped. These components are included with 
+    the complete VPython package but can be updated without reinstalling the whole 
+    package.</p>
+  <dd> 
+    <p><font face="Arial, Helvetica, sans-serif" size="-1"><a href="../all_download.html">Demos, 
+      Documentation, Visual module, IDLE</a> for any platform</font></p>
+  </dd>
+  <dd> 
+    <h3>[<a href="index3.html">VPython home page</a>] [<a href="download.html">other 
+      platforms</a>]</h3>
+</dl>
+</body>
+</html>
